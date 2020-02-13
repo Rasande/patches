@@ -2,7 +2,14 @@
 @import "variables";
 
 // Import Bootstrap 4
-@import "bootstrap4/bootstrap.scss";
+@import "vendor/bootstrap4/bootstrap.scss";
+
+// Import WordPress with BS
+@import "base/wordpress",
+        "base/plugins";
+
+// Import modules
+@import "module/navigation";
 
 // Import custom theme styles
 @import "theme";
