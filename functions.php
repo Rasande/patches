@@ -11,6 +11,8 @@ $rasande_includes = array(
 	'/setup.php',
 	'/cleanup.php',
 	'/enqueue.php',
+	'/nav-walker.php',
+	'/classes.php',
 	'/admin.php'
 );
 

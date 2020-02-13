@@ -8,6 +8,7 @@
 defined( 'ABSPATH' ) || exit;
 
 if ( ! function_exists( 'rasande_theme_support' )) {
+
     function rasande_theme_support() {
 
         // Setup for translation
@@ -40,7 +41,10 @@ if ( ! function_exists( 'rasande_theme_support' )) {
                 'style'
             ) 
         );
-    
+
+        register_nav_menus( array(
+            'primary' => __( 'Primary Menu', 'rasande' ),
+        ) );
     }
 
     add_action( 'after_setup_theme', 'rasande_theme_support');

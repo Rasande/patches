@@ -19,3 +19,26 @@ defined( 'ABSPATH' ) || exit;
         </head>
         <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 		<?php do_action( 'wp_body_open' ); ?>
+
+        <header class="site-header">
+            <nav class="navbar bg-primary navbar-expand-md navbar-dark">
+                <div class="container">
+                    <?php get_template_part( 'parts/navbar', 'logo' ); ?>
+
+                    <?php get_template_part( 'parts/navbar', 'toggle' ); ?>
+
+                    <?php wp_nav_menu(
+                        array(
+                            'theme_location'  => 'primary',
+                            'container_class' => 'collapse navbar-collapse',
+                            'container_id'    => 'navbarNavDropdown',
+                            'menu_class'      => 'navbar-nav ml-auto',
+                            'fallback_cb'     => '',
+                            'menu_id'         => 'main-menu',
+        
+                            'walker'          => new Rasande_WP_Navwalker(),
+                        )
+                    ); ?>
+                </div>
+            </nav>
+        </header>
