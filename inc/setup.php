@@ -16,6 +16,9 @@ if ( ! function_exists( 'rasande_theme_support' )) {
         // Add Support for WP Controlled Title Tag
         add_theme_support( 'title-tag' );
 
+        // Set up the WordPress Theme logo feature.
+		add_theme_support( 'custom-logo' );
+
         // Add WP Thumbnail Support
         add_theme_support( 'post-thumbnails' );
 
