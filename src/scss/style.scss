@@ -1,10 +1,11 @@
 // Import custom variables
 @import "variables";
 
-// Import Bootstrap 4
-@import "vendor/bootstrap4/bootstrap.scss";
+// Import vendor
+@import "vendor/bootstrap4/bootstrap.scss",
+        "vendor/fontawesome/font-awesome.scss";
 
-// Import WordPress with BS
+// Import Base
 @import "base/wordpress",
         "base/plugins";
 
