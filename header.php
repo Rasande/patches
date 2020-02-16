@@ -22,7 +22,7 @@ defined( 'ABSPATH' ) || exit;
 
         <header class="site-header">
             <nav class="navbar bg-primary navbar-expand-md navbar-dark">
-                <div class="container">
+                <div class="container-fluid">
                     <?php get_template_part( 'parts/navbar', 'logo' ); ?>
 
                     <?php get_template_part( 'parts/navbar', 'toggle' ); ?>
@@ -30,12 +30,10 @@ defined( 'ABSPATH' ) || exit;
                     <?php wp_nav_menu(
                         array(
                             'theme_location'  => 'primary',
-                            'container_class' => 'collapse navbar-collapse',
-                            'container_id'    => 'navbarNavDropdown',
-                            'menu_class'      => 'navbar-nav ml-auto',
+                            'container_class' => 'navigation',
+                            'menu_class'      => 'nav-menu',
+                            'items_wrap'      => '<ul class="%2$s">%3$s</ul>' ,
                             'fallback_cb'     => '',
-                            'menu_id'         => 'main-menu',
-        
                             'walker'          => new Rasande_WP_Navwalker(),
                         )
                     ); ?>

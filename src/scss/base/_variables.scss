@@ -1,0 +1,29 @@
+// Color
+$primary: #e08c2b;
+
+// Typography
+$base__fontSize: 16 !default;
+$base__lineHeight: 1.5 !default;
+$base__leading: $base__lineHeight * 1rem !default;
+$base__scale: 1.414 !default;
+
+$base__fontFamily: sans-serif !default;
+$heading__fontFamily: serif !default;
+
+$code__fontFamily: monospace, monospace !default;
+
+// Layout
+$grid__gutterWidth: 1rem !default;
+$grid__outerMargin: 2rem !default;
+$grid__gutterCompensation: $grid__outerMargin !default;
+$grid__gutterHalfWidth: calc($grid__gutterWidth * 0.5) !default;
+
+$container__maxWidth: 1120px !default;
+
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+  xl: 1500px
+);

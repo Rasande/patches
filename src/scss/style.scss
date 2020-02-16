@@ -1,16 +1,23 @@
 // Import custom variables
-@import "variables";
+@import "base/variables",
+        "base/base",
+        "base/mixins";
 
 // Import vendor
-@import "vendor/bootstrap4/bootstrap.scss",
-        "vendor/fontawesome/font-awesome.scss";
+@import "vendor/fontawesome/font-awesome.scss";
 
-// Import Base
-@import "base/wordpress",
-        "base/plugins";
+// Import Gutenberg styles
+@import "base/gutenberg";
+
+// Import plugins
+@import "plugins/cf7";
+
+// Import layout
+@import "layout/grid",
+        "layout/header";
 
 // Import modules
-@import "module/navigation";
+@import "module/navbar";
 
 // Import custom theme styles
 @import "theme";

@@ -6,12 +6,9 @@
  */
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
-
 /* Check if Class Exists. */
 if ( ! class_exists( 'Rasande_WP_Navwalker' ) ) {
-
     class Rasande_WP_Navwalker extends Walker_Nav_Menu {
-
         public function start_lvl(&$output, $depth = 0, $args = array()) {
             $indent = str_repeat("\t", $depth);
             $output .= "\n$indent<button class=\"dropdown-btn btn btn-link\" type=\"button\"><i class=\"fa fa-angle-down\"></i></button>\n";
@@ -19,8 +16,7 @@ if ( ! class_exists( 'Rasande_WP_Navwalker' ) ) {
             parent::start_lvl($html, $depth, $args);
             $html = str_replace('sub-menu', 'dropdown-menu', $html);
             $output .= $html;
-		 }
-		 
+         }
         public function start_el( &$output, $item, $depth = 0, $args = array(), $current_object_id = 0 ) {
             global $wp_query;
             $title = $item->title;
@@ -79,8 +75,7 @@ if ( ! class_exists( 'Rasande_WP_Navwalker' ) ) {
             }
             
             return parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
-		}
-		
+        }
         public static function fallback( $args ) {
             if ( current_user_can( 'edit_theme_options' ) ) {
 				/* Get Arguments. */
