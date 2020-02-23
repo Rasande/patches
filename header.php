@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php do_action( 'wp_body_open' ); ?>
 
         <header class="site-header">
-            <nav class="navbar bg-primary navbar-expand-md navbar-dark">
+            <nav class="bg-primary">
                 <div class="container-fluid">
                     <?php get_template_part( 'parts/navbar', 'logo' ); ?>
 
