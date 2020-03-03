@@ -73,6 +73,9 @@ export const scripts = () => {
                 jquery: 'jQuery'
             },
         }))
+        .on('error', function handleError() {
+            this.emit('end'); // Recover from errors
+          })
         .pipe(dest('assets/js'));
 }
 
