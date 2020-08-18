@@ -1,0 +1,31 @@
+.btn, a.btn {
+    width: fit-content;
+    padding: 5px 2em;
+    border:none;
+    transition: background-color .25s ease, transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    font-size: $navbar-font-size;
+
+    &-link {
+        padding: 0;
+        border: none;
+        background: transparent;
+    }
+    // Primary button
+    &-primary {
+        border: solid $dark 2px;
+        color: $dark;
+        background-color: $body-bg;
+        box-shadow: 0 25px 50px -12px rgba(0,0,0,0);
+        &:hover, &:focus {
+            color: $light;
+            
+            background-color: $dark;
+            box-shadow: 0 25px 50px -12px $boxshadow-color;
+        }
+        &:active {
+            border-color: $secondary;
+            background-color: $secondary;
+            transform: translateY(3px);
+        }
+    }
+}

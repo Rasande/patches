@@ -1,0 +1,19 @@
+.site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transform: translateZ(40px);
+    z-index: 200;
+    transition: background-color .5s ease, height .3s ease;
+    // Make header click-through
+    //pointer-events: none;
+    background-color: transparent;
+
+    a, li, button {
+        pointer-events: all;
+    }
+    &.expanded {
+        background-color: $dropdown-bg;
+        height: 100vh;
+    }
+}

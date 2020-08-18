@@ -1,0 +1,18 @@
+.hero {
+    width: 100%;
+    height: 60vh;
+    background-color: $primary;
+    color: $light;
+
+    &-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: $spacer;
+    }
+
+    &-title {
+        color: inherit;
+    }
+}

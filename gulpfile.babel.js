@@ -18,7 +18,8 @@ const server = browserSync.create();
 export const bs = done => {
     server.init({
       proxy: "http://localhost/",
-      notify: false
+      notify: false,
+      open: false
     });
     done();
   };
@@ -30,12 +31,12 @@ export const reload = done => {
 };
 
 // Clean the assets folder
-export const clean = () => del(['assets']);
+export const clean = () => del(['assets/js', 'assets/css']);
 
 // Run gulp styles to compile sass files
 // Run gulp styles --prod to also minify 
 export const styles = () => {
-    return src(['src/scss/style.scss'])
+    return src(['src/scss/style.scss', 'src/scss/editor-style.scss'])
       .pipe(gulpif(PRODUCTION, sourcemaps.init()))
       .pipe(sass().on('error', sass.logError))
       .pipe(gulpif(PRODUCTION, postcss([ autoprefixer ])))
@@ -85,6 +86,12 @@ export const copy = () => {
       .pipe(dest('assets'));
   }
 
+
+export const vendor = () => {
+  return src(['src/js/vendor/**/*'])
+  .pipe(dest('assets/js/vendor'));
+}
+
 // Watch
 export const watcher = () => {
     watch('src/scss/**/*.scss', styles);
@@ -94,6 +101,6 @@ export const watcher = () => {
 }
 
 // Start dev environment
-export const dev = series(clean, parallel(styles, scripts, copy), bs, watcher)
-export const build = series(clean, parallel(styles, scripts, copy))
+export const dev = series(clean, parallel(styles, scripts, copy, vendor), bs, watcher)
+export const build = series(clean, parallel(styles, scripts, copy, vendor))
 export default dev;

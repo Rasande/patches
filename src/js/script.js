@@ -1,2 +1,2 @@
-// Import
-import './modules/navigation';
+import './navigation'
+import './animation'

@@ -1,0 +1,20 @@
+ul.social-media {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li.social-item {
+        display: inline-block;
+        margin: 0 1rem;
+        svg {
+            height: 35px;
+        }
+    }
+    a.social-link {
+        display: inline-block;
+        color: $secondary;
+        transition: color .25s ease;
+        &:hover {
+          color: $primary;
+        }
+    }
+}

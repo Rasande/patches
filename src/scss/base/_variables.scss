@@ -1,32 +1,205 @@
-// Color
-$primary: #e08c2b !default;
-$secondary: purple !default;
-$light: #f3f3f3 !default;
-$dark: #1d1d1d !default;
+// Standard Colors
+$blue:     #007bff !default;
+$indigo:   #6610f2 !default;
+$purple:   #6f42c1 !default;
+$pink:     #e83e8c !default;
+$red:      #dc3545 !default;
+$orange:   #fd7e14 !default;
+$yellow:   #ffc107 !default;
+$green:    #28a745 !default;
+$teal:     #20c997 !default;
+$cyan:     #17a2b8 !default;
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #22262a !default;
+$black:    #000 !default;
 
-// Typography
-$base__fontSize: 16 !default;
-$base__lineHeight: 1.5 !default;
-$base__leading: $base__lineHeight * 1rem !default;
-$base__scale: 1.414 !default;
+$colors: () !default;
+$colors: map-merge(
+  (
+    "blue":     $blue,    
+    "indigo":   $indigo,  
+    "purple":   $purple,  
+    "pink":     $pink,    
+    "red":      $red,     
+    "orange":   $orange, 
+    "yellow":   $yellow,
+    "green":    $green,  
+    "teal":     $teal,    
+    "cyan":     $cyan,    
+    "white":    $white,   
+    "gray-100": $gray-100,
+    "gray-200": $gray-200,
+    "gray-300": $gray-300,
+    "gray-400": $gray-400, 
+    "gray-500": $gray-500,
+    "gray-600": $gray-600,
+    "gray-700": $gray-700, 
+    "gray-800": $gray-800, 
+    "gray-900": $gray-900, 
+    "black":    $black  
+  ),
+  $colors
+) !default;
 
-$base__fontFamily: sans-serif !default;
-$heading__fontFamily: serif !default;
+// Theme Colors
+$primary:     #0d2724 !default;
+$secondary:   #366255 !default;
+$tertiary:    #b6aa9e !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          #131313 !default;
 
-$code__fontFamily: monospace, monospace !default;
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "tretiary":   $tertiary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+  ),
+  $theme-colors
+) !default;
 
-// Layout
-$grid__gutterWidth: 1rem !default;
-$grid__outerMargin: 2rem !default;
-$grid__gutterCompensation: $grid__outerMargin !default;
-$grid__gutterHalfWidth: calc($grid__gutterWidth * 0.5) !default;
+// Merge color maps
+$all-colors: map-merge($theme-colors,$colors);
 
-$container__maxWidth: 1120px !default;
+// Add all colors to :root as CSS-variables
+:root {
+    @each $name, $color in $all-colors{
+    --#{$name}: #{$color};
+    }
+}
 
+$body-bg:                   #f5f6f7 !default;
+$body-color:                $dark !default;
+
+$selection-bg: $primary !default;
+$selection-color: $light !default;
+
+$boxshadow-color: rgba($dark, .25);
+
+// Spacing 
+$spacer: 2rem !default;
+
+// Breakpoints
 $breakpoints: (
   xs: 576px,
-  sm: 768px,
+  sm: 814px,
   md: 992px,
-  lg: 1200px,
-  xl: 1500px
-);
+  lg: 1480px,
+  xl: 1600px
+) !default;
+
+// Fonts
+$font-family-sans-serif: sans-serif !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$font-size-base:              1.8rem !default;
+$font-size-base-md:           2.2rem !default;
+$font-size-lg:                $font-size-base * 1.25 !default;
+$font-size-sm:                $font-size-base * .875 !default;
+
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+$font-weight-bolder:          bolder !default;
+
+$font-weight-base:            $font-weight-normal !default;
+$line-height-base:            1.5 !default;
+
+$headings-margin-bottom:      $spacer / 2 !default;
+$headings-font-family:        'Poppins', sans-serif !default;
+$headings-font-weight:        $font-weight-bold !default;
+$headings-line-height:        1 !default;
+$headings-color:              $dark !default;
+
+$h1-font-size:                $font-size-base * 2.5 !default;
+$h2-font-size:                $font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 1.75 !default;
+$h4-font-size:                $font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.25 !default;
+$h6-font-size:                $font-size-base !default;
+
+$dt-font-weight:              $font-weight-bold !default;
+
+$text-muted:                  $gray-600 !default;
+
+// Paragraphs
+$paragraph-margin-bottom:   1rem !default;
+
+// Links
+$link-color:                              $primary !default;
+$link-decoration:                         none !default;
+$link-hover-color:                        $secondary !default;
+$link-hover-decoration:                   none !default;
+
+// Tables
+$table-cell-padding:          .75rem !default;
+$table-caption-color:         $text-muted !default;
+
+// Forms
+$label-margin-bottom:                   .5rem !default;
+$label-font-family: $headings-font-family !default;
+$label-color: $body-color !default;
+$label-color-focused: $gray-500 !default;
+
+// Navbar
+$navbar-font-family: $headings-font-family !default;
+$navbar-font-size: 1.6rem !default;
+
+$navbar-padding-y:                  $spacer / 2 !default;
+$navbar-padding-x:                  2rem !default;
+
+$navbar-expand: sm !default;
+
+// Brand
+$brand-width: 80px !default;
+$brand-width-small: 130px !default;
+
+// Navigation
+$nav-item-spacing: $spacer * 0.6 !default;
+
+$nav-link-color: $body-color !default;
+$nav-link-hover-color: $primary !default;
+$nav-link-active-color: $gray-500 !default;
+$nav-link-padding-y: 1rem !default; 
+$nav-link-padding-x: 2.5rem !default;
+
+$dropdown-font-size: $navbar-font-size !default;
+$dropdown-bg: rgba($body-bg, .96) !default;
+
+// Hamburger Icon
+$hamburger-padding-x: 0 !default;
+$hamburger-padding-y: 0 !default;
+$hamburger-layer-width: 30px !default;
+$hamburger-layer-height : 3px !default;
+$hamburger-layer-color: #212529 !default;
+
+// Containers
+$container-width: map-get($breakpoints, "lg") !default;
+$container-wide-width: map-get($breakpoints, "xl") !default;
+$container-narrow-width: map-get($breakpoints, "md") !default;
+
+// Grid
+$grid-gutter-width: $spacer !default;
+$grid-outer-margin: $spacer !default;
+$grid-gutter-compensation: $grid-outer-margin / 2 !default;
+$grid-gutter-halfWidth: $grid-gutter-width / 2 !default;

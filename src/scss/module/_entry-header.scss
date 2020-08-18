@@ -1,0 +1,80 @@
+.entry-header {
+    display: flex;
+    flex-direction: column;
+    padding: 4em 0 2em;
+    @include respond-above(xs) {
+        padding: 4em 0 4em;
+    }
+    @include respond-above(md) {
+        padding: 4em 0 6em;
+    }
+    .entry-title, .entry-lead {
+        position: relative;
+        display: block;
+        width:100%;
+    }
+    h1.title {
+        opacity: 0;
+        height: auto;
+        width: 100%;
+        padding-bottom: .2em;
+        margin-bottom: 0;
+        font-size: 38px;
+        font-weight: bold;
+        @include respond-above(xs) {
+            font-size: 56px;
+        }
+        @include respond-above(sm) {
+            font-size: 76px;
+          
+        }
+        @include respond-above(md) {
+            font-size: 110px;
+        }
+    }
+
+    // Lead
+.lead {
+    opacity: 0;
+    height: auto;
+    width: 100%;
+}
+
+    .post-meta, .post-meta a {
+        font-size: $navbar-font-size;
+        color: $gray-500;
+        margin-bottom: 1rem;
+    }
+    // Block overlay
+
+    .block-overlay, .lead-block-overlay {
+        top: 0;
+        opacity: 1;
+        position: absolute;
+        width: auto;
+    }
+    .block-overlay {
+        background-color: $dark;
+    }
+    .lead-block-overlay {
+        background-color: $secondary;
+    }
+}
+
+.lead {
+    
+   
+    p, h2 {
+        font-size: 22px;
+        color: $gray-600;
+        @include respond-above(xs) {
+            font-size: 24px;
+        }
+        @include respond-above(md) {
+            font-size: 30px;
+        }
+    }
+    & > * {
+        @extend .left-50;
+    }
+}

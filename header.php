@@ -1,42 +1,43 @@
 <?php
+
 /**
  * The template for displaying the header
- * 
+ *
  */
-
-// Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
-
 ?>
 
 <!DOCTYPE html>
-    <html <?php language_attributes(); ?>>
-        <head>
-            <meta charset="<?php bloginfo( 'charset' ); ?>">
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <link rel="profile" href="http://gmpg.org/xfn/11">
-            <?php wp_head(); ?>
-        </head>
-        <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
-		<?php do_action( 'wp_body_open' ); ?>
+<html <?php language_attributes(); ?>>
 
-        <header class="site-header">
-            <nav class="bg-primary">
-                <div class="container-fluid">
-                    <?php get_template_part( 'parts/navbar', 'logo' ); ?>
+<head>
+	<meta charset="<?php bloginfo('charset'); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<?php wp_head(); ?>
+</head>
 
-                    <?php get_template_part( 'parts/navbar', 'toggle' ); ?>
+<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+	<?php do_action('wp_body_open'); ?>
 
-                    <?php wp_nav_menu(
-                        array(
-                            'theme_location'  => 'primary',
-                            'container_class' => 'navigation',
-                            'menu_class'      => 'nav-menu',
-                            'items_wrap'      => '<ul class="%2$s">%3$s</ul>' ,
-                            'fallback_cb'     => '',
-                            'walker'          => new Rasande_WP_Navwalker(),
-                        )
-                    ); ?>
-                </div>
-            </nav>
-        </header>
+	<header class="site-header">
+		<!-- Navbar -->
+		<nav class="navbar">
+			<!-- Navbar brand -->
+			<?php get_template_part('parts/navbar', 'brand'); ?>
+			<!-- Navbar menu toggler -->
+			<?php get_template_part('parts/navbar', 'toggler'); ?>
+			<!-- Navbar navigation -->
+			<?php wp_nav_menu(array(
+				'theme_location' => 'primary',
+				'container' => '',
+				'menu_class' => 'navbar-nav',
+				'depth' => 0,
+				'walker' => new Rasande_WP_Navwalker(),
+				'fallback_cb' => '',
+				'depth' => '2'
+			)); ?>
+
+		</nav>
+	</header>

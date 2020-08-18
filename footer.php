@@ -1,15 +1,41 @@
 <?php
 /**
- * The template file for displaying the footer
  * 
+ * The template for displaying the footer. 
+ *
  */
-
-// Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
-
 ?>
 
-<footer>
+<footer class="site-footer">
+
+	<!-- Footer Information -->
+	<div class="footer-info">
+		<div class="container">
+			<div class="row">
+
+				<!-- Footer Column 1 -->
+				<div class="col-12 col-md-4">
+					<?php dynamic_sidebar( 'footer-1' ); ?>
+				</div>
+
+				<!-- Footer Column 2 -->
+				<div class="col-12 col-md-4">
+					<?php dynamic_sidebar( 'footer-2' ); ?>
+				</div>
+
+				<!-- Footer Column 3 -->
+				<div class="col-12 col-md-4">
+					<?php dynamic_sidebar( 'footer-3' ); ?>
+				</div>
+
+				<!-- Copyright Information -->
+				<div class="col-12 text-center">
+					<?php rasande_copyright(); ?>
+				</div>
+
+			</div>
+		</div>
+	</div>
 
 </footer>
 

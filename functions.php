@@ -13,6 +13,11 @@ $rasande_includes = array(
 	'/enqueue.php',
 	'/nav-walker.php',
 	'/classes.php',
+	'/hooks.php',
+	'/widgets.php',
+	'/acf.php',
+	'/editor.php',
+	'/acf-blocks.php',
 	'/admin.php'
 );
 
