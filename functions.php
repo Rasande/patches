@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Functions, setups and definitions
  * 
@@ -12,7 +13,6 @@ $rasande_includes = array(
 	'/cleanup.php',
 	'/enqueue.php',
 	'/nav-walker.php',
-	'/classes.php',
 	'/hooks.php',
 	'/widgets.php',
 	'/acf.php',
