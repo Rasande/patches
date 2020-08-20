@@ -20,14 +20,23 @@
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 	<?php do_action('wp_body_open'); ?>
-
+	
+	<!-- Site header -->
 	<header class="site-header">
+
 		<!-- Navbar -->
 		<nav class="navbar">
+
 			<!-- Navbar brand -->
 			<?php get_template_part('parts/navbar', 'brand'); ?>
+
 			<!-- Navbar menu toggler -->
-			<?php get_template_part('parts/navbar', 'toggler'); ?>
+			<button class="navbar-toggler hamburger hamburger--squeeze" type="button" aria-label="<?php esc_attr_e( 'Toggle navigation', 'rasande' ); ?>">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>	
+			</button>
+
 			<!-- Navbar navigation -->
 			<?php wp_nav_menu(array(
 				'theme_location' => 'primary',
