@@ -1,11 +1,12 @@
 <?php
+
 /**
- * 
  * The template for displaying the footer. 
  *
  */
 ?>
 
+<!-- Site footer -->
 <footer class="site-footer">
 
 	<!-- Footer Information -->
@@ -30,7 +31,9 @@
 
 				<!-- Copyright Information -->
 				<div class="col-12 text-center">
-					<?php rasande_copyright(); ?>
+					<div class="copyright">
+						<span class="copyright-info">&copy; <?php echo bloginfo( 'name' ); ?> <?php echo date("Y"); ?></span>
+					</div>
 				</div>
 
 			</div>

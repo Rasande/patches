@@ -12,6 +12,7 @@ defined('ABSPATH') || exit;
 
 get_header(); ?>
 
+<!-- Site content -->
 <div class="site-content">
     <main class="main">
 

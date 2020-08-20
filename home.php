@@ -10,8 +10,11 @@ defined('ABSPATH') || exit;
 
 get_header(); ?>
 
+<!-- Site content -->
 <div class="site-content">
     <main class="main">
+
+        <!-- Entry -->
         <section class="blog">
             <div class="container">
 
