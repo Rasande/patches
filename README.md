@@ -2,13 +2,13 @@
 
 The start of development.
 
+## ToDo
+
+- [ ] Woocommerce templates
+
 ## Licenses & Credits
 
 - jQuery: https://jquery.org | (MIT License)
 - Anime.js: https://animejs.com/ | (MIT License)
 - Waypoints: http://imakewebthings.com/waypoints/ | (MIT License)
-
-## ToDo
-
-- [ ] Make "similar posts" a theme part.
-- [ ] Woocommerce templates
+- Hamburgers: https://jonsuh.com/hamburgers/ | (MIT License)
