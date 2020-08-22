@@ -96,6 +96,8 @@ $boxshadow-color: rgba($dark, .25);
 
 // Spacing 
 $spacer: 2rem !default;
+$spacer-2: $spacer * 2 !default;
+$spacer-4: $spacer * 4 !default;
 
 // Breakpoints
 $breakpoints: (
@@ -111,8 +113,7 @@ $font-family-sans-serif: sans-serif !default;
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base: $font-family-sans-serif !default;
 
-$font-size-base:              1.8rem !default;
-$font-size-base-md:           2.2rem !default;
+$font-size-base:              1.6rem !default;
 $font-size-lg:                $font-size-base * 1.25 !default;
 $font-size-sm:                $font-size-base * .875 !default;
 
@@ -129,7 +130,6 @@ $headings-margin-bottom:      $spacer / 2 !default;
 $headings-font-family:        'Poppins', sans-serif !default;
 $headings-font-weight:        $font-weight-bold !default;
 $headings-line-height:        1 !default;
-$headings-color:              $dark !default;
 
 $h1-font-size:                $font-size-base * 2.5 !default;
 $h2-font-size:                $font-size-base * 2 !default;
@@ -172,7 +172,7 @@ $navbar-expand: sm !default;
 
 // Brand
 $brand-width: 80px !default;
-$brand-width-small: 130px !default;
+$brand-width-desktop: 130px !default;
 
 // Navigation
 $nav-item-spacing: $spacer * 0.6 !default;

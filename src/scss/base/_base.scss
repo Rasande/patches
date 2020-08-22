@@ -47,9 +47,6 @@ body {
     text-align: left;
     background-color: $body-bg;
     overflow-x: hidden;
-    @include respond-above(md) {
-        font-size: $font-size-base-md;
-    }
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -78,7 +75,6 @@ h6 {
     font-family: $headings-font-family;
     font-weight: $headings-font-weight;
     line-height: $headings-line-height;
-    color: $headings-color;
 }
 
 h1,

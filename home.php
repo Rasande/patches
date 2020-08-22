@@ -61,7 +61,7 @@ get_header(); ?>
                     <?php else : ?>
                         <!-- No post fallback -->
                         <div class="col-12">
-                            <p class="text-center color-gray-500"><?php echo __('Here it was empty, new posts coming soon!', 'rasande') ?></p>
+                            <p class="text-center"><?php echo __('Here it was empty, new posts coming soon!', 'rasande') ?></p>
                         </div>
                     <?php endif; ?>
                 </div>
