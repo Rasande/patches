@@ -1,0 +1,11 @@
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    max-width: $navbar-width;
+    margin: 0 auto;
+    font-family: $navbar-font-family;
+    font-size: $navbar-font-size;
+    list-style: none;
+}

@@ -2,16 +2,14 @@
     position: fixed;
     top: 0;
     width: 100%;
-    transform: translateZ(40px);
-    z-index: 200;
-    transition: background-color .5s ease, height .3s ease;
-    background-color: red;
+    height: $header-height;
+    background-color: $tertiary;
+    color: $light;
+    z-index: 999;
 
     a, li, button {
         pointer-events: all;
+        color: inherit;
     }
-    &.expanded {
-        background-color: $dropdown-bg;
-        height: 100vh;
-    }
+
 }

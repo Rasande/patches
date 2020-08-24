@@ -1,7 +1,7 @@
 form.wpcf7-form {
     display: block;
     padding: 2rem 2rem;
-    box-shadow: 0 25px 50px -12px $boxshadow-color;
+  
 
     @include respond-above(sm) {
         padding: 4rem 8rem;

@@ -1,0 +1,7 @@
+.navbar-toggler {
+    padding-right: $spacer;
+
+    @include respond-above($navbar-expand) {
+      display: none;
+    }
+  }

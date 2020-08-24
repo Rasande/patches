@@ -15,12 +15,11 @@
         border: solid $dark 2px;
         color: $dark;
         background-color: $body-bg;
-        box-shadow: 0 25px 50px -12px rgba(0,0,0,0);
         &:hover, &:focus {
             color: $light;
             
             background-color: $dark;
-            box-shadow: 0 25px 50px -12px $boxshadow-color;
+          
         }
         &:active {
             border-color: $secondary;

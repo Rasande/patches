@@ -86,16 +86,16 @@ $all-colors: map-merge($theme-colors,$colors);
     }
 }
 
-$body-bg:                   #f5f6f7 !default;
+$body-bg:                   $light !default;
 $body-color:                $dark !default;
+$body-color-secondary:      $gray-500 !default;
 
 $selection-bg: $primary !default;
 $selection-color: $light !default;
 
-$boxshadow-color: rgba($dark, .25);
-
 // Spacing 
 $spacer: 2rem !default;
+$spacer-half: $spacer * .5 !default;
 $spacer-2: $spacer * 2 !default;
 $spacer-4: $spacer * 4 !default;
 
@@ -107,6 +107,17 @@ $breakpoints: (
   lg: 1480px,
   xl: 1600px
 ) !default;
+
+// Containers
+$container-width: map-get($breakpoints, "lg") !default;
+$container-wide-width: map-get($breakpoints, "xl") !default;
+$container-narrow-width: map-get($breakpoints, "md") !default;
+
+// Grid
+$grid-gutter-width: $spacer !default;
+$grid-outer-margin: $spacer !default;
+$grid-gutter-compensation: $grid-outer-margin / 2 !default;
+$grid-gutter-halfWidth: $grid-gutter-width / 2 !default;
 
 // Fonts
 $font-family-sans-serif: sans-serif !default;
@@ -140,7 +151,7 @@ $h6-font-size:                $font-size-base !default;
 
 $dt-font-weight:              $font-weight-bold !default;
 
-$text-muted:                  $gray-600 !default;
+$text-muted:                  $body-color-secondary !default;
 
 // Paragraphs
 $paragraph-margin-bottom:   1rem !default;
@@ -153,7 +164,7 @@ $link-hover-decoration:                   none !default;
 
 // Tables
 $table-cell-padding:          .75rem !default;
-$table-caption-color:         $text-muted !default;
+$table-caption-color:         $body-color-secondary !default;
 
 // Forms
 $label-margin-bottom:                   .5rem !default;
@@ -161,45 +172,34 @@ $label-font-family: $headings-font-family !default;
 $label-color: $body-color !default;
 $label-color-focused: $gray-500 !default;
 
+// Site header
+$header-height: 64px !default;
+
 // Navbar
 $navbar-font-family: $headings-font-family !default;
-$navbar-font-size: 1.6rem !default;
-
-$navbar-padding-y:                  $spacer / 2 !default;
-$navbar-padding-x:                  2rem !default;
-
+$navbar-font-size: $font-size-base !default;
+$navbar-width: $container-width !default;
 $navbar-expand: sm !default;
 
-// Brand
+// Navbar Brand
 $brand-width: 80px !default;
 $brand-width-desktop: 130px !default;
 
-// Navigation
-$nav-item-spacing: $spacer * 0.6 !default;
-
-$nav-link-color: $body-color !default;
+// Navbar Navigation
+$nav-bg: $secondary !default;
+$nav-dropdown-bg: $nav-bg !default;
+$nav-dropdown-bg-desktop: $nav-bg !default;
+$nav-item-spacing: 0 !default;
+$nav-item-width: 200px !default;
+$nav-link-padding: $spacer !default;
+$nav-link-color: $light !default;
 $nav-link-hover-color: $primary !default;
-$nav-link-active-color: $gray-500 !default;
-$nav-link-padding-y: 1rem !default; 
-$nav-link-padding-x: 2.5rem !default;
+$nav-link-active-color: $primary !default;
 
-$dropdown-font-size: $navbar-font-size !default;
-$dropdown-bg: rgba($body-bg, .96) !default;
-
-// Hamburger Icon
-$hamburger-padding-x: 0 !default;
-$hamburger-padding-y: 0 !default;
-$hamburger-layer-width: 30px !default;
-$hamburger-layer-height : 3px !default;
-$hamburger-layer-color: #212529 !default;
-
-// Containers
-$container-width: map-get($breakpoints, "lg") !default;
-$container-wide-width: map-get($breakpoints, "xl") !default;
-$container-narrow-width: map-get($breakpoints, "md") !default;
-
-// Grid
-$grid-gutter-width: $spacer !default;
-$grid-outer-margin: $spacer !default;
-$grid-gutter-compensation: $grid-outer-margin / 2 !default;
-$grid-gutter-halfWidth: $grid-gutter-width / 2 !default;
+// Navbar hamburger
+$hamburger-layer-width: 30px;
+$hamburger-layer-height : 3px;
+$hamburger-layer-color: $nav-link-color;
+$hamburger-types: (
+  squeeze
+);

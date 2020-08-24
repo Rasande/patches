@@ -23,7 +23,7 @@
 	
 	<!-- Site header -->
 	<header class="site-header">
-
+	
 		<!-- Navbar -->
 		<nav class="navbar">
 
@@ -45,8 +45,9 @@
 				'depth' => 0,
 				'walker' => new Rasande_WP_Navwalker(),
 				'fallback_cb' => '',
-				'depth' => '2'
+				'depth' => '3'
 			)); ?>
 
 		</nav>
+	
 	</header>

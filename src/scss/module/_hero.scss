@@ -4,7 +4,7 @@
     background-color: $primary;
     color: $light;
 
-    &-inner {
+    &__inner {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -12,7 +12,7 @@
         padding: $spacer;
     }
 
-    &-title {
-        color: inherit;
+    &__title {
+        text-align: center;
     }
 }

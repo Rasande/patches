@@ -1,12 +1,10 @@
 .navbar-brand {
-    padding: 1rem 0;
+    padding: $spacer;
+    white-space: nowrap;
 }
 
 img.navbar-brand {
-    width: auto;
     max-width: $brand-width;
-    white-space: nowrap;
-
     @include respond-above(sm) {
         max-width: $brand-width-desktop;
     }
