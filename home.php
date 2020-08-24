@@ -13,8 +13,6 @@ get_header(); ?>
 <!-- Site content -->
 <div class="site-content">
     <main class="main">
-
-        <!-- Entry -->
         <section class="blog">
 
             <!-- Entry header -->
@@ -22,21 +20,12 @@ get_header(); ?>
 
             <div class="container">
                 <div class="row">
+
                     <?php if (have_posts()) :
-
-                        // Arguments for query
-                        $args = array(
-                            'paged' => (get_query_var('paged') ? get_query_var('paged') : 1),
-                            'post_status' => 'publish',
-                            'post_type' => 'post',
-                            'orderby' => 'post_date',
-                        );
-                        query_posts($args);
-
                         while (have_posts()) : the_post(); ?>
 
                             <!-- Blog item -->
-                            <div class="col-12 col-sm-6 col-md-4 slide-in-btt">
+                            <div class="col-12 col-sm-6 col-md-4">
                                 <article class="blog-item">
                                     <a class="blog-item-link" href="<?php the_permalink(); ?>">
 
@@ -57,12 +46,6 @@ get_header(); ?>
                                 </article>
                             </div>
                         <?php endwhile; ?>
-
-                    <?php else : ?>
-                        <!-- No post fallback -->
-                        <div class="col-12">
-                            <p class="text-center"><?php echo __('Here it was empty, new posts coming soon!', 'rasande') ?></p>
-                        </div>
                     <?php endif; ?>
                 </div>
 
