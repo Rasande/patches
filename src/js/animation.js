@@ -1,12 +1,15 @@
+// Settings
 const offset = '80%';
 const easeing = 'easeOutExpo'
 
+// The animations
 document.addEventListener('DOMContentLoaded', () => {
 
-  let fadeIn = document.getElementsByClassName('fade-in');
+  const fadeIn = document.getElementsByClassName('fade-in');
 
   if (fadeIn) {
     for (var i = 0; i < fadeIn.length; i++) {
+      fadeIn[i].style.opacity = '0'
       new Waypoint({
         element: fadeIn[i],
         handler: function () {
@@ -26,10 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Slide in content bottom to top
   // Execute: on scroll
-  let slideInTop = document.getElementsByClassName('slide-in-btt');
+  const slideInTop = document.getElementsByClassName('slide-in-btt');
 
   if (slideInTop) {
     for (var i = 0; i < slideInTop.length; i++) {
+      slideInTop[i].style.opacity = '0'
       new Waypoint({
         element: slideInTop[i],
         handler: function () {
@@ -50,10 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Slide in content top to bottom
   // Execute: on scroll
-  let slideInBottom = document.getElementsByClassName('slide-in-ttb');
+  const slideInBottom = document.getElementsByClassName('slide-in-ttb');
 
   if (slideInBottom) {
     for (var i = 0; i < slideInBottom.length; i++) {
+      slideInBottom[i].style.opacity = '0'
       new Waypoint({
         element: slideInBottom[i],
         handler: function () {
@@ -74,10 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Slide in content left to right
   // Execute: on scroll
-  let slideInRight = document.getElementsByClassName('slide-in-ltr');
-
+  var slideInRight = document.getElementsByClassName('slide-in-ltr');
+ 
   if (slideInRight) {
     for (var i = 0; i < slideInRight.length; i++) {
+      slideInRight[i].style.opacity = '0'
       new Waypoint({
         element: slideInRight[i],
         handler: function () {
@@ -98,10 +104,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Slide in content right to left
   // Execute: on scroll
-  let slideInLeft = document.getElementsByClassName('slide-in-rtl');
+  const slideInLeft = document.getElementsByClassName('slide-in-rtl');
 
   if (slideInLeft) {
     for (var i = 0; i < slideInLeft.length; i++) {
+      slideInLeft[i].style.opacity = '0'
       new Waypoint({
         element: slideInLeft[i],
         handler: function () {
