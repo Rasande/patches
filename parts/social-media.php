@@ -10,7 +10,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if( have_rows('social_media', 'option') ):
+if( class_exists('ACF') && have_rows('social_media', 'option') ):
 	echo '<ul class="social-media ">';
     while ( have_rows('social_media', 'option') ) : the_row();
     

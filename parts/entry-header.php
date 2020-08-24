@@ -23,19 +23,21 @@ defined('ABSPATH') || exit;
     <?php else :
 
         // Check if has custom title, else use the_title();
-        if (get_field('custom_title')) :
+        if (class_exists('ACF') && get_field('custom_title')) :
             $title = get_field('custom_title');
-        else :
+        elseif (!class_exists('ACF') || class_exists('ACF') && ! get_field('custom_title')):
             $title = get_the_title();
         endif; ?>
 
         <h1 class="entry-header__title"><?php echo $title ?></h1>
     <?php endif; ?>
 
-    <!-- Entry lead -->
-    <div class="entry-header__lead">
-        <?php $lead = get_field('custom_lead'); ?>
-        <?php echo $lead ?>
-    </div>
+    <?php if (class_exists('ACF') && get_field('custom_lead')) : ?>
+        <!-- Entry lead -->
+        <div class="entry-header__lead">
+            <?php $lead = get_field('custom_lead'); ?>
+            <?php echo $lead ?>
+        </div>
+    <?php endif; ?>
 
 </header>

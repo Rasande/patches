@@ -19,7 +19,7 @@ if( !empty($block['align']) ) {
 
 // Load values and assing defaults.
 
-if( have_rows('social_media', 'option') ):
+if( class_exists('ACF') && have_rows('social_media', 'option') ):
 	echo '<ul class="social-media ">';
     while ( have_rows('social_media', 'option') ) : the_row();
     
