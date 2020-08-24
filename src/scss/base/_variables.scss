@@ -102,9 +102,9 @@ $spacer-4: $spacer * 4 !default;
 // Breakpoints
 $breakpoints: (
   xs: 576px,
-  sm: 814px,
+  sm: 680px,
   md: 992px,
-  lg: 1480px,
+  lg: 1280px,
   xl: 1600px
 ) !default;
 
@@ -179,7 +179,7 @@ $header-height: 64px !default;
 $navbar-font-family: $headings-font-family !default;
 $navbar-font-size: $font-size-base !default;
 $navbar-width: $container-width !default;
-$navbar-expand: sm !default;
+$navbar-expand: md !default;
 
 // Navbar Brand
 $brand-width: 80px !default;

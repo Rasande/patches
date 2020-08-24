@@ -1,5 +1,6 @@
 (function($) {
 
+    let body = $( 'body' );
     let $window = $(window);
     let lastWindowWidth = $window.width();
     let toggle = $( '.navbar-toggler' );
@@ -10,12 +11,14 @@
 
     // Functions
     function toggleMenu() {
-        // Toggle .open to .navbar-nav
+        // Toggle .is-open to .navbar-nav
         $(navigation).toggleClass( 'is-open' );
         // Toggle .is-active to the hamburger icon
         $(toggle).toggleClass( 'is-active' );
         // Toggle .is-active on site-header
         $(header).toggleClass( 'expanded' );
+        // Prevent body from scrolling
+        $(body).toggleClass('stuck');
     }
 
     function closeAllDropdowns() {

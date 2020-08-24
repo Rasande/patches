@@ -9,9 +9,9 @@
     overflow-y: scroll;
 
     &.is-open {
-        display: flex;
-        height: 90vh;
-
+        display: block;
+        height: 92vh;
+        padding-bottom: $spacer-4;
         @include respond-above($navbar-expand) {
             height: auto;
         }
@@ -81,7 +81,6 @@
 
         // Navigation dropdown menu 
         .dropdown-menu {
-            position: static;
             display: none;
             flex-basis: 100%;
             padding-left: 0;

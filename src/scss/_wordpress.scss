@@ -4,8 +4,6 @@
 	width: 100vw;
 }
 
-
-
 // Wordpress Block editor styles
 
 /* Main column width */
@@ -27,11 +25,8 @@
     p {
         margin-bottom: 2em;
         line-height: 1.8;
-a{
-    background-color: $dark;
-    color: $light;
-    transition: color .25s ease;
-    padding: 0 .4em;
+a {
+    
     &:hover {
         color: $primary !important;
     }
