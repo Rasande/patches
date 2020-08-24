@@ -19,17 +19,17 @@ get_header(); ?>
 
                 <!-- Entry -->
                 <article class="entry">
-                    <div class="container">
 
                         <!-- Entry header -->
                         <?php get_template_part('parts/entry', 'header'); ?>
 
                         <!-- Entry content -->
                         <div class="entry-content">
-                            <?php the_content(); ?>
+                            <div class="container">
+                                <?php the_content(); ?>
+                            </div>
                         </div>
 
-                    </div>
                 </article>
 
             <?php endwhile; ?>

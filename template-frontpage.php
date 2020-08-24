@@ -26,13 +26,14 @@ get_header(); ?>
                     <?php get_template_part('parts/hero'); ?>
 
                     <!-- Entry -->
-                    <div class="container">
+                    
 
-                        <div class="entry-content">
+                    <div class="entry-content">
+                        <div class="container">
                             <?php the_content(); ?>
                         </div>
-
                     </div>
+
                 </article>
 
             <?php endwhile; ?>

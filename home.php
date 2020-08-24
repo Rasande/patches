@@ -16,11 +16,11 @@ get_header(); ?>
 
         <!-- Entry -->
         <section class="blog">
+
+            <!-- Entry header -->
+            <?php get_template_part('parts/entry', 'header'); ?>
+
             <div class="container">
-
-                <!-- Entry header -->
-                <?php get_template_part('parts/entry', 'header'); ?>
-
                 <div class="row">
                     <?php if (have_posts()) :
 
