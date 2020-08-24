@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (slideInTop) {
     for (var i = 0; i < slideInTop.length; i++) {
       slideInTop[i].style.opacity = '0'
+      slideInTop[i].style.transform = 'translateY(200)'
       new Waypoint({
         element: slideInTop[i],
         handler: function () {
@@ -59,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (slideInBottom) {
     for (var i = 0; i < slideInBottom.length; i++) {
       slideInBottom[i].style.opacity = '0'
+      slideInBottom[i].style.transform = 'translateY(-200)'
       new Waypoint({
         element: slideInBottom[i],
         handler: function () {
@@ -79,11 +81,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Slide in content left to right
   // Execute: on scroll
-  var slideInRight = document.getElementsByClassName('slide-in-ltr');
+  const slideInRight = document.getElementsByClassName('slide-in-ltr');
  
   if (slideInRight) {
     for (var i = 0; i < slideInRight.length; i++) {
       slideInRight[i].style.opacity = '0'
+      slideInRight[i].style.transform = 'translateX(-200)'
       new Waypoint({
         element: slideInRight[i],
         handler: function () {
@@ -109,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (slideInLeft) {
     for (var i = 0; i < slideInLeft.length; i++) {
       slideInLeft[i].style.opacity = '0'
+      slideInLeft[i].style.transform = 'translateX(200)'
       new Waypoint({
         element: slideInLeft[i],
         handler: function () {
