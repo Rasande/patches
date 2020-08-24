@@ -38,6 +38,20 @@
             margin-left: $nav-item-spacing;
         }
 
+        // Navigation item with dropdown menu
+        &.dropdown {
+            @include respond-above($navbar-expand) {
+                > .nav-link::after {
+                    content: ' ▾';
+                }
+                .dropdown {
+                    > .nav-link::after {
+                        content: ' ▸';
+                    }
+                }
+            }
+        }
+
         // Epand dropdown on mobile button
         .dropdown-btn {
             padding: $spacer-half $spacer-2;
