@@ -26,7 +26,7 @@ get_header(); ?>
 
                         <!-- Entry content -->
                         <div class="entry-content">
-                            <div class="container">
+                            <div class="content">
                                 <?php the_content(); ?>
                             </div>
                         </div>

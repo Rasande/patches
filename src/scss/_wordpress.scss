@@ -1,38 +1,51 @@
+// Make align full cover who window width
 .alignfull {
-	margin: 32px calc(50% - 50vw);
-	max-width: 100vw;
-	width: 100vw;
+    margin: $spacer-2 calc(50% - 50vw);
+    max-width: 100vw !important;
+    width: 100vw !important;
 }
 
-// Wordpress Block editor styles
+// Make alignwide same with as a wide container
+.alignwide,
+.alignwide * {
+    max-width: $container-wide-width !important;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+// Set width of all wp-blocks
+[class^="wp-block"] {
+    max-width: $container-width;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+// Make parent blocks have same padding as containers
+.content>* {
+    padding-right: $grid-outer-margin;
+    padding-left: $grid-outer-margin;
+    margin-bottom: $spacer-2;
+}
 
 /* Main column width */
 .wp-block {
     max-width: $container-width;
 }
- 
+
 /* Width of "wide" blocks */
 .wp-block[data-align="wide"] {
     max-width: $container-wide-width;
 }
- 
+
 /* Width of "full-wide" blocks */
 .wp-block[data-align="full"] {
     max-width: none;
 }
 
-.entry {
+.content {
     p {
-        margin-bottom: 2em;
         line-height: 1.8;
-a {
-    
-    &:hover {
-        color: $primary !important;
     }
-}
-    }
-  ul {
-    margin-bottom: 2em;
-  }
 }
