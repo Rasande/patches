@@ -23,7 +23,7 @@ get_header(); ?>
                         <span class="four-zero-four">0</span>
                         <span class="four-zero-four">4</span>
                     </h1>
-                    <p class="text-center"><?php echo __('The page you are looking for does not exist. ', 'rasande') ?></p>
+                    <p class="text-center"><?php echo __('Something went wrong, the page you are looking for does not exist', 'rasande') ?></p>
                 </div>
             </div>
         </div>
