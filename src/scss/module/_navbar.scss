@@ -1,11 +1,13 @@
 .navbar {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
     max-width: $navbar-width;
+    height: inherit;
     margin: 0 auto;
     font-family: $navbar-font-family;
     font-size: $navbar-font-size;
+    font-weight: $navbar-font-weight;
     list-style: none;
 }

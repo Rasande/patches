@@ -3,9 +3,19 @@
     top: 0;
     width: 100%;
     height: $header-height;
-    background-color: $tertiary;
-    color: $light;
+    background-color: $header-bg;
+    color: $header-color;
+    transition: height .4s ease;
     z-index: 999;
+
+    @include respond-above($navbar-expand) {
+        height: $header-height-desktop;
+        &.shrink {
+            &.is-shrinked {
+                height: $header-height;
+            }
+        }
+    }
 
     a, li, button {
         pointer-events: all;

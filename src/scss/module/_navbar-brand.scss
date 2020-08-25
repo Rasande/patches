@@ -1,10 +1,22 @@
 .navbar-brand {
+    height: 100%;
     padding: $spacer;
     white-space: nowrap;
+
+    svg {
+        height: 100%;
+        max-width: $brand-width;
+        transition: width .4s ease;
+
+        @include respond-above($navbar-expand) {
+            max-width: $brand-width-desktop;
+        }
+    }
 }
 
 img.navbar-brand {
     max-width: $brand-width;
+    
     @include respond-above(sm) {
         max-width: $brand-width-desktop;
     }

@@ -138,7 +138,7 @@ $font-weight-base:            $font-weight-normal !default;
 $line-height-base:            1.5 !default;
 
 $headings-margin-bottom:      $spacer / 2 !default;
-$headings-font-family:        'Poppins', sans-serif !default;
+$headings-font-family:        sans-serif !default;
 $headings-font-weight:        $font-weight-bold !default;
 $headings-line-height:        1 !default;
 
@@ -173,11 +173,15 @@ $label-color: $body-color !default;
 $label-color-focused: $gray-500 !default;
 
 // Site header
-$header-height: 64px !default;
+$header-bg: $tertiary !default;
+$header-color: $light !default;
+$header-height: 44px !default;
+$header-height-desktop: 64px !default;
 
 // Navbar
 $navbar-font-family: $headings-font-family !default;
 $navbar-font-size: $font-size-base !default;
+$navbar-font-weight: $font-weight-normal !default;
 $navbar-width: $container-width !default;
 $navbar-expand: md !default;
 

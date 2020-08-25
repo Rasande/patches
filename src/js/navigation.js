@@ -85,5 +85,20 @@
                 $(navigation).removeAttr( 'style' );
         }
     });
+
+    function isMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      }
+    
+      if (!isMobile()) {
+        // Change header height on scroll
+        $(window).scroll(function(){
+            if($(document).scrollTop() > 50) {
+                $('.site-header.shrink').addClass('is-shrinked');
+            } else {
+                $('.site-header.shrink').removeClass('is-shrinked');
+            }
+        });
+      }
       
 })( jQuery );

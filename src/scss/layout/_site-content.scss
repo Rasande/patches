@@ -1,4 +1,8 @@
 .site-content {
     min-height: 80vh;
     padding-top: $header-height;
+    
+    @include respond-above($navbar-expand) {
+        padding-top: $header-height-desktop;
+    }
 }
