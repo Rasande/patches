@@ -30,6 +30,9 @@ if ( ! function_exists( 'rasande_theme_support' )) {
         // Add support for responsive embedded content
         add_theme_support( 'responsive-embeds' );
 
+        // Add excerpt to pages
+        add_post_type_support( 'page', 'excerpt' );
+
         // Enable blockeditor .alignwide and .alignfull support
         add_theme_support( 'align-wide' );
 
@@ -50,8 +53,7 @@ if ( ! function_exists( 'rasande_theme_support' )) {
         );
 
         register_nav_menus( array(
-            'primary' => __( 'Primary Menu', 'rasande' ),
-            'footer' => __('Footer Menu', 'rasande')
+            'primary' => __( 'Primary Menu', 'rasande' )
         ) );
         }
     add_action( 'after_setup_theme', 'rasande_theme_support');
