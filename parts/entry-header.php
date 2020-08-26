@@ -31,13 +31,21 @@ defined('ABSPATH') || exit;
 
             <h1 class="entry-header__title"><?php echo $title ?></h1>
         <?php endif; ?>
-
-        <?php if (class_exists('ACF') && get_field('custom_lead')) : ?>
+        
+        <?php if (has_excerpt()) : ?>
             <!-- Entry lead -->
             <div class="entry-header__lead">
-                <?php $lead = get_field('custom_lead'); ?>
-                <?php echo $lead ?>
+                <?php the_excerpt(); ?>
             </div>
         <?php endif; ?>
     </div>
 </header>
+<?php if ( function_exists('yoast_breadcrumb') ) : ?>
+<div class="breadcrumbs">
+    <div class="container">
+       
+           <?php yoast_breadcrumb( '<p id="breadcrumbs">','</p>' ); ?>
+       
+    </div>
+</div>
+<?php endif; ?>
