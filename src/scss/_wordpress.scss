@@ -15,7 +15,7 @@
 }
 
 // Set width of all wp-blocks
-[class^="wp-block"] {
+[class^="wp-block"], .content p {
     max-width: $container-width;
     margin-right: auto;
     margin-left: auto;
