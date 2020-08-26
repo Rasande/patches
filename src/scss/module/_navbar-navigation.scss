@@ -123,7 +123,7 @@
             }
         }
 
-        &.active a {
+        &.active > a.nav-link, .dropdown-item.active > a.nav-link {
             color: $nav-link-active-color;
         }
 
