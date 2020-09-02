@@ -20,7 +20,7 @@
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 	<?php do_action('wp_body_open'); ?>
-	
+	<div id="site">
 	<!-- Site header -->
 	<header class="site-header">
 	

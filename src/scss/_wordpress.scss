@@ -3,6 +3,8 @@
     margin: $spacer-2 calc(50% - 50vw);
     max-width: 100vw !important;
     width: 100vw !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
 }
 
 // Make alignwide same with as a wide container
@@ -15,7 +17,8 @@
 }
 
 // Set width of all wp-blocks
-[class^="wp-block"], .content p {
+[class^="wp-block"],
+.content p {
     max-width: $container-width;
     margin-right: auto;
     margin-left: auto;
@@ -23,11 +26,20 @@
 }
 
 // Make parent blocks have same padding as containers
-.content>* {
-    padding-right: $grid-outer-margin;
-    padding-left: $grid-outer-margin;
-    margin-bottom: $spacer-2;
+.content {
+    & >* {
+        padding-right: $grid-outer-margin;
+        padding-left: $grid-outer-margin;
+        margin-bottom: $spacer-2;
+        max-width: $container-width;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    ul {
+        padding-left: $spacer-2;
+    }
 }
+
 
 /* Main column width */
 .wp-block {

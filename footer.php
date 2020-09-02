@@ -5,7 +5,7 @@
  *
  */
 ?>
-
+</div>
 <!-- Site footer -->
 <footer class="site-footer">
 
