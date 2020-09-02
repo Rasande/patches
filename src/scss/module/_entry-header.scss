@@ -1,5 +1,8 @@
 .entry-header {
     padding: $spacer-2 0;
+    margin-bottom: $spacer-4;
+    background-color: $tertiary;
+    color: $light;
 
     // Title
     &__title {
@@ -16,7 +19,7 @@
     .post-meta,
     .post-meta a {
         font-size: $font-size-sm;
-        color: $body-color-secondary;
+        color: $light;
         margin-bottom: 1rem;
     }
 }

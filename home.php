@@ -11,7 +11,7 @@ defined('ABSPATH') || exit;
 get_header(); ?>
 
 <!-- Site content -->
-<div class="site-content">
+<div class="site__content">
     <main class="main">
         <section class="blog">
 

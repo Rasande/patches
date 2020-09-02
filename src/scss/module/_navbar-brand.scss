@@ -1,16 +1,22 @@
 .navbar-brand {
     height: 100%;
-    padding: $spacer;
+    padding: 1rem $spacer;
     white-space: nowrap;
 
     svg {
         height: 100%;
+        width: 100%;
         max-width: $brand-width;
         transition: width .4s ease;
-
+        fill: $nav-link-color;
+        transition: fill .25s ease;
         @include respond-above($navbar-expand) {
             max-width: $brand-width-desktop;
         }
+       
+    }
+    &:hover svg {
+        fill: $nav-link-hover-color;
     }
 }
 

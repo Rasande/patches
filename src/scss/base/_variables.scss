@@ -50,9 +50,13 @@ $colors: map-merge(
 ) !default;
 
 // Theme Colors
-$primary:     #0d2724 !default;
-$secondary:   #366255 !default;
-$tertiary:    #b6aa9e !default;
+$primary:     #FF0052 !default;
+$primary-light:     #eb3c73 !default;
+$primary-dark:     #CB0542 !default;
+$secondary:   #27205E !default;
+$secondary-light:   #352c77 !default;
+$secondary-dark:   #1E1749 !default;
+$tertiary:    #F9B92D !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
@@ -103,14 +107,14 @@ $spacer-4: $spacer * 4 !default;
 $breakpoints: (
   xs: 576px,
   sm: 680px,
-  md: 992px,
+  md: 990px,
   lg: 1280px,
   xl: 1600px
 ) !default;
 
 // Containers
-$container-width: map-get($breakpoints, "lg") !default;
-$container-wide-width: map-get($breakpoints, "xl") !default;
+$container-width: map-get($breakpoints, "md") !default;
+$container-wide-width: map-get($breakpoints, "lg") !default;
 $container-narrow-width: map-get($breakpoints, "md") !default;
 
 // Grid
@@ -124,7 +128,7 @@ $font-family-sans-serif: sans-serif !default;
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base: $font-family-sans-serif !default;
 
-$font-size-base:              1.6rem !default;
+$font-size-base:              1.8rem !default;
 $font-size-lg:                $font-size-base * 1.25 !default;
 $font-size-sm:                $font-size-base * .875 !default;
 
@@ -159,7 +163,7 @@ $paragraph-margin-bottom:   1rem !default;
 // Links
 $link-color:                              $primary !default;
 $link-decoration:                         none !default;
-$link-hover-color:                        $secondary !default;
+$link-hover-color:                        $primary-dark !default;
 $link-hover-decoration:                   none !default;
 
 // Tables
@@ -173,16 +177,14 @@ $label-color: $body-color !default;
 $label-color-focused: $gray-500 !default;
 
 // Site header
-$header-bg: $tertiary !default;
+$header-bg: $dark !default;
 $header-color: $light !default;
-$header-height: 44px !default;
-$header-height-desktop: 64px !default;
 
 // Navbar
 $navbar-font-family: $headings-font-family !default;
 $navbar-font-size: $font-size-base !default;
 $navbar-font-weight: $font-weight-normal !default;
-$navbar-width: $container-width !default;
+$navbar-width: $container-wide-width !default;
 $navbar-expand: md !default;
 
 // Navbar Brand
@@ -191,14 +193,14 @@ $brand-width-desktop: 130px !default;
 
 // Navbar Navigation
 $nav-bg: $secondary !default;
-$nav-dropdown-bg: $nav-bg !default;
-$nav-dropdown-bg-desktop: $nav-bg !default;
+$nav-dropdown-bg: $header-bg !default;
+$nav-dropdown-bg-desktop: $header-bg !default;
 $nav-item-spacing: 0 !default;
 $nav-item-width: 200px !default;
-$nav-link-padding: $spacer !default;
+$nav-link-padding: 2.5rem $spacer !default;
 $nav-link-color: $light !default;
 $nav-link-hover-color: $primary !default;
-$nav-link-active-color: $primary !default;
+$nav-link-active-color: $primary-dark !default;
 
 // Navbar hamburger
 $hamburger-layer-width: 30px;
@@ -207,3 +209,7 @@ $hamburger-layer-color: $nav-link-color;
 $hamburger-types: (
   squeeze
 );
+
+// Site footer
+$footer-bg: $dark !default;
+$footer-color: $light !default;

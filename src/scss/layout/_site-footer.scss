@@ -1,8 +1,8 @@
-.site-footer {
+.site__footer {
     padding: $spacer-4 0 $spacer-2;
     margin-top: $spacer-4;
-    color: $light;
-    background-color: $primary;
+    color: $footer-color;
+    background-color: $footer-bg;
 
     a {
         color: $light;

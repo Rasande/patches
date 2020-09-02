@@ -5,9 +5,9 @@
  *
  */
 ?>
-</div>
+
 <!-- Site footer -->
-<footer class="site-footer">
+<footer class="site__footer">
 
 	<!-- Footer Information -->
 	<div class="footer-info">
@@ -41,7 +41,7 @@
 	</div>
 
 </footer>
-
+</div>
 <?php wp_footer(); ?>
 
 </body>

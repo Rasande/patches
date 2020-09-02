@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Slide down site header
   // Execute: on load
   anime({
-    targets: '.site-header',
+    targets: '.site__header',
     translateY: [-200, 0],
     opacity: [0, 1],
     easing: easeing

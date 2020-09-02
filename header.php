@@ -22,7 +22,7 @@
 	<?php do_action('wp_body_open'); ?>
 	<div id="site">
 	<!-- Site header -->
-	<header class="site-header">
+	<header class="site__header">
 	
 		<!-- Navbar -->
 		<nav class="navbar">

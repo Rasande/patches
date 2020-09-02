@@ -19,12 +19,12 @@ if (!function_exists('rasande_admin_bar_css')) {
                     position: fixed;
                 }
 
-                .site-header {
+                .site__header {
                     margin-top: 46px;
                 }
 
                 @media screen and (min-width: 783px) {
-                    .site-header {
+                    .site__header {
                         margin-top: 32px;
                     }
                 }

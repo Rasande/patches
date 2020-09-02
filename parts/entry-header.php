@@ -10,7 +10,7 @@ defined('ABSPATH') || exit;
 ?>
 
 <header class="entry-header">
-    <div class="container">
+    <div class="container-wide">
         <?php if (is_singular('post')) : ?>
             <div class="post-meta fade-in">
                 <span class="post-meta-date"><?php echo get_the_date('d/m Y') ?></span> - <span class="post-meta-category"><?php the_category('| '); ?></span>

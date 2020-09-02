@@ -68,16 +68,13 @@
 }
 
 
-.site-content {
+.site__content {
     -webkit-transition: -webkit-transform .28s, opacity .28s;
     -ms-transition: -o-transform .28s, opacity .28s;
     -o-transition: -o-transform .28s, opacity .28s;
-    transition: transform .28s, opacity .28s;
+    transition: opacity .28s;
 }
-.slide-out .site-content {
-    -webkit-transform: translate3d( 0, 100px, 0 );
-    -ms-transform: translate3d( 0, 100px, 0 );
-    -o-transform: translate3d( 0, 100px, 0 );
-    transform: translate3d( 0, 100px, 0 );
+.slide-out .site__content {
+
     opacity: 0;
 }
