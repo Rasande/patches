@@ -1,30 +1,55 @@
-.btn, a.btn {
+.btn,
+a.btn {
     width: fit-content;
-    padding: 5px 2em;
-    border:none;
-    transition: background-color .25s ease, transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-    font-size: $navbar-font-size;
+    border: none;
+    padding: $spacer-half $spacer;
+    transition: color .25s ease, background-color .25s ease;
+}
 
-    &-link {
-        padding: 0;
-        border: none;
-        background: transparent;
+.btn-primary {
+    background-color: $primary;
+    color: $light;
+
+    &:hover {
+        color: $light;
+        background-color: $primary-dark;
     }
-    // Primary button
-    &-primary {
-        border: solid $dark 2px;
-        color: $dark;
-        background-color: $body-bg;
-        &:hover, &:focus {
-            color: $light;
-            
-            background-color: $dark;
-          
-        }
-        &:active {
-            border-color: $secondary;
-            background-color: $secondary;
-            transform: translateY(3px);
-        }
+
+    &:active {
+        background-color: $primary-light;
     }
+}
+
+.btn-secondary {
+    background-color: $secondary;
+    color: $light;
+
+    &:hover {
+        color: $light;
+        background-color: $secondary-dark;
+    }
+
+    &:active {
+        background-color: $secondary-light;
+    }
+}
+
+.btn-outline {
+    border: 2px solid !important;
+    color: $primary;
+    background-color: transparent;
+
+    &:hover {
+        color: $primary-light;
+        background-color: inherit;
+    }
+
+    &:active {
+        color: $primary-dark;
+    }
+}
+
+input[type="submit"] {
+    @extend .btn;
+    @extend .btn-primary
 }

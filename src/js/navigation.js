@@ -8,6 +8,7 @@
        const body = $( 'body' ),
             $window = $(window),
             lastWindowWidth = $window.width(),
+            site = $( '.site' ),
             toggle = $( '.navbar-toggler' ),
             header = $( '.site__header' ),
             navigation = $( '.navbar-nav' ),
@@ -23,7 +24,7 @@
            // Toggle .is-active on site-header
            $(header).toggleClass( 'expanded' );
            // Prevent body from scrolling
-           $(body).toggleClass('stuck');
+           $(site).toggleClass('stuck');
        }
    
        function closeAllDropdowns() {
@@ -116,7 +117,7 @@
            let headerHeight = $('.site__header').height();
    
            this.css(
-               'padding-top', headerHeight + 'px'
+               'padding-top', headerHeight -1 + 'px'
            )   
        };
        
@@ -154,7 +155,7 @@
                onStart: {
                    duration: 280,
                    render: function ( $container ) {
-                       $container.addClass( 'slide-out' );
+                       $container.addClass( 'load-in' );
                    }
                },
                onAfter: function( $container ) {
@@ -174,7 +175,7 @@
                        } );
                    }
    
-                   $container.removeClass( 'slide-out' );
+                   $container.removeClass( 'load-in' );
                    
                    theFunctions();
                   

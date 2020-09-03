@@ -133,19 +133,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Slide down site header
   // Execute: on load
-  anime({
-    targets: '.site__header',
-    translateY: [-200, 0],
-    opacity: [0, 1],
-    easing: easeing
-  })
 
+
+  
   function isMobile() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   }
 
   if (!isMobile()) {
-
+    anime({
+      targets: '.nav-item',
+      translateY: [-20,0],
+      opacity: [0,1],
+      delay: anime.stagger(150)
+    });
   }
 
 })

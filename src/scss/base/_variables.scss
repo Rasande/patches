@@ -182,9 +182,9 @@ $header-color: $light !default;
 
 // Navbar
 $navbar-font-family: $headings-font-family !default;
-$navbar-font-size: $font-size-base !default;
+$navbar-font-size: $font-size-sm !default;
 $navbar-font-weight: $font-weight-normal !default;
-$navbar-width: $container-wide-width !default;
+$navbar-width: 100% !default;
 $navbar-expand: md !default;
 
 // Navbar Brand
@@ -198,6 +198,7 @@ $nav-dropdown-bg-desktop: $header-bg !default;
 $nav-item-spacing: 0 !default;
 $nav-item-width: 200px !default;
 $nav-link-padding: 2.5rem $spacer !default;
+$nav-dropdown-link-padding: 1.5rem $spacer !default;
 $nav-link-color: $light !default;
 $nav-link-hover-color: $primary !default;
 $nav-link-active-color: $primary-dark !default;

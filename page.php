@@ -20,10 +20,13 @@ get_header(); ?>
                 <!-- Entry -->
                 <article class="entry">
                    
-
-                        <!-- Entry header -->
-                        <?php get_template_part('parts/entry', 'header'); ?>
-
+                        <?php if (is_front_page()) : ?>
+                            <!-- Hero -->
+                            <?php get_template_part('parts/hero'); ?>
+                        <?php else : ?>
+                            <!-- Entry header -->
+                            <?php get_template_part('parts/entry', 'header'); ?>
+                        <?php endif; ?>
                         <!-- Entry content -->
                         <div class="entry-content">
                             <div class="content">

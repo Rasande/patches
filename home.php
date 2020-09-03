@@ -18,7 +18,7 @@ get_header(); ?>
             <!-- Entry header -->
             <?php get_template_part('parts/entry', 'header'); ?>
 
-            <div class="container">
+            <div class="container-wide">
                 <div class="row">
 
                     <?php if (have_posts()) :

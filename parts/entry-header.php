@@ -11,6 +11,7 @@ defined('ABSPATH') || exit;
 
 <header class="entry-header">
     <div class="container-wide">
+        <div class="entry-header__inner">
         <?php if (is_singular('post')) : ?>
             <div class="post-meta fade-in">
                 <span class="post-meta-date"><?php echo get_the_date('d/m Y') ?></span> - <span class="post-meta-category"><?php the_category('| '); ?></span>
@@ -45,7 +46,7 @@ defined('ABSPATH') || exit;
     <div class="container">
        
            <?php yoast_breadcrumb( '<p id="breadcrumbs">','</p>' ); ?>
-       
+        </div>
     </div>
 </div>
 <?php endif; ?>

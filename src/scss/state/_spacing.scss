@@ -14,9 +14,3 @@
 .pt-5 {
     padding-top: 5rem,
 }
-
-.pt-10-md {
-    @include respond-above(md) {
-        padding-top: 10rem;
-    }
-}

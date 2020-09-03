@@ -1,12 +1,7 @@
-.four-zero-four {
-    display: inline-block;
+.stuck {
+    position: fixed;
+    overflow-y: scroll;
 }
-
-.text-biggest {
-    font-size: 18vw;
-}
-
-
 
 .right-25 {
     padding-left: 0;
@@ -60,21 +55,4 @@
         margin-right: 25%;
         padding-right: 1rem;
     }
-}
-
-.stuck {
-    position: fixed;
-    overflow-y: scroll;
-}
-
-
-.site__content {
-    -webkit-transition: -webkit-transform .28s, opacity .28s;
-    -ms-transition: -o-transform .28s, opacity .28s;
-    -o-transition: -o-transform .28s, opacity .28s;
-    transition: opacity .28s;
-}
-.slide-out .site__content {
-
-    opacity: 0;
 }

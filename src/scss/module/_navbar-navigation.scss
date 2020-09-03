@@ -89,10 +89,15 @@
 
             @include respond-above($navbar-expand) {
                 position: absolute;
+                display: block;
                 background-color: $nav-dropdown-bg-desktop;
                 margin-top: 0;
+                // Animation init state
+                visibility: hidden;
+                transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+                transform: translateY(-25px);
+                opacity: 0;
 
-                // Child dropdown menu
                 .dropdown-menu {
                     left: 100%;
                     top: 0;
@@ -112,6 +117,9 @@
                     width: 200px;
                     padding-left: 0;
                 }
+                .nav-link {
+                    padding: $nav-dropdown-link-padding;
+                }
             }
         }
 
@@ -119,7 +127,10 @@
         &.dropdown:hover>.dropdown-menu,
         .dropdown-menu .dropdown-item:hover>.dropdown-menu {
             @include respond-above($navbar-expand) {
-                display: block;
+                // Animation hover state
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(0px);
             }
         }
 

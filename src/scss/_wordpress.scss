@@ -27,7 +27,7 @@
 
 // Make parent blocks have same padding as containers
 .content {
-    & >* {
+    &>* {
         padding-right: $grid-outer-margin;
         padding-left: $grid-outer-margin;
         margin-bottom: $spacer-2;
@@ -35,7 +35,8 @@
         margin-right: auto;
         margin-left: auto;
     }
-    ul {
+
+    ul:not(.blocks-gallery-grid) {
         padding-left: $spacer-2;
     }
 }
@@ -56,8 +57,31 @@
     max-width: none;
 }
 
+.wp-block-columns {
+    margin-bottom: 0;
+
+    .wp-block-column {
+        margin-bottom: $spacer-2;
+    }
+}
+
+.wp-block-button {
+    .wp-block-button__link:not(.has-text-color) {
+        @extend .btn;
+        @extend .btn-primary;
+    }
+
+    &.is-style-outline {
+        .wp-block-button__link {
+            @extend .btn;
+            @extend .btn-outline;
+        }
+    }
+}
+
 .content {
     p {
+
         line-height: 1.8;
     }
 }

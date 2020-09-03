@@ -26,9 +26,9 @@
 @import "wordpress";
 
 @import "plugins/cf7";
+@import "plugins/yoast";
 
 @import "state/flex";
+@import "state/position";
 @import "state/spacing";
 @import "state/text";
-
-@import "shame";
