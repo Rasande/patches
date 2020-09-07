@@ -94,7 +94,7 @@ $body-bg:                   $light !default;
 $body-color:                $dark !default;
 $body-color-secondary:      $gray-500 !default;
 
-$selection-bg: $primary !default;
+$selection-bg: $secondary !default;
 $selection-color: $light !default;
 
 // Spacing 
@@ -183,7 +183,7 @@ $header-color: $light !default;
 // Navbar
 $navbar-font-family: $headings-font-family !default;
 $navbar-font-size: $font-size-sm !default;
-$navbar-font-weight: $font-weight-normal !default;
+$navbar-font-weight: $font-weight-bold !default;
 $navbar-width: 100% !default;
 $navbar-expand: md !default;
 

@@ -18,6 +18,9 @@
     &:hover svg {
         fill: $nav-link-hover-color;
     }
+    &:focus {
+        fill: green;
+    }
 }
 
 img.navbar-brand {

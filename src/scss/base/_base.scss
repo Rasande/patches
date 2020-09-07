@@ -297,10 +297,13 @@ button,
 select,
 optgroup,
 textarea {
-    margin: 0;
+    margin: $spacer-half 0;
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
+    font-size: $font-size-sm;
+    padding: $spacer-half;
+    border: none;
 }
 
 input, textarea {
@@ -318,7 +321,6 @@ input[type="submit"] {
 
 button,
 select {
-
     text-transform: none;
 }
 

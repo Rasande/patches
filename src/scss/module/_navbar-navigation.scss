@@ -125,7 +125,10 @@
 
         // Navigation item with dropdown
         &.dropdown:hover>.dropdown-menu,
-        .dropdown-menu .dropdown-item:hover>.dropdown-menu {
+        &.dropdown:focus-within>.dropdown-menu,
+        .dropdown-menu .dropdown-item:hover>.dropdown-menu,
+        .dropdown-menu .dropdown-item:focus-within>.dropdown-menu
+        {
             @include respond-above($navbar-expand) {
                 // Animation hover state
                 visibility: visible;
