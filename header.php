@@ -18,7 +18,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="http://schema.org/WebPage">
 	<?php do_action('wp_body_open'); ?>
 	<div id="site">
 		<div <?php body_class( 'site'); ?>>

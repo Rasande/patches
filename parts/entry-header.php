@@ -41,12 +41,25 @@ defined('ABSPATH') || exit;
         <?php endif; ?>
     </div>
 </header>
+
 <?php if ( function_exists('yoast_breadcrumb') ) : ?>
+    
 <div class="breadcrumbs">
-    <div class="container">
-       
-           <?php yoast_breadcrumb( '<p id="breadcrumbs">','</p>' ); ?>
-        </div>
+    <div class="container-wide">
+
+        <?php yoast_breadcrumb( '<p id="breadcrumbs">','</p>' ); ?>
+
     </div>
 </div>
+
+<?php elseif (function_exists("seopress_display_breadcrumbs")) :?>
+
+<div clasS="breadcrumbs">
+    <div class="container-wide">
+
+        <?php seopress_display_breadcrumbs(); ?>
+
+    </div>
+</div>
+
 <?php endif; ?>
