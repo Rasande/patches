@@ -10,30 +10,32 @@ defined('ABSPATH') || exit;
 
 get_header(); ?>
 
+
 <!-- Site content -->
 <div class="site__content">
     <main class="main">
+    <?php get_template_part('template-parts/page', 'header'); ?>
+        <!-- Entries -->
+        <div class="container-wide">
+            <div class="columns row--animate">
 
-        <?php if (have_posts()) :
-            while (have_posts()) : the_post(); ?>
+                <!-- Ad here -->
 
-                <!-- Entry -->
-                <article class="entry">
+                <?php if (have_posts()) :
+                    while (have_posts()) : the_post(); ?>
 
-                        <!-- Entry header -->
-                        <?php get_template_part('parts/entry', 'header'); ?>
-
-                        <!-- Entry content -->
-                        <div class="entry-content">
-                            <div class="content">
-                                <?php the_content(); ?>
-                            </div>
+                        <div class="col-12 col-sm-6 col-md-4 <?php echo $odd_or_even; $odd_or_even = ('odd' == $odd_or_even) ? 'even' : 'odd'; ?>">
+                            <?php get_template_part('template-parts/card-small'); ?>
                         </div>
 
-                </article>
+                    <?php endwhile; ?>
+                <?php endif; ?>
 
-            <?php endwhile; ?>
-        <?php endif; ?>
+            </div>
+        </div>
+
+          <!-- Pagination here -->
+        <?php ?>
 
     </main>
 </div>

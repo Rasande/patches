@@ -1,0 +1,26 @@
+.site__header {
+    top: 0;
+    width: 100%;
+    //height: $header-height;
+    background-color: $header-bg;
+    color: $header-color;
+    transition: height .4s ease;
+    z-index: 999;
+    @include respond-above($navbar-expand) {
+        //height: $header-height-desktop;
+    }
+
+    a, li, button {
+        pointer-events: all;
+        color: inherit;
+    }
+    &.fixed {
+        position: fixed;
+    }
+}
+
+.site-header__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}

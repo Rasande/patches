@@ -1,0 +1,236 @@
+@font-face {
+	font-family: "Raleway";
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: auto;
+  src: url(../fonts/Raleway.ttf) format('woff2 supports variations'),
+  url(../fonts/Raleway.ttf) format('woff2');
+}
+
+@font-face {
+	font-family: "Raleway";
+	font-weight: 100 900;
+	font-style: italic;
+	font-display: auto;
+  src: url(../fonts/Raleway-Italic.ttf) format('woff2 supports variations'),
+  url(../fonts/Raleway-Italic.ttf) format('woff2');
+}
+
+// Standard Colors
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #22262a !default;
+$black: #000 !default;
+
+$colors: () !default;
+$colors: map-merge(("blue": $blue,
+    "indigo": $indigo,
+    "purple": $purple,
+    "pink": $pink,
+    "red": $red,
+    "orange": $orange,
+    "yellow": $yellow,
+    "green": $green,
+    "teal": $teal,
+    "cyan": $cyan,
+    "white": $white,
+    "gray-100": $gray-100,
+    "gray-200": $gray-200,
+    "gray-300": $gray-300,
+    "gray-400": $gray-400,
+    "gray-500": $gray-500,
+    "gray-600": $gray-600,
+    "gray-700": $gray-700,
+    "gray-800": $gray-800,
+    "gray-900": $gray-900,
+    "black": $black),
+  $colors) !default;
+
+// Theme Colors
+$primary: #ff584c!default;
+$secondary: #DFDFDF !default;
+$tertiary: #60E1E0 !default;
+$quaternary: #C47335 !default;
+$primary-light: lighten($primary, 4%) !default;
+$primary-dark: darken($primary, 4%) !default;
+$secondary-light: lighten($secondary, 4%) !default;
+$secondary-dark: darken($secondary, 4%) !default;
+$tertiary-light: lighten($tertiary, 4%) !default;
+$tertiary-dark: darken($tertiary, 4%) !default;
+$quaternary-light:lighten($quaternary, 4%) !default;
+$quaternary-dark: darken($quaternary, 4%) !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: rgb(43, 43, 43) !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(("primary": $primary,
+    "secondary": $secondary,
+    "tretiary": $tertiary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark),
+  $theme-colors) !default;
+
+// Merge color maps
+$all-colors: map-merge($theme-colors, $colors);
+
+// Add all colors to :root as CSS-variables
+:root {
+
+  @each $name,
+  $color in $all-colors {
+    --#{$name}: #{$color};
+  }
+}
+
+$body-bg: #F9F0EA !default;
+$body-color: $dark !default;
+$body-color-secondary: $gray-500 !default;
+
+$selection-bg: $secondary !default;
+$selection-color: $light !default;
+
+// Spacing 
+$spacer: 2rem !default;
+$spacer-half: $spacer * .5 !default;
+$spacer-2: $spacer * 2 !default;
+$spacer-4: $spacer * 4 !default;
+
+// Breakpoints
+$breakpoints: (xs: 576px,
+  sm: 680px,
+  md: 1080px,
+  lg: 1680px,
+  xl: 1920px) !default;
+
+// Containers
+$container-width: map-get($breakpoints, "sm") !default;
+$container-wide-width: map-get($breakpoints, "md") !default;
+$container-large-width: map-get($breakpoints, "lg") !default;
+
+// Grid
+$grid-gutter-width: $spacer-2 !default;
+$grid-outer-margin: $spacer-2 !default;
+$grid-gutter-compensation: $grid-outer-margin / 2 !default;
+$grid-gutter-halfWidth: $grid-gutter-width / 2 !default;
+
+// Fonts
+$font-family-sans-serif: 'Quicksand', sans-serif !default;
+$font-family-monospace: SFMono-Regular,
+Menlo,
+Monaco,
+Consolas,
+"Liberation Mono",
+"Courier New",
+monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+$font-family-heading: 'Raleway', sans-serif !default;
+
+$font-size-base: 1.8rem !default;
+$font-size-lg: $font-size-base * 1.25 !default;
+$font-size-sm: $font-size-base * .875 !default;
+
+$font-weight-lighter: lighter !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
+$font-weight-bolder: bolder !default;
+
+$font-weight-base: $font-weight-normal !default;
+$line-height-base: 1.5 !default;
+
+$headings-margin-bottom: $spacer / 2 !default;
+$headings-font-weight: $font-weight-normal!default;
+$headings-line-height: 1 !default;
+
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
+
+$dt-font-weight: $font-weight-bold !default;
+
+$text-muted: $body-color-secondary !default;
+
+// Paragraphs
+$paragraph-margin-bottom: 1rem !default;
+
+// Links
+$link-color: $body-color !default;
+$link-decoration: none !default;
+$link-hover-color: $primary-dark !default;
+$link-hover-decoration: none !default;
+
+// Tables
+$table-cell-padding: .75rem !default;
+$table-caption-color: $body-color-secondary !default;
+
+// Forms
+$label-margin-bottom: .5rem !default;
+$label-font-family: $font-family-heading !default;
+$label-color: $body-color !default;
+$label-color-focused: $gray-500 !default;
+
+// Site header
+$header-bg: $light !default;
+$header-color: $dark !default;
+
+$header-height: 61px !default;
+$header-height-desktop: 90px !default;
+
+// Navbar
+$navbar-font-family: $font-family-heading !default;
+$navbar-font-size: $font-size-sm !default;
+$navbar-font-weight: $font-weight-normal !default;
+$navbar-expand: md !default;
+
+// Navbar Navigation
+$nav-bg: $secondary !default;
+$nav-dropdown-bg: $header-bg !default;
+$nav-dropdown-bg-desktop: $header-bg !default;
+$nav-item-spacing: 0 !default;
+$nav-item-width: 200px !default;
+$nav-link-padding: 2.5rem $spacer !default;
+$nav-dropdown-link-padding: 1.5rem $spacer !default;
+$nav-link-color: $dark !default;
+$nav-link-hover-color: $primary !default;
+$nav-link-active-color: $primary-dark !default;
+
+// Navbar hamburger
+$hamburger-layer-width: 30px;
+$hamburger-layer-height : 3px;
+$hamburger-layer-color: $nav-link-color;
+$hamburger-types: (squeeze);
+
+// Site footer
+$footer-bg: $dark !default;
+$footer-color: $light !default;
+
+// Shadow
+$shadow: 0px 14px 26px -20px rgba(0,0,0,0.45) !default;

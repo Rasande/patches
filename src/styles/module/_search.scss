@@ -1,0 +1,26 @@
+.search-modal {
+    display: none;
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    width: 100%;
+    
+    &.toggled {
+        display: block;
+    }
+}
+
+.search-modal__form{
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.863);
+}
+
+.search-modal__overlay {
+    position: absolute;
+    height: 100vh;
+    background-color: $black;
+    opacity: .5;
+    width:100%;
+    top:100%;
+    z-index: -10;
+}

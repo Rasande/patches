@@ -1,0 +1,83 @@
+.btn,
+a.btn {
+    width: fit-content;
+    border: none;
+    padding: $spacer-half $spacer-2;
+    transition: color .25s ease, background-color .25s ease;
+}
+
+.btn-primary {
+    background-color: $primary;
+    color: $light;
+
+    &:hover {
+        color: $light;
+        background-color: $primary-light;
+    }
+
+    &:active {
+        background-color: $primary-dark;
+    }
+}
+
+.btn-secondary {
+    background-color: $secondary;
+    color: $light;
+
+    &:hover {
+        color: $light;
+        background-color: $secondary-light;
+    }
+
+    &:active {
+        background-color: $secondary-dark;
+    }
+}
+
+.btn-tertiary {
+    background-color: $tertiary;
+    color: $light;
+
+    &:hover {
+        color: $light;
+        background-color: darken($quaternary, 4%);
+    }
+
+    &:active {
+        background-color: lighten($quaternary, 4%);
+    }
+}
+
+.btn-quaternary {
+    background-color: $quaternary;
+    color: $light;
+
+    &:hover {
+        color: $light;
+        background-color: darken($quaternary, 4%);
+    }
+
+    &:active {
+        background-color: lighten($quaternary, 4%);
+    }
+}
+
+.btn-outline {
+    border: 2px solid !important;
+    color: $primary;
+    background-color: transparent;
+
+    &:hover {
+        color: $primary-light;
+        background-color: inherit;
+    }
+
+    &:active {
+        color: $primary-dark;
+    }
+}
+
+input[type="submit"] {
+    @extend .btn;
+    @extend .btn-primary
+}

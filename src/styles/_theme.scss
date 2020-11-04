@@ -1,0 +1,100 @@
+// Change the vales of variables here
+$breakpoints: (xs: 576px,
+  sm: 755px,
+  md: 992px,
+  lg: 1160px,
+  xl: 1600px);
+
+$container-width: map-get($breakpoints, "sm");
+$container-narrow-width: map-get($breakpoints, "xs");
+$container-wide-width: map-get($breakpoints, "lg");
+
+$grid-gutter-width: 4rem;
+
+// Theme colors
+$primary: #41695B;
+$secondary: #163029;
+$tertiary: #B5AA9D;
+$quaternary: #E86944;
+
+$body-bg: white;
+$body-color: #333333;
+
+$selection-bg: $primary;
+$selection-color: white;
+
+$link-color: $quaternary;
+$link-hover-color: $primary;
+
+// fonts
+$font-family-sans-serif: 'Roboto',
+sans-serif;
+$headings-font-family: 'Poppins',
+sans-serif;
+
+$font-size-base: 2rem;
+
+$font-size-lg: $font-size-base * 1.5;
+$font-size-sm: $font-size-base * .75;
+
+$h1-font-size: $font-size-base * 2.2;
+$h2-font-size: $font-size-base * 1.8;
+$h3-font-size: $font-size-base * 1.65;
+$h4-font-size: $font-size-base * 1.4;
+$h5-font-size: $font-size-base * 1.20;
+
+// header
+$header-height: 73px;
+$header-height-desktop: 110px;
+
+$header-bg: white;
+$header-color: $primary;
+
+$brand-width: 120px;
+$brand-width-desktop: 210px;
+
+// nav
+$navbar-width: $container-wide-width;
+
+$nav-bg: white;
+$nav-link-color: $primary;
+$nav-link-hover-color: $quaternary;
+$nav-link-active-color: #B5AA9D;
+$nav-link-padding: 1.5rem;
+
+$navbar-font-size: 1.6rem;
+$navbar-font-weight: 700;
+
+.custom-cover {
+  .wp-block-cover__inner-container {
+    width: 100% !important;
+    max-width: $container-wide-width !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding: 2rem;
+
+    p {
+      width: 100% !important;
+      max-width: $container-wide-width !important;
+      margin-right: auto !important;
+      margin-left: auto !important;
+    }
+
+    a {
+      background: $quaternary;
+      padding: 2rem;
+      color: white;
+      transition: background .25s ease;
+      font-weight: bold;
+      font-family: $headings-font-family;
+
+      &:hover {
+        background: darken($quaternary, 5%);
+      }
+    }
+  }
+}
+
+.zoom-social-icons-list{
+  padding-bottom: 2em;
+}

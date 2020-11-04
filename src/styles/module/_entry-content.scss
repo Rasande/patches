@@ -1,0 +1,100 @@
+// Make align full cover who window width
+.alignfull {
+    margin: $spacer-2 calc(50% - 50vw);
+    max-width: 100vw !important;
+    width: 100vw !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+// Make alignwide same with as a wide container
+.alignwide,
+.alignwide * {
+    max-width: $container-wide-width !important;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+// Set width of all wp-blocks
+[class^="wp-block"],
+.entry__content p {
+    max-width: $container-width;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+// Make parent blocks have same padding as containers
+.entry__content {
+    &>* {
+        padding-right: $grid-outer-margin;
+        padding-left: $grid-outer-margin;
+        margin-bottom: $spacer-2;
+        max-width: $container-width;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    ul:not(.blocks-gallery-grid) {
+        padding-left: $spacer-2;
+        font-family: 'Roboto Mono', monospace;
+        color: $primary;
+        font-size: 16px;
+        li {
+            margin-bottom: $spacer;
+        }
+        &.column-list {
+            @include respond-above(sm) {
+            columns: 2;
+            column-gap: 4%;
+            column-width: 48%;
+            }
+        }
+    }
+}
+
+/* Main column width */
+.wp-block {
+    max-width: $container-width;
+}
+
+/* Width of "wide" blocks */
+.wp-block[data-align="wide"] {
+    max-width: $container-wide-width;
+}
+
+/* Width of "full-wide" blocks */
+.wp-block[data-align="full"] {
+    max-width: none;
+}
+
+.wp-block-columns {
+    margin-bottom: 0;
+
+    .wp-block-column {
+        margin-bottom: $spacer-2;
+    }
+}
+
+.wp-block-button {
+    .wp-block-button__link:not(.has-text-color) {
+        @extend .btn;
+        @extend .btn-quaternary;
+        font-weight: bold;
+    }
+
+    &.is-style-outline {
+        .wp-block-button__link {
+            @extend .btn;
+            @extend .btn-outline;
+        }
+    }
+}
+
+.entry__content {
+    p {
+
+        line-height: 1.8;
+    }
+}

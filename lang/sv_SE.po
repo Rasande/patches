@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Rasande\n"
-"POT-Creation-Date: 2020-08-25 10:03+0200\n"
-"PO-Revision-Date: 2020-08-25 10:03+0200\n"
+"POT-Creation-Date: 2020-10-13 11:41+0200\n"
+"PO-Revision-Date: 2020-10-13 11:42+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -22,61 +22,53 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 
-#: 404.php:26
-msgid "Something went wrong, the page you are looking for does not exist"
-msgstr "Något gick snett, sidan du söker verkar inte finnas"
-
-#: header.php:34
-msgid "Toggle navigation"
-msgstr "Öppna navigation"
-
-#: inc/acf-blocks.php:16
-msgid "Social Icons"
-msgstr "Sociala Ikoner"
-
-#: inc/acf-blocks.php:17
-msgid "Display social media icons."
-msgstr "Visa social media ikoner."
-
-#: inc/acf.php:11 inc/acf.php:12
-msgid "Theme settings"
-msgstr "Tema inställningar"
-
-#: inc/editor.php:13
-msgid "Custom Blocks"
-msgstr "Anpassade Block"
-
-#: inc/nav-walker.php:105
-msgid "Add a menu"
-msgstr "Lägg till meny"
-
-#: inc/setup.php:53
+#: functions.php:66
 msgid "Primary Menu"
 msgstr "Primär meny"
 
-#: inc/setup.php:54
-msgid "Footer Menu"
-msgstr "Fotmeny"
+#: functions.php:67
+msgid "Mobile Menu"
+msgstr "Mobilmeny"
 
-#: inc/widgets.php:14
-msgid "Footer 1"
-msgstr ""
+#: functions.php:82
+msgid "Footer column 1"
+msgstr "Fotkolumn 1"
 
-#: inc/widgets.php:22
-#, fuzzy
-#| msgid "Footer Menu"
-msgid "Footer 2"
-msgstr "Fotmeny"
+#: functions.php:90
+msgid "Footer column 2"
+msgstr "Fotkolumn 2"
 
-#: inc/widgets.php:30
-#, fuzzy
-#| msgid "Footer Menu"
-msgid "Footer 3"
-msgstr "Fotmeny"
+#: functions.php:98
+msgid "Footer column 3"
+msgstr "Fotkolumn 3"
+
+#: functions.php:229
+msgid "Custom Blocks"
+msgstr "Anpassade Block"
+
+#: header.php:49
+msgid "Toggle navigation"
+msgstr "Öppna navigation"
+
+#: inc/acf.php:10 inc/acf.php:11
+msgid "Theme settings"
+msgstr "Tema inställningar"
+
+#: inc/acf.php:38
+msgid "Social Icons"
+msgstr "Sociala Ikoner"
+
+#: inc/acf.php:39
+msgid "Display social media icons."
+msgstr "Visa social media ikoner."
+
+#: inc/navigation-walker.php:105
+msgid "Add a menu"
+msgstr "Lägg till meny"
 
 #. Theme Name of the plugin/theme
 msgid "Patches"
-msgstr ""
+msgstr "Patches"
 
 #. Theme URI of the plugin/theme
 msgid "https://github.com/Rasande/patches"
@@ -94,17 +86,8 @@ msgstr ""
 msgid "https://rasande.se"
 msgstr ""
 
-#. Template Name of the plugin/theme
-msgid "Start"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Narrow"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Wide"
-msgstr ""
+#~ msgid "Something went wrong, the page you are looking for does not exist"
+#~ msgstr "Något gick snett, sidan du söker verkar inte finnas"
 
 #~ msgid "Filter cases"
 #~ msgstr "Filtrera projekt"

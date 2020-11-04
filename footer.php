@@ -8,37 +8,33 @@
 
 <!-- Site footer -->
 <footer class="site__footer">
-
-	<!-- Footer Information -->
-	<div class="footer-info">
-		<div class="container">
-			<div class="row">
+		<div class="container-wide">
+			<div class="columns">
 
 				<!-- Footer Column 1 -->
-				<div class="col-12 col-md-4">
+				<div class="col-12 col-sm-6 col-md-4">
 					<?php dynamic_sidebar( 'footer-1' ); ?>
 				</div>
 
 				<!-- Footer Column 2 -->
-				<div class="col-12 col-md-4">
+				<div class="col-12 col-sm-6 col-md-4">
 					<?php dynamic_sidebar( 'footer-2' ); ?>
 				</div>
 
 				<!-- Footer Column 3 -->
-				<div class="col-12 col-md-4">
+				<div class="col-12 col-sm-6 col-md-4">
 					<?php dynamic_sidebar( 'footer-3' ); ?>
 				</div>
 
 				<!-- Copyright Information -->
 				<div class="col-12 text-center">
 					<div class="copyright">
-						<span class="copyright-info">&copy; <?php echo bloginfo( 'name' ); ?> <?php echo date("Y"); ?></span>
+						<p>&copy; <?php echo bloginfo( 'name' ); ?> <?php echo date("Y"); ?></p>
 					</div>
 				</div>
 
 			</div>
 		</div>
-	</div>
 
 </footer>
 </div>

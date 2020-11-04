@@ -1,0 +1,27 @@
+.site__footer {
+    padding: $spacer-4 0 $spacer-2;
+    margin-top: $spacer-4;
+    color: $light;
+    background-color: $footer-bg;
+    font-size: 1.8rem;
+    a {
+        color: $light;
+
+        &:hover {
+            color: $quaternary;
+        }
+    }
+    h2,h3,h4,h5,h6 {
+     font-size:2rem;
+    }
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+}
+
+.copyright {
+    padding: $spacer-2 0 0;
+    font-size: $font-size-sm;
+    color: $primary;
+}

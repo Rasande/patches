@@ -1,0 +1,12 @@
+.site__content {
+    min-height: 80vh;
+}
+
+.site__header.fixed+.site__content {
+    //padding-top: $header-height;
+
+
+    @include respond-above($navbar-expand) {
+        //padding-top: $header-height-desktop;
+    }
+}
