@@ -1,11 +1,9 @@
-$card-font-size: 18px;
-
 .card {
     margin-bottom: $spacer-2;
 
     &__thumbnail {
         width: auto;
-        background-color: $gray-200;
+        background-color: $grey;
     }
     &__content {
         &--title {

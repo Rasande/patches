@@ -1,0 +1,11 @@
+.modal-overlay {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    background-color: $dark;
+    opacity: .5;
+    width:100%;
+    top:0;
+    bottom: 0;
+    z-index: 1;
+}

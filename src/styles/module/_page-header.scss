@@ -1,4 +1,4 @@
-.entry__header {
+.page-header{
     padding: 10rem 0 $spacer-2;
     background-color: $primary;
     margin-bottom: $spacer;
@@ -11,7 +11,7 @@
     // Lead
     &--lead {
         margin-top: $spacer;
-        color: $tertiary;
+
     }
 
     // Post meta tags
@@ -38,13 +38,13 @@
        color: black;
        padding: $spacer;
        text-align: center;
-       box-shadow: $shadow;
+
     }
 
     // Lead
     &--lead {
         margin-top: $spacer;
-        color: $tertiary;
+
     }
 
     // Post meta tags

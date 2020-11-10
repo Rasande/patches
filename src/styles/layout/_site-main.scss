@@ -1,0 +1,97 @@
+.site-main {
+    min-height: 80vh;
+
+    .page-content {
+
+        // Links
+        a {
+            color: $primary;
+
+            &:hover {
+                color: $secondary;
+            }
+        }
+
+        // Alignment
+        &>*,
+        .wp-block {
+            max-width: $container-width;
+            padding-right: $grid-outer-margin;
+            padding-left: $grid-outer-margin;
+            margin-bottom: $spacer-2;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .alignfull,
+        .wp-block[data-align="full"] {
+            margin: $spacer-2 calc(50% - 50vw);
+            max-width: 100vw !important;
+            width: 100vw !important;
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+
+        .alignwide,
+        .alignwide *,
+        .wp-block[data-align="wide"] {
+            max-width: $container-wide-width !important;
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        // Lists
+        ul:not(.blocks-gallery-grid),
+        ol {
+            padding-left: $spacer-2;
+            font-size: 16px;
+            list-style-position: inside;
+        }
+
+        // Columns
+        .wp-block-columns {
+            margin-bottom: 0;
+
+            .wp-block-column {
+                margin-bottom: $spacer-2;
+            }
+        }
+
+        // Buttons
+        .wp-block-button {
+            .wp-block-button__link:not(.has-text-color) {
+                @extend .btn;
+                @extend .btn-primary;
+                font-weight: bold;
+            }
+
+            &.is-style-outline {
+                .wp-block-button__link {
+                    @extend .btn;
+                    @extend .btn-outline;
+                }
+            }
+        }
+
+        // Preformatted block
+        .wp-block-preformatted,
+        .wp-block-verse {
+            white-space: pre-wrap
+        }
+
+        // Video block
+        .wp-block-video video {
+            width: 100%;
+        }
+    }
+}
+
+.site-header.fixed+.site-main {
+    //padding-top: $header-height;
+
+
+    @include respond-above($navbar-expand) {
+        //padding-top: $header-height-desktop;
+    }
+}

@@ -11,29 +11,26 @@ defined('ABSPATH') || exit;
 get_header(); ?>
 
 <!-- Site content -->
-<div class="site__content">
-    <main class="main">
+<main class="site-main">
 
-        <?php if (have_posts()) :
-            while (have_posts()) : the_post(); ?>
+    <!-- Page header -->
+    <?php get_template_part('template-parts/page', 'header'); ?>
 
-                <!-- Entry -->
-                <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
+    <div class="container-wide">
+        <div class="columns">
 
-                        <!-- Entry header -->
-                        <?php get_template_part('template-parts/entry', 'header-single'); ?>
+            <?php if (have_posts()) :
+                while (have_posts()) : the_post(); ?>
 
-                        <!-- Entry content -->
-                        <div class="entry__content">
-                                <?php the_content(); ?>
-                        </div>
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <?php get_template_part('template-parts/card'); ?>
+                    </div>
 
-                </article>
+                <?php endwhile; ?>
+            <?php endif; ?>
 
-            <?php endwhile; ?>
-        <?php endif; ?>
-
-    </main>
-</div>
+        </div>
+    </div>
+</main>
 
 <?php get_footer(); ?>

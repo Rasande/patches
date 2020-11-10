@@ -1,11 +1,11 @@
 class MobileMenu {
 
     constructor() {
-        this.menu = document.querySelector('.navbar__nav')
-        this.openButton = document.querySelector('.navbar__toggler')
-        this.body = document.querySelector('body')
+        this.menu = document.querySelector('.navigation__menu')
+        this.openButton = document.querySelector('.navigation__toggle')
         this.dropdownButton = document.querySelectorAll('.dropdown-menu__btn')
-        this.menuOverlay = document.querySelector('.navbar-overlay')
+        this.searchOverlay = document.querySelector('.modal-overlay')
+        this.isMenuOpen = false
         this.events()
     }
 
@@ -20,22 +20,49 @@ class MobileMenu {
 
         window.addEventListener('resize', () => this.resetMenu())
 
-        if (this.menuOverlay) {
-            this.menuOverlay.addEventListener('click', () => this.toggleMenu())
+        if (this.searchOverlay) {
+            this.searchOverlay.addEventListener('click', () => this.closeMenu())
         }
     }
 
     toggleMenu() {
         if (this.menu.classList.contains('is-open')) {
-            this.menu.classList.remove('is-open')
-            this.openButton.classList.remove('is-active')
-            this.body.classList.remove('stuck')
+            this.closeMenu()
         } else {
-            this.menu.classList.add('is-open')
-            this.openButton.classList.add('is-active')
-            this.body.classList.add('stuck')
+           this.openMenu()
         }
     }
+    
+    openMenu() {
+        const scrollY = window.scrollY
+
+        document.body.style.position = 'fixed'
+        document.body.style.top = -scrollY + 'px'
+
+        this.searchOverlay.style.display = 'block'
+        this.menu.classList.add('is-open')
+        this.openButton.classList.add('is-active')  
+        this.openButton.setAttribute('aria-expanded', 'true')
+        this.isMenuOpen = true
+
+        return false
+    }
+
+    closeMenu() {
+        if (this.isMenuOpen == true) {
+            const bodyStyle = document.body.style.top;
+            document.body.style.position = '';
+            document.body.style.top = '';
+            window.scrollTo(0, parseInt(bodyStyle || 0) * -1);
+            this.searchOverlay.style.display = 'none'
+        }
+       
+        this.menu.classList.remove('is-open')
+        this.openButton.classList.remove('is-active')
+        this.openButton.setAttribute('aria-expanded', 'false')
+        this.isMenuOpen = false
+    }
+
     toggleSubMenu(e) {
         const btn = e.currentTarget;
         if (btn.classList.contains('is-open')) {
@@ -46,10 +73,13 @@ class MobileMenu {
             btn.parentNode.querySelector('.dropdown-menu').classList.add('is-open')
         }
     }
+
     resetMenu() {
         this.menu.classList.remove('is-open')
         this.openButton.classList.remove('is-active')
-        this.body.classList.remove('stuck')
+        document.body.style.position = '';
+        document.body.style.top = '';
+        this.searchOverlay.style.display = 'none'
 
         const btn = document.querySelectorAll('.dropdown-menu__btn.is-open')
         const menu = document.querySelectorAll('.dropdown-menu.is-open')

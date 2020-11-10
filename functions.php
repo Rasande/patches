@@ -8,6 +8,7 @@
  * - Theme setup
  * - Register widget areas
  * - Clean up
+ * - Remove hentry class
  * - Enqueue styles
  * - Enqueue scripts
  * - Ajax handler
@@ -143,6 +144,15 @@ if (!function_exists('rasande_cleanup')) {
 	}
 	add_action('after_setup_theme', 'rasande_cleanup');
 }
+
+/**
+* Remove hentry from post_class
+*/
+function isa_remove_hentry_class( $classes ) {
+    $classes = array_diff( $classes, array( 'hentry' ) );
+    return $classes;
+}
+add_filter( 'post_class', 'isa_remove_hentry_class' );
 
 /**
  * Clean up archives titles
@@ -292,7 +302,7 @@ if (!function_exists('rasande_block_categories')) {
 if (!function_exists('rasande_change_logo_class')) {
 	function rasande_change_logo_class($html)
 	{
-		$html = str_replace('class="custom-logo-link"', 'class="navbar__brand navbar__brand--link"', $html);
+		$html = str_replace('class="custom-logo-link"', 'class="site-header__brand"', $html);
 		$html = str_replace('alt=""', 'title="Home" alt="logo"', $html);
 
 		return $html;
@@ -359,12 +369,12 @@ if (!function_exists('rasande_admin_bar_css')) {
 					position: fixed;
 				}
 
-				.site__header.fixed {
+				.site-header.fixed {
 					margin-top: 46px;
 				}
 
 				@media screen and (min-width: 783px) {
-					.site__header.fixed {
+					.site-header.fixed {
 						margin-top: 32px;
 					}
 				}

@@ -1,5 +1,4 @@
-//@import "theme";
-$fa-font-path:        "../fonts/fontawesome";
+$fa-font-path: "../fonts/fontawesome";
 
 @import "base/variables",
         "base/mixins";
@@ -9,23 +8,19 @@ $fa-font-path:        "../fonts/fontawesome";
         "vendor/flickity/flickity",
         "vendor/hamburgers/hamburgers";
 
-@import "base/base";
+@import "base/base",
+        "base/columns";
 
-@import "layout/layout",
-        "layout/site-content",
+@import "layout/site-main",
         "layout/site-footer",
         "layout/site-header";
 
 @import "module/hero",
+        "module/forms",
         "module/card",
         "module/buttons",
-        "module/navbar",
-        "module/navbar-brand",
-        "module/navbar-hamburger",
-        "module/navbar-navigation",
-        "module/search",
-        "module/entry-content",
-        "module/entry-header",
+        "module/modals",
+        "module/page-header",
         "module/pagination";
 
 @import "plugins/cf7",

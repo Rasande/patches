@@ -18,75 +18,56 @@
 	<?php wp_head(); ?>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?>>
 	<?php do_action('wp_body_open'); ?>
-	<div id="root">
-		<div <?php body_class('site'); ?>>
-			<!-- Site header -->
-			<header class="site__header fixed">
-			<div class="site-header__wrapper container-wide">
+	<!-- Site header -->
+	<header class="site-header fixed">
+		<div class="site-header__wrapper container-lg">
 
-						<!-- Navbar brand -->
-						<?php if (!has_custom_logo()) : ?>
+			<!-- Site header brand -->
+			<?php if (!has_custom_logo()) : ?>
+				
+					<a class="site-header__brand" rel="home" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" itemprop="url"><?php bloginfo('name'); ?></a>
 
-<?php if (is_front_page()) : ?>
+			<?php else :
+				the_custom_logo();
+			endif; ?>
 
-	<h1 class="navbar__brand"><a rel="home" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" itemprop="url"><?php bloginfo('name'); ?></a></h1>
-
-<?php else : ?>
-
-	<a class="navbar__brand" rel="home" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" itemprop="url"><?php bloginfo('name'); ?></a>
-
-<?php endif; ?>
-
-<?php else :
-the_custom_logo();
-endif; ?>
-				<!-- Navbar -->
-				<nav class="navbar">
-						<!-- Navbar menu toggler -->
-		
-					<!-- Navbar navigation -->
-					<?php wp_nav_menu(array(
+			<!-- Site header navigation -->
+			<nav class="site-header__navigation">
+				<?php wp_nav_menu(array(
 					'theme_location' => 'primary',
 					'container' => '',
-					'menu_class' => 'navbar__nav',
+					'menu_class' => 'navigation__menu',
 					'depth' => 0,
 					'walker' => new Rasande_WP_Navwalker(),
 					'fallback_cb' => '',
 					'depth' => '3'
-					)); 
-					?>
-					<!-- Navbar search toggler -->
-				
-				<div class="navbar-overlay"></div>			
-				</nav>
-				<button class="search-modal__toggle"><i class="fas fa-search"></i></button>
-					<button class="navbar__toggler hamburger hamburger--squeeze" type="button" aria-label="<?php esc_attr_e('Toggle navigation', 'rasande'); ?>">
-							<span class="hamburger-box">
-								<span class="hamburger-inner"></span>
-							</span>
-						</button>
+				));
+				?>
+			</nav>
 
-				</div>
+			<!-- Site header controls -->
+			<div class="site-header__controls">
+				<button class="search__toggle" aria-expanded="false"><i class="fas fa-search"></i></button>
 
+				<button class="navigation__toggle hamburger hamburger--squeeze" type="button" aria-label="<?php esc_attr_e('Toggle navigation', 'rasande'); ?>" aria-expanded="false">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>
+			</div>
 
-				
-				<div class="search-modal">
-					<div class="search-modal__form">
-					<i class="fas fa-window-close search-modal__close" aria-hidden="true"></i>
-						<div class="container-wide">
-							<form action="<?php echo home_url( '/' ); ?>" method="get" role="search">
-							<input type="search" class="search-modal__input" placeholder="What are you looking for?" value="<?php the_search_query(); ?>" name="s">
-							<!-- <input type="submit" class="search-submit" value="Sök"> -->
-							</form>
-						</div>
-					</div>
+		</div>
 
-					<div class="search-modal__overlay">
+		<!-- Site header search -->
+		<div class="site-header__search">
+			<i class="fas fa-window-close search-modal__close" aria-hidden="true"></i>
+			<div class="container-wide">
+				<form action="<?php echo home_url('/'); ?>" method="get" role="search" class="search__form">
+					<input type="search" class="search__input" placeholder="What are you looking for?" value="<?php the_search_query(); ?>" name="s">
+				</form>
+			</div>
 
-					</div>
-					
-				</div>
-
-			</header>
+		</div>
+	</header>

@@ -34,33 +34,7 @@ a.btn {
     }
 }
 
-.btn-tertiary {
-    background-color: $tertiary;
-    color: $light;
 
-    &:hover {
-        color: $light;
-        background-color: darken($quaternary, 4%);
-    }
-
-    &:active {
-        background-color: lighten($quaternary, 4%);
-    }
-}
-
-.btn-quaternary {
-    background-color: $quaternary;
-    color: $light;
-
-    &:hover {
-        color: $light;
-        background-color: darken($quaternary, 4%);
-    }
-
-    &:active {
-        background-color: lighten($quaternary, 4%);
-    }
-}
 
 .btn-outline {
     border: 2px solid !important;

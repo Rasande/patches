@@ -1,27 +1,41 @@
-.site__footer {
+.site-footer {
     padding: $spacer-4 0 $spacer-2;
     margin-top: $spacer-4;
+    background-color: $dark;
     color: $light;
-    background-color: $footer-bg;
     font-size: 1.8rem;
-    a {
-        color: $light;
 
-        &:hover {
-            color: $quaternary;
-        }
-    }
     h2,h3,h4,h5,h6 {
-     font-size:2rem;
+     font-size:$h5-font-size;
     }
+
     ul {
         list-style: none;
         padding-left: 0;
     }
+
+    a {
+        color: $grey;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+
+.site-footer__top {
+
+}
+.site-footer__center {
+
+}
+.site-footer__bottom {
+
 }
 
 .copyright {
     padding: $spacer-2 0 0;
     font-size: $font-size-sm;
     color: $primary;
+    text-align: center;
 }

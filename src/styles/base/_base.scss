@@ -10,15 +10,15 @@
   }
 
 html {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 1.15;
     // Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
     -webkit-text-size-adjust: 100%;
     // Change the default tap highlight to be completely transparent in iOS.
-    -webkit-tap-highlight-color: rgba($black, 0);
-    background-color: $body-color;
-    @include respond-above(md) {
-        font-size: 62.5%;
+    -webkit-tap-highlight-color: rgba($dark, 0);
+  
+    @include respond-below(md) {
+        font-size: 8px;
     }
 }
 
@@ -44,13 +44,19 @@ body {
     font-family: $font-family-base;
     font-size: $font-size-base;
     font-weight: 500;
-    line-height: $line-height-base;
+    line-height: 1.5;
     color: $body-color;
     text-align: left;
     background-color: $body-bg;
     overflow-x: hidden;
     width: 100%;
     overflow-y: scroll;
+    animation: hello .3s forwards;
+}
+
+@keyframes hello {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -75,10 +81,9 @@ h4,
 h5,
 h6 {
     margin-top: 0;
-    margin-bottom: $headings-margin-bottom;
+    margin-bottom: $spacer-half;
     font-family: $font-family-heading;
-    font-weight: 500;
-    line-height: $headings-line-height;
+    font-weight: $font-weight-bold;
     font-feature-settings: "lnum";
     font-variant-numeric: lining-nums;
     transition: font-size .25s ease;
@@ -116,7 +121,7 @@ h6,
 
 p {
     margin-top: 0;
-    margin-bottom: $paragraph-margin-bottom;
+    margin-bottom: $spacer-half;
 }
 
 // Abbreviations
@@ -151,10 +156,6 @@ ul ol {
     margin-bottom: 0;
 }
 
-dt {
-    font-weight: $dt-font-weight;
-}
-
 dd {
     margin-bottom: .5rem;
     margin-left: 0; // Undo browser default
@@ -167,7 +168,7 @@ blockquote {
 b,
 strong,
 .strong {
-    font-weight: $font-weight-bolder; // Add the correct font weight in Chrome, Edge, and Safari
+    font-weight: $font-weight-bold; // Add the correct font weight in Chrome, Edge, and Safari
 }
 
 small,
@@ -198,13 +199,13 @@ sup {
 
 a {
     color: $link-color;
-    text-decoration: $link-decoration;
+    text-decoration: none;
     transition: color .25s ease;
     background-color: transparent;
     
     &:hover {
         color: $link-hover-color;
-        text-decoration: $link-hover-decoration;
+        text-decoration: none;
     }
 }
 
@@ -270,9 +271,9 @@ table {
 }
 
 caption {
-    padding-top: $table-cell-padding;
-    padding-bottom: $table-cell-padding;
-    color: $table-caption-color;
+    padding-top: $spacer-half;
+    padding-bottom: $spacer-half;
+    color: $grey;
     text-align: left;
     caption-side: bottom;
 }
@@ -288,7 +289,7 @@ th {
 label {
     // Allow labels to use `margin` for spacing.
     display: block;
-    margin-bottom: $label-margin-bottom;
+
 }
 
 button {
@@ -308,6 +309,7 @@ textarea {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
+    outline: none;
 }
 
 input, textarea {

@@ -10,7 +10,7 @@ form.wpcf7-form {
 
         &.focused {
             label {
-                color: $label-color-focused;
+                color: $body-color;
                 transform: translateY(8px);
             }
         }
@@ -33,7 +33,7 @@ form.wpcf7-form {
         width: 100%;
         padding: 5px;
         border: none;
-        border-bottom: solid 1px $gray-400;
+        border-bottom: solid 1px $grey;
         background-color: transparent;
         font-size: $font-size-base;
         option {
@@ -44,7 +44,7 @@ form.wpcf7-form {
     }
     textarea {
         min-height: 40px;
-        border: solid 1px $gray-400;
+        border: solid 1px $grey;
         background-color: transparent;
         padding: 5px;
         border-radius: 0;
@@ -53,12 +53,12 @@ form.wpcf7-form {
     }
     input {
         border: none;
-        border-bottom: solid 1px $gray-400;
+        border-bottom: solid 1px $grey;
         background-color: transparent;
         }
     input[type="submit"] {
         @extend .btn;
-        @extend .btn-quaternary;
+        @extend .btn-primary;
         height: auto;
         margin: 2em auto 0;
     }
@@ -94,13 +94,13 @@ span .wpcf7-not-valid {
     border-bottom: 1px solid $danger !important;
     &-tip {
         color: $danger;
-        font-size: $navbar-font-size;
+        font-size: $font-size-sm;
 
     }
 }
 div.wpcf7-response-output {
     margin: 2em 0 1em;
-    font-size: $navbar-font-size;
+    font-size: $font-size-sm;
 }
 div.wpcf7-validation-errors {
     background-color: rgba($danger, 0.25);
