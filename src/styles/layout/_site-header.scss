@@ -50,17 +50,41 @@
         justify-content: center;
         align-items: center;
 
-        .search__toggle {}
+        .search__toggle { 
+            margin-top: 2px;
+            font-size: 18px;
+            color: $dark;
+            background-color: transparent;
+            @include respond-above($navbar-expand) {
+                margin-top: 0;
+            }
+           
+            &:hover,
+            &:focus {
+            
+                background-color: transparent;
+            }
+        }
 
         .navigation__toggle {
             padding-right: 0;
             line-height: 0;
-
+            background-color: transparent;
+            
             @include respond-above($navbar-expand) {
                 display: none;
             }
+            &:hover,
+            &:focus {
+                background-color: transparent;
+            }
+            .hamburger-box {
+                display: inline-table;
+                .hamburger-inner::before {
+                   //width: 20px;
+                }
+            }
         }
-
     }
 
     // Search
@@ -198,7 +222,7 @@
                     // Animation init state
                     visibility: hidden;
                     transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
-                    transform: translateY(-25px);
+                    transform: translateY(-15px);
                     opacity: 0;
     
                     .dropdown-menu {

@@ -1,57 +1,62 @@
 .btn,
-a.btn {
-    width: fit-content;
+a.btn,
+.wp-block-button__link {
+    border-radius: 0;
     border: none;
-    padding: $spacer-half $spacer-2;
-    transition: color .25s ease, background-color .25s ease;
+    outline: none;
+    box-shadow: none;
+    padding: 8px 16px;
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:not(.has-text-color) {
+        color: white;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    &:not(.has-background) {
+        $default: nth(nth($theme-colors, 1), 2); // first color in $colors array
+        background-color: $default;
+
+        &:hover,
+        &:focus {
+            background-color: darken($default, 10%);
+        }
+    }
+
+    @each $name,
+    $color in $theme-colors {
+
+        &.has-#{$name}-color:hover,
+        &.has-#{$name}-color:focus {
+            color: $color;
+        }
+
+        &.has-#{$name}-background-color:hover,
+        &.has-#{$name}-background-color:focus {
+            background-color: darken($color, 10%);
+        }
+    }
 }
 
-.btn-primary {
-    background-color: $primary;
-    color: $light;
-
-    &:hover {
-        color: $light;
-        background-color: $primary-light;
-    }
-
-    &:active {
-        background-color: $primary-dark;
-    }
-}
-
-.btn-secondary {
-    background-color: $secondary;
-    color: $light;
-
-    &:hover {
-        color: $light;
-        background-color: $secondary-light;
-    }
-
-    &:active {
-        background-color: $secondary-dark;
-    }
-}
-
-
-
-.btn-outline {
-    border: 2px solid !important;
-    color: $primary;
-    background-color: transparent;
-
-    &:hover {
-        color: $primary-light;
-        background-color: inherit;
-    }
-
-    &:active {
-        color: $primary-dark;
-    }
+.btn-clean {
+    border-radius: 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 8px 16px;
+    color: $body-color;
+    background-color: $body-bg;
+    &:hover,
+        &:focus {
+            color: lighten($body-color, 10%);
+        }
 }
 
 input[type="submit"] {
     @extend .btn;
-    @extend .btn-primary
 }

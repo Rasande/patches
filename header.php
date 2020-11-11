@@ -49,7 +49,7 @@
 
 			<!-- Site header controls -->
 			<div class="site-header__controls">
-				<button class="search__toggle" aria-expanded="false"><i class="fas fa-search"></i></button>
+				<button class="search__toggle btn-clean" aria-expanded="false"><i class="fas fa-search"></i></button>
 
 				<button class="navigation__toggle hamburger hamburger--squeeze" type="button" aria-label="<?php esc_attr_e('Toggle navigation', 'rasande'); ?>" aria-expanded="false">
 					<span class="hamburger-box">

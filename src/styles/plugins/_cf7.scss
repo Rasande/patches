@@ -57,8 +57,7 @@ form.wpcf7-form {
         background-color: transparent;
         }
     input[type="submit"] {
-        @extend .btn;
-        @extend .btn-primary;
+     
         height: auto;
         margin: 2em auto 0;
     }
@@ -130,8 +129,7 @@ span.wpcf7-list-item {
         display: block !important;
         text-align: center !important; }
         button  {
-            @extend .btn;
-            @extend .btn-secondary;
+       
             padding: .5em !important;
             margin: 1em 10px 0;
             width:40px;

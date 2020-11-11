@@ -63,6 +63,42 @@ if (!function_exists('rasande_theme_support')) {
 			'script',
 			'style'
 		));
+		// Editor styles
+		add_theme_support( 'editor-styles' );
+		add_editor_style( 'assets/css/editor-style.css' );
+		// Editor Color Palette
+		add_theme_support( 'editor-color-palette', array(
+			array(
+				'name'  => __( 'Primary', 'rasande' ),
+				'slug'  => 'primary',
+				'color'	=> 'var(--primary)',
+			),
+			array(
+				'name'  => __( 'Secondary', 'rasande' ),
+				'slug'  => 'secondary',
+				'color' => 'var(--secondary)',
+			),
+			array(
+				'name'  => __( 'Accent', 'rasande' ),
+				'slug'  => 'accent',
+				'color' => 'var(--accent)',
+			),
+			array(
+				'name'	=> __( 'Light', 'rasande' ),
+				'slug'	=> 'light',
+				'color'	=> 'var(--light)',
+			),
+			array(
+				'name'	=> __( 'Dark', 'rasande' ),
+				'slug'	=> 'dark',
+				'color'	=> 'var(--dark)',
+			),
+			array(
+				'name'	=> __( 'Grey', 'rasande' ),
+				'slug'	=> 'grey',
+				'color'	=> 'var(--grey)',
+			),
+		) );
 		// Add image sizes
 		add_image_size('card-thumbnail', 320, 250, array('center', 'center'));
 		add_image_size('entry-header', 950, 500, array('center', 'center'));
@@ -191,20 +227,6 @@ if (!function_exists('rasande_styles')) {
 		wp_enqueue_style('rasande-styles', get_template_directory_uri() . '/assets/css/style.css', array(), $theme_version);
 	}
 	add_action('wp_enqueue_scripts', 'rasande_styles');
-}
-
-/**
- * Enqueue editor styles
- */
-if (!function_exists('rasande_editor_styles')) {
-
-	function rasande_editor_styles()
-	{
-		$theme_version = wp_get_theme()->get('Version');
-		wp_enqueue_style('editor', get_stylesheet_directory_uri() . '/assets/css/editor-style.css', false, $theme_version, 'all');
-	}
-
-	add_action('enqueue_block_editor_assets', 'rasande_editor_styles');
 }
 
 /**
@@ -365,6 +387,7 @@ if (!function_exists('rasande_admin_bar_css')) {
 	{
 		if (is_admin_bar_showing()) { ?>
 			<style>
+				
 				#wpadminbar {
 					position: fixed;
 				}

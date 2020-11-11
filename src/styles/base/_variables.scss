@@ -18,16 +18,11 @@
 
 // Colors
 $primary: #8c00e9 !default;
-$primary-variant: #0000ad !default;
+$primary-variant: #6f00b9 !default;
 $secondary: #e9b045 !default;
 $secondary-variant: #c59438 !default;
-$accent:  #e9b045 !default;
-$accent-variant: #c59438 !default;
-
-$primary-light: lighten($primary, 4%) !default;
-$primary-dark: darken($primary, 4%) !default;
-$secondary-light: lighten($secondary, 4%) !default;
-$secondary-dark: darken($secondary, 4%) !default;
+$accent:  #e945aa !default;
+$accent-variant: #bd388a !default;
 
 $success: #28a745!default;
 $warning: #ffc107 !default;
@@ -45,7 +40,26 @@ $selection-bg: $secondary !default;
 $selection-color: $light !default;
 
 $link-color: $body-color !default;
-$link-hover-color: $primary-dark !default;
+$link-hover-color: $primary !default;
+
+$theme-colors: 
+  ( primary, $primary ),
+	( secondary, $secondary ),
+	( accent, $accent ),
+  ( light, $light ),
+  ( dark, $dark),
+  ( grey, $grey);
+
+  @each $name, $color in $theme-colors {
+
+    .has-#{$name}-color {
+      color: $color;
+    }
+  
+    .has-#{$name}-background-color {
+      background-color: $color;
+    }
+  }
 
 // Fonts
 $font-family-base: 'Raleway', sans-serif !default;
@@ -94,19 +108,20 @@ $grid-gutter-compensation: $grid-outer-margin / 2 !default;
 $grid-gutter-halfWidth: $grid-gutter-width / 2 !default;
 
 // Navbar Navigation
-$nav-bg: $secondary !default;
-$nav-dropdown-bg: $primary !default;
-$nav-dropdown-bg-desktop: $primary !default;
+$nav-bg: rgba($light,.95) !default;
+$nav-dropdown-bg: transparent !default;
+$nav-dropdown-bg-desktop: $light !default;
 $nav-item-spacing: 0 !default;
 $nav-item-width: 200px !default;
 $nav-link-padding: 2.5rem $spacer !default;
 $nav-dropdown-link-padding: 1.5rem $spacer !default;
 $nav-link-color: $dark !default;
 $nav-link-hover-color: $primary !default;
-$nav-link-active-color: $primary-dark !default;
+$nav-link-active-color: $grey !default;
 
 // Hamburger icon
 $hamburger-layer-width: 25px;
 $hamburger-layer-height : 3px;
 $hamburger-layer-color: $nav-link-color;
+$hamburger-layer-border-radius : 0px;
 $hamburger-types: (squeeze);

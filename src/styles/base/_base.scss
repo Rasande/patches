@@ -5,13 +5,16 @@
 }
 
 :root {
-    --primary: #{$primary};
-    --secondary: #{$secondary};
+
+    @each $name,
+    $color in $theme-colors {
+      --#{$name}: #{$color};
+    }
   }
 
 html {
     font-size: 10px;
-    line-height: 1.15;
+    line-height: 1.5;
     // Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
     -webkit-text-size-adjust: 100%;
     // Change the default tap highlight to be completely transparent in iOS.
@@ -44,7 +47,6 @@ body {
     font-family: $font-family-base;
     font-size: $font-size-base;
     font-weight: 500;
-    line-height: 1.5;
     color: $body-color;
     text-align: left;
     background-color: $body-bg;
@@ -310,10 +312,12 @@ textarea {
     font-size: inherit;
     line-height: inherit;
     outline: none;
+    border:none;
 }
 
 input, textarea {
     width: 100%;
+    padding: $spacer-half;
 }
 
 button,
@@ -447,7 +451,6 @@ template {
     background: $selection-bg;
 }
 
-
 .screen-reader-text {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
@@ -461,4 +464,10 @@ template {
 	width: 1px;
 	word-wrap: normal !important;
 	word-break: normal;
+}
+
+.stuck {
+    position: fixed;
+    width: 100%;
+    overflow-y: scroll;
 }
