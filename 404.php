@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Template for 404
- *
+ * The 404 template file
+ * 
  */
 
 // Exit if accessed directly.
@@ -10,25 +10,18 @@ defined('ABSPATH') || exit;
 
 get_header(); ?>
 
-<!-- Site content -->
-<div class="site__content">
-    <main class="main">
 
-        <!-- 404 -->
-        <div class="container height-100vh">
-            <div class="row align-center justify-center height-80">
-                <div>
-                    <h1 class="text-biggest text-center width-100 bold">
-                        <span class="four-zero-four">4</span>
-                        <span class="four-zero-four">0</span>
-                        <span class="four-zero-four">4</span>
-                    </h1>
-                    <p class="text-center"><?php echo __('Something went wrong, the page you are looking for does not exist', 'rasande') ?></p>
-                </div>
+<!-- Site content -->
+<main class="site-main">
+
+        
+            <div class="page-404">
+            <div class="container">
+                <h1>404</h1>
+                <p><?php _e("Sorry, we can't find the page you were looking for.","rasande") ?></p>
             </div>
         </div>
 
     </main>
-</div>
 
 <?php get_footer(); ?>

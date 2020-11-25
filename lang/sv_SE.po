@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Rasande\n"
-"POT-Creation-Date: 2020-08-25 10:03+0200\n"
-"PO-Revision-Date: 2020-08-25 10:03+0200\n"
+"POT-Creation-Date: 2020-11-20 13:23+0100\n"
+"PO-Revision-Date: 2020-11-20 13:25+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -22,61 +22,129 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 
-#: 404.php:26
-msgid "Something went wrong, the page you are looking for does not exist"
-msgstr "Något gick snett, sidan du söker verkar inte finnas"
+#: 404.php:21
+msgid "Sorry, we can't find the page you were looking for."
+msgstr "Något gick snett, sidan du söker verkar inte finnas."
 
-#: header.php:34
-msgid "Toggle navigation"
-msgstr "Öppna navigation"
+#: functions.php:70
+msgid "Primary"
+msgstr "Primär"
 
-#: inc/acf-blocks.php:16
-msgid "Social Icons"
-msgstr "Sociala Ikoner"
+#: functions.php:75
+msgid "Secondary"
+msgstr ""
 
-#: inc/acf-blocks.php:17
-msgid "Display social media icons."
-msgstr "Visa social media ikoner."
+#: functions.php:80
+msgid "Accent"
+msgstr ""
 
-#: inc/acf.php:11 inc/acf.php:12
-msgid "Theme settings"
-msgstr "Tema inställningar"
+#: functions.php:85
+msgid "Light"
+msgstr ""
 
-#: inc/editor.php:13
-msgid "Custom Blocks"
-msgstr "Anpassade Block"
+#: functions.php:90
+msgid "Dark"
+msgstr ""
 
-#: inc/nav-walker.php:105
-msgid "Add a menu"
-msgstr "Lägg till meny"
+#: functions.php:95
+msgid "Grey"
+msgstr ""
 
-#: inc/setup.php:53
+#: functions.php:105
+msgid "Small"
+msgstr ""
+
+#: functions.php:106
+msgid "S"
+msgstr ""
+
+#: functions.php:111
+msgid "Normal"
+msgstr ""
+
+#: functions.php:112
+msgid "N"
+msgstr ""
+
+#: functions.php:117
+msgid "Medium"
+msgstr ""
+
+#: functions.php:118
+msgid "M"
+msgstr ""
+
+#: functions.php:123
+msgid "Large"
+msgstr ""
+
+#: functions.php:124
+msgid "L"
+msgstr ""
+
+#: functions.php:135
 msgid "Primary Menu"
 msgstr "Primär meny"
 
-#: inc/setup.php:54
-msgid "Footer Menu"
-msgstr "Fotmeny"
+#: functions.php:136
+msgid "Mobile Menu"
+msgstr "Mobilmeny"
 
-#: inc/widgets.php:14
-msgid "Footer 1"
-msgstr ""
+#: functions.php:151
+msgid "Footer column 1"
+msgstr "Fotkolumn 1"
 
-#: inc/widgets.php:22
-#, fuzzy
-#| msgid "Footer Menu"
-msgid "Footer 2"
-msgstr "Fotmeny"
+#: functions.php:159
+msgid "Footer column 2"
+msgstr "Fotkolumn 2"
 
-#: inc/widgets.php:30
-#, fuzzy
-#| msgid "Footer Menu"
-msgid "Footer 3"
-msgstr "Fotmeny"
+#: functions.php:167
+msgid "Footer column 3"
+msgstr "Fotkolumn 3"
+
+#: functions.php:341
+msgid "Custom Blocks"
+msgstr "Anpassade Block"
+
+#: header.php:57
+msgid "Toggle navigation"
+msgstr "Öppna navigation"
+
+#: inc/acf.php:13 inc/acf.php:14
+msgid "Theme settings"
+msgstr "Tema inställningar"
+
+#: inc/acf.php:41
+msgid "Social Icons"
+msgstr "Sociala Ikoner"
+
+#: inc/acf.php:42
+msgid "Display social media icons."
+msgstr "Visa social media ikoner."
+
+#: inc/navigation-walker.php:97
+msgid "Add a menu"
+msgstr "Lägg till meny"
+
+#: index.php:36
+msgid "Newer posts"
+msgstr "Senare inlägg"
+
+#: index.php:39
+msgid "Older posts"
+msgstr "Tidigare inlägg"
+
+#: template-parts/page-header.php:23
+msgid "Search Results For"
+msgstr "Sökresultat för"
+
+#: templates/template-frontpage.php:111
+msgid "All articles"
+msgstr "Alla artiklar"
 
 #. Theme Name of the plugin/theme
 msgid "Patches"
-msgstr ""
+msgstr "Patches"
 
 #. Theme URI of the plugin/theme
 msgid "https://github.com/Rasande/patches"
@@ -92,18 +160,6 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://rasande.se"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Start"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Narrow"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Wide"
 msgstr ""
 
 #~ msgid "Filter cases"
@@ -129,9 +185,6 @@ msgstr ""
 
 #~ msgid "Related projects"
 #~ msgstr "Liknande projekt"
-
-#~ msgid "Similar posts"
-#~ msgstr "Liknande artiklar"
 
 #~ msgid "Customer: "
 #~ msgstr "Kund: "

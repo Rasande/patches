@@ -1,0 +1,123 @@
+.site-main {
+    min-height: 90vh;
+
+    .page-content {
+
+        // Links
+        a {
+            color: $primary;
+
+            &:hover {
+                color: $secondary;
+            }
+        }
+
+        // Alignment
+        &>*,
+        .wp-block {
+            max-width: $container-width;
+            padding-right: $grid-outer-margin;
+            padding-left: $grid-outer-margin;
+            margin-bottom: $spacer-2;
+            margin-right: auto;
+            margin-left: auto;
+            word-break: break-word;
+        }
+
+        .alignfull,
+        .wp-block[data-align="full"] {
+            margin: $spacer-2 calc(50% - 50vw);
+            max-width: 100vw !important;
+            width: 100vw !important;
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+
+        .alignwide,
+        .alignwide *,
+        .wp-block[data-align="wide"] {
+            max-width: $container-wide-width !important;
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        // Lists
+        ul:not(.blocks-gallery-grid),
+        ol {
+            padding-left: $spacer-2;
+            font-size: 16px;
+            list-style-position: inside;
+        }
+
+        // Columns
+        .wp-block-columns {
+            margin-bottom: 0;
+
+            .wp-block-column {
+                margin-bottom: $spacer-2;
+            }
+        }
+
+        // Preformatted block
+        .wp-block-preformatted,
+        .wp-block-verse {
+            white-space: pre-wrap
+        }
+
+        // Video block
+        .wp-block-video video {
+            width: 100%;
+        }
+
+        // Image block
+        .wp-block-image figcaption {
+            font-size: $font-size-sm;
+            color: $grey;
+        }
+
+        // Socials links
+        .wp-social-link {
+            background-color: $primary !important;
+
+            a {
+                color: $light;
+            }
+        }
+
+        // Font sizes
+        .has-small-font-size {
+            font-size: $font-size-sm;
+        }
+
+        .has-normal-font-size {
+            font-size: $font-size-base;
+        }
+
+        .has-medium-font-size {
+            font-size: $font-size-base * 1.35;
+            line-height: 1.3;
+        }
+
+        .has-large-font-size {
+            font-size: $font-size-lg * 0.8;
+            line-height: 1.3;
+
+            @include respond-above(md) {
+                font-size: $font-size-lg;
+            }
+        }
+
+    }
+}
+
+// 404 page
+.page-404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    color: $grey;
+    text-align: center;
+}

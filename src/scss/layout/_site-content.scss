@@ -1,9 +1,0 @@
-.site__content {
-    min-height: 80vh;
-    transition: opacity .28s;
-}
-
-// SmoothState animation
-.load-in .site__content {
-    opacity: 0;
-}

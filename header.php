@@ -18,37 +18,56 @@
 	<?php wp_head(); ?>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?>>
 	<?php do_action('wp_body_open'); ?>
-	<div id="site">
-		<div <?php body_class( 'site'); ?>>
 	<!-- Site header -->
-	<header class="site__header">
-	
-		<!-- Navbar -->
-		<nav class="navbar">
+	<header class="site-header fixed">
+		<div class="site-header__wrapper container-lg">
 
-			<!-- Navbar brand -->
-			<?php get_template_part('parts/navbar', 'brand'); ?>
+			<!-- Site header brand -->
+			<?php if (!has_custom_logo()) : ?>
+				
+					<a class="site-header__brand" rel="home" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" itemprop="url"><?php bloginfo('name'); ?></a>
 
-			<!-- Navbar menu toggler -->
-			<button class="navbar-toggler hamburger hamburger--squeeze" type="button" aria-label="<?php esc_attr_e( 'Toggle navigation', 'rasande' ); ?>">
-				<span class="hamburger-box">
-					<span class="hamburger-inner"></span>
-				</span>	
-			</button>
+			<?php else :
+				the_custom_logo();
+			endif; ?>
 
-			<!-- Navbar navigation -->
-			<?php wp_nav_menu(array(
-				'theme_location' => 'primary',
-				'container' => '',
-				'menu_class' => 'navbar-nav',
-				'depth' => 0,
-				'walker' => new Rasande_WP_Navwalker(),
-				'fallback_cb' => '',
-				'depth' => '3'
-			)); ?>
+			<!-- Site header navigation -->
+			<nav class="site-header__navigation">
+				<?php wp_nav_menu(array(
+					'theme_location' => 'primary',
+					'container' => '',
+					'menu_class' => 'navigation__menu',
+					'menu_id' => 'menu',
+					'depth' => 0,
+					'walker' => new Rasande_WP_Navwalker(),
+					'fallback_cb' => '',
+					'depth' => '3'
+				));
+				?>
+			</nav>
 
-		</nav>
-	
+			<!-- Site header controls -->
+			<div class="site-header__controls">
+				<button class="search__toggle btn-clean" aria-expanded="false"><i class="fas fa-search"></i></button>
+
+				<button class="navigation__toggle hamburger hamburger--squeeze" type="button" aria-label="<?php esc_attr_e('Toggle navigation', 'rasande'); ?>" aria-expanded="false">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>
+			</div>
+
+		</div>
+
+		<!-- Site header search -->
+		<div class="site-header__search">
+			<div class="container-wide">
+				<form action="<?php echo home_url('/'); ?>" method="get" role="search" class="search__form">
+					<input type="search" class="search__input" placeholder="What are you looking for?" value="<?php the_search_query(); ?>" name="s">
+				</form>
+			</div>
+
+		</div>
 	</header>

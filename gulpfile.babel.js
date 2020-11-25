@@ -36,7 +36,7 @@ export const clean = () => del(['assets/js', 'assets/css']);
 // Run gulp styles to compile sass files
 // Run gulp styles --prod to also minify 
 export const styles = () => {
-    return src(['src/scss/style.scss', 'src/scss/editor-style.scss'])
+    return src(['src/styles/style.scss', 'src/styles/editor-style.scss'])
       .pipe(gulpif(PRODUCTION, sourcemaps.init()))
       .pipe(sass().on('error', sass.logError))
       .pipe(gulpif(PRODUCTION, postcss([ autoprefixer ])))
@@ -49,7 +49,7 @@ export const styles = () => {
 // Run gulp scripts to compile js files
 // Run gulp scripts --prod to also minify 
 export const scripts = () => {
-    return src(['src/js/script.js'])
+    return src(['src/scripts/script.js', 'src/scripts/scriptDesktop.js'])
         .pipe(named())
         .pipe(webpack({
             module: {
@@ -82,21 +82,20 @@ export const scripts = () => {
 
 // Copy files from src to assets
 export const copy = () => {
-    return src(['src/**/*','!src/{js,scss}','!src/{js,scss}/**/*'])
+    return src(['src/**/*','!src/{scripts,styles}','!src/{scripts,styles}/**/*'])
       .pipe(dest('assets'));
   }
 
-
 export const vendor = () => {
-  return src(['src/js/vendor/**/*'])
+  return src(['src/scripts/vendor/**/*'])
   .pipe(dest('assets/js/vendor'));
 }
 
 // Watch
 export const watcher = () => {
-    watch('src/scss/**/*.scss', styles);
-    watch('src/js/**/*.js', series(scripts, reload));
-    watch(['src/**/*','!src/{js,scss}','!src/{js,scss}/**/*'], series(copy, reload));
+    watch('src/styles/**/*.scss', styles);
+    watch('src/scripts/**/*.js', series(scripts, reload));
+    watch(['src/**/*','!src/{scripts,styles}','!src/{scripts,styles}/**/*'], series(copy, reload));
     watch("**/*.php", reload);
 }
 

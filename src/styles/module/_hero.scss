@@ -1,0 +1,55 @@
+.hero {
+    //padding-top: $spacer-4 * 2;
+    padding: 54px $spacer-2 $spacer-2;
+    margin-bottom: $spacer-4;
+    background-color: $light;
+    @include respond-above(sm){
+        padding: 72px $spacer-2 $spacer-2;
+    }
+
+    .hero__inner {
+        position: relative;
+        width: 100%;
+        height: 80vh;
+        min-height: 500px;
+        max-height: 600px;
+        animation: fadeIn 1.5s forwards;
+        animation-timing-function: ease;
+        opacity: 0;
+        background-position: center !important;
+        background-size: cover !important;
+        z-index: 888;
+       @include respond-above(sm){
+     
+        height: 65vh;
+        max-height: 100%;
+        }
+        &--content {
+            position: absolute;
+            right: 0;
+            background-color: rgba($light, .85);
+            width: 100%;
+            bottom: -1px;
+            max-width: 900px;
+            padding: $spacer-2;
+            animation: scaleY .5s forwards;
+            animation-timing-function: ease;
+            animation-delay: 1s;
+            transform-origin: bottom;
+            transform: scaleY(0);
+
+            @include respond-above(sm) {
+                background-color: $light;
+                width: auto;
+            }
+            h2 {
+                animation: fadeIn .75s forwards;
+                animation-timing-function: ease;
+                animation-delay: 1.25s;
+                opacity: 0;
+            }
+        }
+    }
+
+}
+

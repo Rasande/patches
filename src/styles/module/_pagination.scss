@@ -1,0 +1,13 @@
+.pagination {
+    display: flex;
+    padding: $spacer 0;
+
+    &__next {
+        margin-left: auto;
+    }
+
+    &__link {
+        @extend .btn;
+
+    }
+}
