@@ -47,8 +47,9 @@
 
 </footer>
 
-<!-- Modals -->
-<div class="modal-overlay"></div>
+<!-- Overlays -->
+<div class="overlay overlay--menu"></div>
+<div class="overlay overlay--search"></div>
 
 <?php wp_footer(); ?>
 

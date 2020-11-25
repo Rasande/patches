@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Rasande\n"
-"POT-Creation-Date: 2020-10-13 11:41+0200\n"
-"PO-Revision-Date: 2020-10-13 11:42+0200\n"
+"POT-Creation-Date: 2020-11-20 13:23+0100\n"
+"PO-Revision-Date: 2020-11-20 13:25+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -22,49 +22,125 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 
-#: functions.php:66
+#: 404.php:21
+msgid "Sorry, we can't find the page you were looking for."
+msgstr "Något gick snett, sidan du söker verkar inte finnas."
+
+#: functions.php:70
+msgid "Primary"
+msgstr "Primär"
+
+#: functions.php:75
+msgid "Secondary"
+msgstr ""
+
+#: functions.php:80
+msgid "Accent"
+msgstr ""
+
+#: functions.php:85
+msgid "Light"
+msgstr ""
+
+#: functions.php:90
+msgid "Dark"
+msgstr ""
+
+#: functions.php:95
+msgid "Grey"
+msgstr ""
+
+#: functions.php:105
+msgid "Small"
+msgstr ""
+
+#: functions.php:106
+msgid "S"
+msgstr ""
+
+#: functions.php:111
+msgid "Normal"
+msgstr ""
+
+#: functions.php:112
+msgid "N"
+msgstr ""
+
+#: functions.php:117
+msgid "Medium"
+msgstr ""
+
+#: functions.php:118
+msgid "M"
+msgstr ""
+
+#: functions.php:123
+msgid "Large"
+msgstr ""
+
+#: functions.php:124
+msgid "L"
+msgstr ""
+
+#: functions.php:135
 msgid "Primary Menu"
 msgstr "Primär meny"
 
-#: functions.php:67
+#: functions.php:136
 msgid "Mobile Menu"
 msgstr "Mobilmeny"
 
-#: functions.php:82
+#: functions.php:151
 msgid "Footer column 1"
 msgstr "Fotkolumn 1"
 
-#: functions.php:90
+#: functions.php:159
 msgid "Footer column 2"
 msgstr "Fotkolumn 2"
 
-#: functions.php:98
+#: functions.php:167
 msgid "Footer column 3"
 msgstr "Fotkolumn 3"
 
-#: functions.php:229
+#: functions.php:341
 msgid "Custom Blocks"
 msgstr "Anpassade Block"
 
-#: header.php:49
+#: header.php:57
 msgid "Toggle navigation"
 msgstr "Öppna navigation"
 
-#: inc/acf.php:10 inc/acf.php:11
+#: inc/acf.php:13 inc/acf.php:14
 msgid "Theme settings"
 msgstr "Tema inställningar"
 
-#: inc/acf.php:38
+#: inc/acf.php:41
 msgid "Social Icons"
 msgstr "Sociala Ikoner"
 
-#: inc/acf.php:39
+#: inc/acf.php:42
 msgid "Display social media icons."
 msgstr "Visa social media ikoner."
 
-#: inc/navigation-walker.php:105
+#: inc/navigation-walker.php:97
 msgid "Add a menu"
 msgstr "Lägg till meny"
+
+#: index.php:36
+msgid "Newer posts"
+msgstr "Senare inlägg"
+
+#: index.php:39
+msgid "Older posts"
+msgstr "Tidigare inlägg"
+
+#: template-parts/page-header.php:23
+msgid "Search Results For"
+msgstr "Sökresultat för"
+
+#: templates/template-frontpage.php:111
+msgid "All articles"
+msgstr "Alla artiklar"
 
 #. Theme Name of the plugin/theme
 msgid "Patches"
@@ -85,9 +161,6 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://rasande.se"
 msgstr ""
-
-#~ msgid "Something went wrong, the page you are looking for does not exist"
-#~ msgstr "Något gick snett, sidan du söker verkar inte finnas"
 
 #~ msgid "Filter cases"
 #~ msgstr "Filtrera projekt"
@@ -112,9 +185,6 @@ msgstr ""
 
 #~ msgid "Related projects"
 #~ msgstr "Liknande projekt"
-
-#~ msgid "Similar posts"
-#~ msgstr "Liknande artiklar"
 
 #~ msgid "Customer: "
 #~ msgstr "Kund: "

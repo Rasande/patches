@@ -1,4 +1,13 @@
 .pagination {
     display: flex;
-    justify-content: space-between;
+    padding: $spacer 0;
+
+    &__next {
+        margin-left: auto;
+    }
+
+    &__link {
+        @extend .btn;
+
+    }
 }

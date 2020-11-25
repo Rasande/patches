@@ -8,14 +8,15 @@
  * - Theme setup
  * - Register widget areas
  * - Clean up
- * - Remove hentry class
+ * - Archive post order
  * - Enqueue styles
  * - Enqueue scripts
  * - Ajax handler
  * - Register block categories
  * - Custom logo classes
- * - Archive post order
+ * - Remove hentry class
  * - SVG fix
+ * - Pagination classes
  * - Adminbar CSS
  * - Include files
  */
@@ -51,8 +52,6 @@ if (!function_exists('rasande_theme_support')) {
 		add_theme_support('align-wide');
 		// Add RSS Support
 		add_theme_support('automatic-feed-links');
-		//Add AMP support
-		add_theme_support('amp');
 		// Add HTML5 Support
 		add_theme_support('html5', array(
 			'comment-list',
@@ -99,9 +98,39 @@ if (!function_exists('rasande_theme_support')) {
 				'color'	=> 'var(--grey)',
 			),
 		) );
+		// Editor font sizes
+		add_theme_support(
+			'editor-font-sizes', 
+			array(
+				array(
+					'name'      => __( 'Small', 'rasande' ),
+					'shortName' => __( 'S', 'rasande' ),
+					'size'      => 12,
+					'slug'      => 'small'
+				),
+				array(
+					'name'      => __( 'Normal', 'rasande' ),
+					'shortName' => __( 'N', 'rasande' ),
+					'size'      => 18,
+					'slug'      => 'normal'
+				),
+				array(
+					'name'      => __( 'Medium', 'rasande' ),
+					'shortName' => __( 'M', 'rasande' ),
+					'size'      => 24,
+					'slug'      => 'medium'
+				),
+				array(
+					'name'      => __( 'Large', 'rasande' ),
+					'shortName' => __( 'L', 'rasande' ),
+					'size'      => 30,
+					'slug'      => 'large'
+				)
+			)
+		);
 		// Add image sizes
-		add_image_size('card-thumbnail', 320, 250, array('center', 'center'));
-		add_image_size('entry-header', 950, 500, array('center', 'center'));
+		add_image_size('card-thumbnail', 500, 320, array('center', 'center'));
+		add_image_size('page-header', 1020, 650, array('center', 'center'));
 		// Register menus
 		register_nav_menus(array(
 			'primary' => __('Primary Menu', 'rasande'),
@@ -182,15 +211,6 @@ if (!function_exists('rasande_cleanup')) {
 }
 
 /**
-* Remove hentry from post_class
-*/
-function isa_remove_hentry_class( $classes ) {
-    $classes = array_diff( $classes, array( 'hentry' ) );
-    return $classes;
-}
-add_filter( 'post_class', 'isa_remove_hentry_class' );
-
-/**
  * Clean up archives titles
  */
 if (!function_exists('rasande_archive_titles')) {
@@ -214,6 +234,22 @@ if (!function_exists('rasande_archive_titles')) {
 	}
 	add_filter('get_the_archive_title', 'rasande_archive_titles');
 }
+
+/**
+ * Set archive post order
+ */
+if (!function_exists('rasande_archive_order')) {
+
+	function rasande_archive_order($query)
+	{
+		if (is_archive()) :
+			$query->set('order', 'DESC');
+			$query->set('orderby', 'date');
+		endif;
+	};
+	add_action('pre_get_posts', 'rasande_archive_order');
+}
+
 
 /**
  * Enqueue styles
@@ -276,7 +312,7 @@ function rasande_ajax_loadmore()
 
 		while ($query->have_posts()) : $query->the_post(); ?>
 
-			<div class="col-12 col-sm-6 col-md-4 the-card">
+			<div class="col-12 col-sm-6 col-md-4">
 				<article id="post-<?php the_ID(); ?>" <?php post_class('entry'); ?>>
 					<?php get_template_part('template-parts/card'); ?>
 				</article>
@@ -333,19 +369,14 @@ if (!function_exists('rasande_change_logo_class')) {
 }
 
 /**
- * Set archive post order
- */
-if (!function_exists('rasande_archive_order')) {
-
-	function rasande_archive_order($query)
-	{
-		if (is_archive()) :
-			$query->set('order', 'DESC');
-			$query->set('orderby', 'date');
-		endif;
-	};
-	add_action('pre_get_posts', 'rasande_archive_order');
+* Remove hentry from post_class
+*/
+function isa_remove_hentry_class( $classes ) {
+    $classes = array_diff( $classes, array( 'hentry' ) );
+    return $classes;
 }
+add_filter( 'post_class', 'isa_remove_hentry_class' );
+
 
 /**
  * Fix svg size attributes
@@ -365,7 +396,18 @@ if (!function_exists('rasande_svg_attr')) {
 }
 
 /**
- * 
+ * Pagination classes
+ */
+if (!function_exists('rasande_pagination_attr')) {
+	function rasande_pagination_attr() {
+		return 'class="pagination__link"';
+	  }
+	  add_filter('next_posts_link_attributes', 'rasande_pagination_attr');
+	  add_filter('previous_posts_link_attributes', 'rasande_pagination_attr');
+}
+
+/**
+ * Post reading time function
  */
 if (!function_exists('rasande_reading_time')) {
 	function rasande_reading_time($postID)

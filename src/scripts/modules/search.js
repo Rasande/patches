@@ -2,24 +2,21 @@ class Search {
 
     constructor() {
         this.searchModal = document.querySelector('.site-header__search')
-        this.openButton = document.querySelector('.search__toggle')
-        this.closeButton = document.querySelector('.search-modal__close')
+        this.searchButton = document.querySelector('.search__toggle')
         this.searchField = document.querySelector('.search__input')
-        this.searchOverlay = document.querySelector('.modal-overlay')
-        this.isOverlayOpen = false
+        this.searchOverlay = document.querySelector('.overlay--search')
+        this.isSearchOpen = false
+        this.menu = document.querySelector('.navigation__menu')
+        this.menuButton = document.querySelector('.navigation__toggle')
         this.events()
     }
 
     events() {
         // Open search modal
-        if (this.openButton) {
-            this.openButton.addEventListener('click', () => this.toggleModal())
+        if (this.searchButton) {
+            this.searchButton.addEventListener('click', () => this.toggleModal())
         }
         // Close search modal
-        if (this.closeButton) {
-            this.closeButton.addEventListener('click', () => this.closeModal())
-        }
-
         if (this.searchOverlay) {
             this.searchOverlay.addEventListener('click', () => this.closeModal())
         }
@@ -29,7 +26,7 @@ class Search {
     }
 
     toggleModal() {
-        if (this.searchModal.classList.contains('toggled')) {
+        if (this.searchModal.classList.contains('is-open')) {
             this.closeModal()
         } else {
             this.openModal()
@@ -38,33 +35,43 @@ class Search {
 
     openModal() {
         const scrollY = window.scrollY
-        this.searchModal.classList.add('toggled')
+        this.searchModal.classList.add('is-open')
         document.body.style.position = 'fixed'
         document.body.style.top = -scrollY + 'px'
-        this.searchOverlay.style.display = 'block'
+        //this.searchOverlay.classList.add('is-open')
         this.searchField.value = ''
         setTimeout(() => this.searchField.focus(), 301)
-        this.openButton.setAttribute('aria-expanded', 'true')
-        this.isOverlayOpen = true
+        this.searchButton.classList.add('is-active')  
+        this.searchButton.setAttribute('aria-expanded', 'true')
+        this.isSearchOpen = true
+        this.closeMenu()
+
         return false
     }
 
     closeModal() {
-        if (this.isOverlayOpen == true) {
+        if (this.isSearchOpen == true) {
             const bodyStyle = document.body.style.top;
             document.body.style.position = '';
             document.body.style.top = '';
-            this.searchOverlay.style.display = 'none'
+            //this.searchOverlay.classList.remove('is-open')
             window.scrollTo(0, parseInt(bodyStyle || 0) * -1);
         }
        
-        this.searchModal.classList.remove('toggled')
-        this.openButton.setAttribute('aria-expanded', 'false')
-        this.isOverlayOpen = false
+        this.searchModal.classList.remove('is-open')
+        this.searchButton.classList.remove('is-active') 
+        this.searchButton.setAttribute('aria-expanded', 'false')
+        this.isSearchOpen = false
+    }
+
+    closeMenu() {
+        this.menu.classList.remove('is-open')
+        this.menuButton.classList.remove('is-active')
+        this.menuButton.setAttribute('aria-expanded', 'false')
     }
 
     keyPress(e) {
-        if (e.keyCode == 27 && this.isOverlayOpen) {
+        if (e.keyCode == 27 && this.isSearchOpen) {
             this.closeModal()
         }
     }

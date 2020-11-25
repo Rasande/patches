@@ -39,6 +39,7 @@
 					'theme_location' => 'primary',
 					'container' => '',
 					'menu_class' => 'navigation__menu',
+					'menu_id' => 'menu',
 					'depth' => 0,
 					'walker' => new Rasande_WP_Navwalker(),
 					'fallback_cb' => '',
@@ -62,7 +63,6 @@
 
 		<!-- Site header search -->
 		<div class="site-header__search">
-			<i class="fas fa-window-close search-modal__close" aria-hidden="true"></i>
 			<div class="container-wide">
 				<form action="<?php echo home_url('/'); ?>" method="get" role="search" class="search__form">
 					<input type="search" class="search__input" placeholder="What are you looking for?" value="<?php the_search_query(); ?>" name="s">

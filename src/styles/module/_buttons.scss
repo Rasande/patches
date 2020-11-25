@@ -1,11 +1,17 @@
 .btn,
 a.btn,
 .wp-block-button__link {
+    display: inline-block;
     border-radius: 0;
     border: none;
     outline: none;
     box-shadow: none;
-    padding: 8px 16px;
+    padding: $spacer $spacer-2;
+    transition: all .25s ease;
+    font-size: $font-size-sm;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
     &:hover {
         text-decoration: none;
     }
@@ -51,10 +57,11 @@ a.btn,
     padding: 8px 16px;
     color: $body-color;
     background-color: $body-bg;
+
     &:hover,
-        &:focus {
-            color: lighten($body-color, 10%);
-        }
+    &:focus {
+        color: lighten($body-color, 10%);
+    }
 }
 
 input[type="submit"] {

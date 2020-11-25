@@ -14,7 +14,7 @@
 
 html {
     font-size: 10px;
-    line-height: 1.5;
+    line-height: 1.6;
     // Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
     -webkit-text-size-adjust: 100%;
     // Change the default tap highlight to be completely transparent in iOS.
@@ -318,6 +318,7 @@ textarea {
 input, textarea {
     width: 100%;
     padding: $spacer-half;
+    margin-bottom: $spacer;
 }
 
 button,
