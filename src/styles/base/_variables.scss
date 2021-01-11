@@ -1,19 +1,19 @@
 @font-face {
-	font-family: "Raleway";
-	font-weight: 100 900;
-	font-style: normal;
-	font-display: auto;
+  font-family: "Raleway";
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: auto;
   src: url(../fonts/Raleway.ttf) format('woff2 supports variations'),
-  url(../fonts/Raleway.ttf) format('woff2');
+    url(../fonts/Raleway.ttf) format('woff2');
 }
 
 @font-face {
-	font-family: "Raleway";
-	font-weight: 100 900;
-	font-style: italic;
-	font-display: auto;
+  font-family: "Raleway";
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: auto;
   src: url(../fonts/Raleway-Italic.ttf) format('woff2 supports variations'),
-  url(../fonts/Raleway-Italic.ttf) format('woff2');
+    url(../fonts/Raleway-Italic.ttf) format('woff2');
 }
 
 // Colors
@@ -21,10 +21,10 @@ $primary: #8c00e9 !default;
 $primary-variant: #6f00b9 !default;
 $secondary: #e9b045 !default;
 $secondary-variant: #c59438 !default;
-$accent:  #e945aa !default;
+$accent: #e945aa !default;
 $accent-variant: #bd388a !default;
 
-$success: #28a745!default;
+$success: #28a745 !default;
 $warning: #ffc107 !default;
 $danger: #dc3545 !default;
 
@@ -32,41 +32,44 @@ $light: #fffbff !default;
 $dark: #212121 !default;
 $grey: #929292 !default;
 
-$body-bg: $light!default;
+$body-bg: $light !default;
 $body-color: $dark !default;
-$body-color-secondary: $grey!default;
+$body-color-secondary: $grey !default;
 
 $selection-bg: $secondary !default;
 $selection-color: $light !default;
 
-$link-color: $body-color !default;
-$link-hover-color: $primary !default;
+$link-color: $primary !default;
+$link-hover-color: $primary-variant !default;
 
-$theme-colors: 
-  ( primary, $primary ),
-	( secondary, $secondary ),
-	( accent, $accent ),
-  ( light, $light ),
-  ( dark, $dark),
-  ( grey, $grey);
+$theme-colors: (primary, $primary),
+(secondary, $secondary),
+(accent, $accent),
+(light, $light),
+(dark, $dark),
+(grey, $grey);
 
-  @each $name, $color in $theme-colors {
+@each $name,
+$color in $theme-colors {
 
-    .has-#{$name}-color {
-      color: $color;
-    }
-  
-    .has-#{$name}-background-color {
-      background-color: $color;
-    }
+  .has-#{$name}-color {
+    color: $color;
   }
 
-// Fonts
-$font-family-base: 'Raleway', sans-serif !default;
-$font-family-heading: 'Raleway', sans-serif !default;
-$font-family-monospace: SFMono-Regular, monospace !default;
+  .has-#{$name}-background-color {
+    background-color: $color;
+  }
+}
 
-$font-size-base: 1.8rem !default;
+// Fonts
+$font-family-base: 'Raleway',
+sans-serif !default;
+$font-family-heading: 'Raleway',
+sans-serif !default;
+$font-family-monospace: SFMono-Regular,
+monospace !default;
+
+$font-size-base: 1.6rem !default;
 $font-size-lg: $font-size-base * 1.25 !default;
 $font-size-sm: $font-size-base * .875 !default;
 
@@ -103,21 +106,12 @@ $spacer-4: $spacer * 4 !default;
 
 // Grid
 $grid-gutter-width: $spacer-2 !default;
-$grid-outer-margin: $spacer-2 !default;
+$grid-outer-margin: $spacer !default;
 $grid-gutter-compensation: $grid-outer-margin / 2 !default;
 $grid-gutter-halfWidth: $grid-gutter-width / 2 !default;
 
-// Navbar Navigation
-$nav-bg: rgba($light,.95) !default;
-$nav-dropdown-bg: transparent !default;
-$nav-dropdown-bg-desktop: $light !default;
-$nav-item-spacing: 0 !default;
-$nav-item-width: 200px !default;
-$nav-link-padding: 2.5rem $spacer !default;
-$nav-dropdown-link-padding: 1.5rem $spacer !default;
-$nav-link-color: $dark !default;
-$nav-link-hover-color: $primary !default;
-$nav-link-active-color: $grey !default;
+// Navigation
+$nav-link-color: $dark;
 
 // Hamburger icon
 $hamburger-layer-width: 25px;

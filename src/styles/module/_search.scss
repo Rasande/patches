@@ -1,0 +1,15 @@
+.site-header__search {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: $spacer;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform .5s ease;
+    background: $light;
+    overflow: hidden;
+
+    &.is-open {
+        transform: translateX(0);
+    }
+}

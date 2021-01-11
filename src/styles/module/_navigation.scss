@@ -1,0 +1,170 @@
+.navigation {
+    font-weight: 500;
+
+    &--desktop {
+        display: none;
+
+        @include respond-above($navbar-expand) {
+            display: flex;
+        }
+    }
+
+    &--mobile {
+        display: block;
+
+        @include respond-above($navbar-expand) {
+            display: none;
+        }
+    }
+}
+
+// Desktop navigation
+
+.navigation--desktop {
+    align-items: center;
+
+    .nav__menu {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav__item {
+        position: relative;
+        display: flex;
+        margin-left: $spacer-half;
+        color: $nav-link-color;
+    }
+
+    .nav__item .nav__item {
+        min-width: 200px;
+        margin: 0;
+    }
+
+    .nav__item .nav__item--link {
+        display: block;
+        width: 100%;
+        padding: $spacer $spacer;
+        color: inherit;
+    }
+
+    .nav__item:hover>.nav__item--link {
+        color: $primary !important;
+    }
+
+    .nav__item .nav__item .nav__item--link {
+        padding: $spacer;
+    }
+
+    .nav__item.is-active>.nav__item--link {
+        color: $grey;
+    }
+
+    .nav__item.has-submenu .nav__item--link {
+        padding-right: 0;
+    }
+
+    .nav__item.has-submenu:hover>.submenu {
+        transform: translateY(0px);
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .submenu-btn {
+        border: none;
+        padding-right: $spacer;
+        background-color: transparent;
+    }
+
+    .submenu {
+        position: absolute;
+        top: 100%;
+        display: block;
+        visibility: hidden;
+        background-color: $light;
+        transform: translateY(-15px);
+        opacity: 0;
+        transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+        z-index: 999;
+    }
+
+    .submenu .submenu {
+        left: 100%;
+        top: 0;
+        position: absolute;
+    }
+}
+
+// Mobile navigation
+
+.navigation--mobile {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    padding: $spacer $spacer $spacer-4;
+    background: $light;
+    transform: translateX(100%);
+    transition: transform .5s ease;
+
+    &.is-open {
+        transform: translateX(0);
+    }
+
+    @include respond-above(sm) {
+        width: 50%;
+    }
+
+    @include respond-above(md) {
+        width: 25%;
+    }
+
+    .nav__item {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        color: $nav-link-color;
+    }
+
+    .nav__item .nav__item {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: $spacer;
+    }
+
+    .nav__item .nav__item--link {
+        flex: 1;
+        display: block;
+        width: 100%;
+        padding: $spacer $spacer;
+        color: inherit;
+    }
+
+    .nav__item:hover>.nav__item--link {
+        color: $primary !important;
+    }
+
+    .nav__item.is-active>.nav__item--link {
+        color: $grey;
+    }
+
+    .submenu-btn {
+        border: none;
+        background-color: transparent;
+        padding: 0 $spacer-2;
+    }
+
+    .submenu {
+        display: none;
+        flex-basis: 100%;
+        padding-left: 0;
+        margin-bottom: 0;
+        z-index: 999;
+        overflow: hidden;
+        transition: height .25s ease;
+    }
+
+    .submenu.is-open {
+        display: block;
+    }
+}

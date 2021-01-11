@@ -1,34 +1,34 @@
 $fa-font-path: "../fonts/fontawesome";
 
 @import "base/variables",
-        "base/mixins";
+"base/mixins";
 
 @import "vendor/fontawesome/fontawesome",
-        "vendor/fontawesome/solid",
-        "vendor/flickity/flickity",
-        "vendor/hamburgers/hamburgers";
+"vendor/fontawesome/solid",
+"vendor/flickity/flickity",
+"vendor/hamburgers/hamburgers";
 
 @import "base/base",
-        "base/columns";
+"base/colors",
+"base/typography",
+"base/animation",
+"base/columns";
 
 @import "layout/site-main",
-        "layout/site-footer",
-        "layout/site-header";
+"layout/site-footer",
+"layout/site-header";
 
 @import "module/hero",
-        "module/forms",
-        "module/card",
-        "module/buttons",
-        "module/overlay",
-        "module/page-header",
-        "module/pagination";
+"module/forms",
+"module/card",
+"module/buttons",
+"module/overlay",
+"module/page-header",
+"module/navigation",
+"module/search",
+"module/pagination";
 
 @import "plugins/cf7",
-        "plugins/yoast";
-
-@import "state/animation",
-        "state/flex",
-        "state/spacing",
-        "state/text";
+"plugins/yoast";
 
 @import "shame";

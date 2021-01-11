@@ -63,66 +63,66 @@ if (!function_exists('rasande_theme_support')) {
 			'style'
 		));
 		// Editor styles
-		add_theme_support( 'editor-styles' );
-		add_editor_style( 'assets/css/editor-style.css' );
+		add_theme_support('editor-styles');
+		add_editor_style('assets/css/editor-style.css');
 		// Editor Color Palette
-		add_theme_support( 'editor-color-palette', array(
+		add_theme_support('editor-color-palette', array(
 			array(
-				'name'  => __( 'Primary', 'rasande' ),
+				'name'  => __('Primary', 'rasande'),
 				'slug'  => 'primary',
 				'color'	=> 'var(--primary)',
 			),
 			array(
-				'name'  => __( 'Secondary', 'rasande' ),
+				'name'  => __('Secondary', 'rasande'),
 				'slug'  => 'secondary',
 				'color' => 'var(--secondary)',
 			),
 			array(
-				'name'  => __( 'Accent', 'rasande' ),
+				'name'  => __('Accent', 'rasande'),
 				'slug'  => 'accent',
 				'color' => 'var(--accent)',
 			),
 			array(
-				'name'	=> __( 'Light', 'rasande' ),
+				'name'	=> __('Light', 'rasande'),
 				'slug'	=> 'light',
 				'color'	=> 'var(--light)',
 			),
 			array(
-				'name'	=> __( 'Dark', 'rasande' ),
+				'name'	=> __('Dark', 'rasande'),
 				'slug'	=> 'dark',
 				'color'	=> 'var(--dark)',
 			),
 			array(
-				'name'	=> __( 'Grey', 'rasande' ),
+				'name'	=> __('Grey', 'rasande'),
 				'slug'	=> 'grey',
 				'color'	=> 'var(--grey)',
 			),
-		) );
+		));
 		// Editor font sizes
 		add_theme_support(
-			'editor-font-sizes', 
+			'editor-font-sizes',
 			array(
 				array(
-					'name'      => __( 'Small', 'rasande' ),
-					'shortName' => __( 'S', 'rasande' ),
+					'name'      => __('Small', 'rasande'),
+					'shortName' => __('S', 'rasande'),
 					'size'      => 12,
 					'slug'      => 'small'
 				),
 				array(
-					'name'      => __( 'Normal', 'rasande' ),
-					'shortName' => __( 'N', 'rasande' ),
+					'name'      => __('Normal', 'rasande'),
+					'shortName' => __('N', 'rasande'),
 					'size'      => 18,
 					'slug'      => 'normal'
 				),
 				array(
-					'name'      => __( 'Medium', 'rasande' ),
-					'shortName' => __( 'M', 'rasande' ),
+					'name'      => __('Medium', 'rasande'),
+					'shortName' => __('M', 'rasande'),
 					'size'      => 24,
 					'slug'      => 'medium'
 				),
 				array(
-					'name'      => __( 'Large', 'rasande' ),
-					'shortName' => __( 'L', 'rasande' ),
+					'name'      => __('Large', 'rasande'),
+					'shortName' => __('L', 'rasande'),
 					'size'      => 30,
 					'slug'      => 'large'
 				)
@@ -303,8 +303,8 @@ function rasande_ajax_loadmore()
 
 	$next_page = $_POST['current_page'] + 1;
 	$query = new WP_Query([
-	  'posts_per_page' => get_option( 'posts_per_page' ),
-	  'paged' => $next_page
+		'posts_per_page' => get_option('posts_per_page'),
+		'paged' => $next_page
 	]);
 	if ($query->have_posts()) :
 
@@ -369,13 +369,14 @@ if (!function_exists('rasande_change_logo_class')) {
 }
 
 /**
-* Remove hentry from post_class
-*/
-function isa_remove_hentry_class( $classes ) {
-    $classes = array_diff( $classes, array( 'hentry' ) );
-    return $classes;
+ * Remove hentry from post_class
+ */
+function isa_remove_hentry_class($classes)
+{
+	$classes = array_diff($classes, array('hentry'));
+	return $classes;
 }
-add_filter( 'post_class', 'isa_remove_hentry_class' );
+add_filter('post_class', 'isa_remove_hentry_class');
 
 
 /**
@@ -399,11 +400,12 @@ if (!function_exists('rasande_svg_attr')) {
  * Pagination classes
  */
 if (!function_exists('rasande_pagination_attr')) {
-	function rasande_pagination_attr() {
+	function rasande_pagination_attr()
+	{
 		return 'class="pagination__link"';
-	  }
-	  add_filter('next_posts_link_attributes', 'rasande_pagination_attr');
-	  add_filter('previous_posts_link_attributes', 'rasande_pagination_attr');
+	}
+	add_filter('next_posts_link_attributes', 'rasande_pagination_attr');
+	add_filter('previous_posts_link_attributes', 'rasande_pagination_attr');
 }
 
 /**
@@ -429,17 +431,16 @@ if (!function_exists('rasande_admin_bar_css')) {
 	{
 		if (is_admin_bar_showing()) { ?>
 			<style>
-				
 				#wpadminbar {
 					position: fixed;
 				}
 
-				.site-header.fixed {
+				.site-header.is-fixed {
 					margin-top: 46px;
 				}
 
 				@media screen and (min-width: 783px) {
-					.site-header.fixed {
+					.site-header.is-fixed {
 						margin-top: 32px;
 					}
 				}
@@ -450,8 +451,8 @@ if (!function_exists('rasande_admin_bar_css')) {
 }
 
 
-add_action( 'init', function() {
-    $GLOBALS['wp_rewrite']->pagination_base = 'sida';
+add_action('init', function () {
+	$GLOBALS['wp_rewrite']->pagination_base = 'sida';
 });
 
 /**
