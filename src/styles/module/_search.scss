@@ -4,12 +4,18 @@
     right: 0;
     padding: $spacer;
     width: 100%;
-    transform: translateX(100%);
+    transform: scaleY(0);
+    transform-origin: top;
     transition: transform .5s ease;
     background: $light;
     overflow: hidden;
 
     &.is-open {
-        transform: translateX(0);
+        transform: scaleY(1);
+    }
+
+    .search__input {
+        width: 100%;
+        padding: $spacer-half;
     }
 }

@@ -1,3 +1,24 @@
+button,
+.btn,
+input[type="submit"] {
+    display: inline-block;
+    border-radius: 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: $spacer-half $spacer;
+    transition: all .25s ease;
+    font-size: $font-size-sm;
+}
+
+
+
+
+
+
+
+
+
 .btn,
 a.btn,
 .wp-block-button__link {
@@ -6,14 +27,14 @@ a.btn,
     border: none;
     outline: none;
     box-shadow: none;
-    padding: $spacer $spacer-2;
+    padding: $spacer-half $spacer;
     transition: all .25s ease;
     font-size: $font-size-sm;
     text-transform: uppercase;
     letter-spacing: 2px;
 
     &:hover {
-        text-decoration: none;
+        //text-decoration: none;
     }
 
     &:not(.has-text-color) {
@@ -46,8 +67,24 @@ a.btn,
         &.has-#{$name}-background-color:focus {
             background-color: darken($color, 10%);
         }
+
     }
 }
+
+@each $name,
+$color in $theme-colors {
+    .btn-#{$name} {
+        background-color: $color;
+        color: $light;
+
+        &:hover,
+        &:focus {
+            background-color: darken($color, 10%);
+        }
+    }
+}
+
+
 
 .btn-clean {
     border-radius: 0;
@@ -62,8 +99,4 @@ a.btn,
     &:focus {
         color: lighten($body-color, 10%);
     }
-}
-
-input[type="submit"] {
-    @extend .btn;
 }

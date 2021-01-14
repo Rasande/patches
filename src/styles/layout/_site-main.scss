@@ -4,7 +4,7 @@
     .page-content {
 
         // Links
-        a {
+        a:not(.wp-block-button__link) {
             color: $primary;
 
             &:hover {

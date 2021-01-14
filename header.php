@@ -52,10 +52,11 @@
 			<div class="site-header__controls">
 				<div class="site-header__search">
 
-					<form action="<?php echo home_url('/'); ?>" method="get" role="search" class="search__form">
-						<input type="search" class="search__input" placeholder="What are you looking for?" value="<?php the_search_query(); ?>" name="s">
-					</form>
-
+					<div class="container-wide">
+						<form action="<?php echo home_url('/'); ?>" method="get" role="search" class="search__form">
+							<input type="search" class="search__input" placeholder="What are you looking for?" value="<?php the_search_query(); ?>" name="s">
+						</form>
+					</div>
 
 				</div>
 				<button class="search__toggle btn-clean" aria-expanded="false"><i class="fas fa-search"></i></button>

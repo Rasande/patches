@@ -10,7 +10,7 @@
 <footer class="site-footer">
 
 	<div class="site-footer__top">
-		
+
 	</div>
 
 	<div class="site-footer__center">
@@ -46,10 +46,6 @@
 	</div>
 
 </footer>
-
-<!-- Overlays -->
-<div class="overlay overlay--menu"></div>
-<div class="overlay overlay--search"></div>
 
 <?php wp_footer(); ?>
 

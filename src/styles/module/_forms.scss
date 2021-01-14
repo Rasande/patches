@@ -1,0 +1,23 @@
+input,
+.input,
+textarea,
+.textarea {
+    width: 100%;
+    margin-bottom: $spacer-half;
+    border: 1px solid $grey;
+    outline: none;
+    font-size: $font-size-base;
+    background-color: $light;
+    color: $dark;
+    resize: vertical;
+}
+
+input[type=submit] {
+    @extend .btn;
+    @extend .btn-primary;
+    width: auto;
+}
+
+label {
+    font-size: $font-size-sm;
+}

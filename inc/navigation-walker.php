@@ -16,15 +16,13 @@ if (!class_exists('Rasande_WP_Navwalker')) {
 
             parent::start_lvl($html, $depth, $args);
             $html = str_replace('sub-menu', 'submenu', $html);
-
             $output .= $html;
         }
+
         public function start_el(&$output, $item, $depth = 0, $args = array(), $current_object_id = 0)
         {
             global $wp_query;
             $title = $item->title;
-            $attr_title = $item->attr_title;
-            $description = $item->description;
             $permalink = $item->url;
 
             // Explode menu_class string so we can output only the first class 
@@ -43,17 +41,14 @@ if (!class_exists('Rasande_WP_Navwalker')) {
 
             $class_string = implode(" ", array_filter($item_classes));
 
-
-            // Check if item has attribute title
-            if ($attr_title) {
-                $attr_title_output = 'title="' . $attr_title . '"';
-            } else {
-                $attr_title_output = '';
-            }
+            // Check if item has title, target or rel attribute.    
+            $attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
+            $attributes .= !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
+            $attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
 
             // Check permalink and output <span> if false, <a> if true
-            $link_output_pre = '<a class="nav__item--link"' . " " . 'href="' . $permalink . '"' . $attr_title_output . '>';
-            $link_output_end = '</a>';
+            $link_output_pre = '<a class="nav__item--link"' . " " . 'href="' . $permalink . '"' . $attributes .
+                $link_output_end = '</a>';
 
             // Aria-label text for submenu-btn
             $labelName = sprintf(__('Show submenu for %s', 'rasande'), $title);
