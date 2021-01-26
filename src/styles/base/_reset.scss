@@ -69,7 +69,6 @@ ol[class] {
 /* A elements that don't have a class get default styles */
 a:not([class]) {
     color: $link-color;
-    transition: color .25s ease;
     text-decoration-skip-ink: auto;
 
     &:hover {

@@ -1,0 +1,48 @@
+button,
+.btn,
+input[type="submit"] {
+    display: inline-block;
+    border-style: none;
+    border-radius: 0;
+    outline: none;
+    padding: $spacer-half $spacer;
+    transition: all .25s ease;
+    cursor: pointer;
+}
+
+.btn-clean {
+    border-radius: 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    color: $body-color;
+    background-color: transparent;
+}
+
+.btn-outline {
+    border-style: solid;
+    border-width: 2px;
+    border-color: $body-color;
+    background-color: transparent;
+    color: $body-color;
+
+    &:hover,
+    &:focus {
+        color: darken($primary, 8%);
+        border-color: darken($primary, 8%);
+    }
+}
+
+@each $name,
+$color in $theme-colors {
+    .btn-#{$name} {
+        background-color: $color;
+        color: $light;
+
+        &:hover,
+        &:focus {
+            background-color: darken($color, 8%);
+        }
+    }
+}

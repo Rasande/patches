@@ -6,16 +6,26 @@
     width: 100%;
     transform: scaleY(0);
     transform-origin: top;
-    transition: transform .5s ease;
+    transition: transform .4s ease;
     background: $light;
     overflow: hidden;
-
-    &.is-open {
-        transform: scaleY(1);
-    }
 
     .search__input {
         width: 100%;
         padding: $spacer-half;
+        opacity: 0;
+        transition: opacity .25s ease;
     }
+
+    &.is-open {
+        transform: scaleY(1);
+
+        .search__input {
+            transition-delay: .4s;
+            opacity: 1;
+        }
+
+    }
+
+
 }

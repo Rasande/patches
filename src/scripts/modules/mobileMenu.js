@@ -1,5 +1,6 @@
 class MobileMenu {
     constructor() {
+        this.header = document.querySelector('.site-header')
         this.toggleMenu = document.querySelectorAll('[toggle-menu]')
         this.menu = document.querySelectorAll('[menu-name]')
         this.submenuBtn = document.querySelectorAll('.submenu-btn')
@@ -21,6 +22,7 @@ class MobileMenu {
             })
         })
         document.addEventListener('keydown', e => this.keyPress(e))
+        window.addEventListener('scroll', () => this.changeHeader())
     }
 
     triggerMenu(e) {
@@ -48,22 +50,36 @@ class MobileMenu {
         let id = menu.getAttribute('menu-name')
         let menuBtn = document.querySelector('[toggle-menu="' + id + '"]')
 
+        const scrollY = window.scrollY
+
+        document.body.style.position = 'fixed'
+        document.body.style.top = -scrollY + 'px'
+
+        this.header.classList.add('scrolled')
+
         menu.classList.add('is-open')
         menuBtn.classList.add('is-active')
         menuBtn.setAttribute('aria-expanded', 'true')
 
         this.isMenuOpen = true
+
     }
 
     closeMenu(menu) {
         let id = menu.getAttribute('menu-name')
         let menuBtn = document.querySelector('[toggle-menu="' + id + '"]')
 
+        const bodyStyle = document.body.style.top;
+        document.body.style.position = '';
+        document.body.style.top = '';
+        window.scrollTo(0, parseInt(bodyStyle || 0) * -1);
+
         menu.classList.remove('is-open')
         menuBtn.classList.remove('is-active')
         menuBtn.setAttribute('aria-expanded', 'false')
 
         this.isMenuOpen = false
+
     }
 
     toggleSubMenu(e) {
@@ -119,7 +135,16 @@ class MobileMenu {
                 }
             })
         }
-
     }
+
+    changeHeader() {
+        let scrollPos = window.scrollY
+        if (scrollPos >= 75 || this.isMenuOpen) {
+            this.header.classList.add('scrolled')
+        } else {
+            this.header.classList.remove('scrolled')
+        }
+    }
+
 }
 export default MobileMenu

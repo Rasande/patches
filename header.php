@@ -4,6 +4,9 @@
  * The template for displaying the header
  *
  */
+
+// Exit if accessed directly.
+defined('ABSPATH') || exit;
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +43,6 @@
 					'container' => '',
 					'menu_class' => 'nav__menu',
 					'menu_id' => 'menu-primary',
-					'depth' => 0,
 					'walker' => new Rasande_WP_Navwalker(),
 					'fallback_cb' => '',
 					'depth' => '3'
@@ -77,7 +79,6 @@
 				'container' => '',
 				'menu_class' => 'nav__menu',
 				'menu_id' => 'menu-mobile',
-				'depth' => 0,
 				'walker' => new Rasande_WP_Navwalker(),
 				'fallback_cb' => '',
 				'depth' => '3'

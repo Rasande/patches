@@ -1,28 +1,12 @@
-@font-face {
-  font-family: "Raleway";
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: auto;
-  src: url(../fonts/Raleway.ttf) format('woff2 supports variations'),
-    url(../fonts/Raleway.ttf) format('woff2');
-}
-
-@font-face {
-  font-family: "Raleway";
-  font-weight: 100 900;
-  font-style: italic;
-  font-display: auto;
-  src: url(../fonts/Raleway-Italic.ttf) format('woff2 supports variations'),
-    url(../fonts/Raleway-Italic.ttf) format('woff2');
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 // Colors
-$primary: #8c00e9 !default;
-$primary-variant: #6f00b9 !default;
-$secondary: #e9b045 !default;
-$secondary-variant: #c59438 !default;
-$accent: #e945aa !default;
-$accent-variant: #bd388a !default;
+$primary: #21209c !default;
+$primary-variant: #1c1c86 !default;
+$secondary: #23120b !default;
+$secondary-variant: #160c07 !default;
+$accent: #fdb827 !default;
+$accent-variant:#e6a824 !default;
 
 $success: #28a745 !default;
 $warning: #ffc107 !default;
@@ -62,15 +46,16 @@ $color in $theme-colors {
 }
 
 // Fonts
-$font-family-base: 'Raleway',
+$font-family-base: 'Roboto',
 sans-serif !default;
-$font-family-heading: 'Raleway',
+$font-family-heading: 'Roboto',
 sans-serif !default;
 $font-family-monospace: SFMono-Regular,
 monospace !default;
 
 $font-size-base: 1.6rem !default;
-$font-size-lg: $font-size-base * 1.25 !default;
+$font-size-lg: $font-size-base * 1.5 !default;
+$font-size-md: $font-size-base * 1.25 !default;
 $font-size-sm: $font-size-base * .875 !default;
 
 $font-weight-light: 300 !default;

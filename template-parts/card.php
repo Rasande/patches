@@ -8,6 +8,7 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class('entry card the-card'); ?>>
     <a href="<?php echo get_permalink(); ?>">
         <div class="card__thumbnail">
@@ -27,9 +28,9 @@ defined('ABSPATH') || exit;
             } ?>
         </div>
         <div class="card__content--title">
-        <h2><a href="<?php echo get_permalink(); ?>">
-                <?php the_title(); ?>
-            </a></h2>
+            <h2><a href="<?php echo get_permalink(); ?>">
+                    <?php the_title(); ?>
+                </a></h2>
         </div>
 
 

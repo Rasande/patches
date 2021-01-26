@@ -17,29 +17,18 @@ get_header(); ?>
     <?php get_template_part('template-parts/page', 'header'); ?>
 
     <div class="container-wide">
-        <div class="columns">
 
-            <?php if (have_posts()) :
-                while (have_posts()) : the_post(); ?>
+        <?php if (have_posts()) :
+            while (have_posts()) : the_post(); ?>
 
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <?php get_template_part('template-parts/card'); ?>
-                    </div>
+                <div class="block-content">
+                    <?php the_content(); ?>
+                </div>
 
-                <?php endwhile; ?>
-            <?php endif; ?>
+            <?php endwhile; ?>
+        <?php endif; ?>
 
-        </div>
 
-        <div class="pagination">
-            <div class="pagination__prev">
-                <?php echo get_previous_posts_link(__('Newer posts', 'rasande')) ?>
-            </div>
-            <div class="pagination__next">
-                <?php echo get_next_posts_link(__('Older posts', 'rasande')) ?>
-            </div>
-        </div>
-        
     </div>
 </main>
 

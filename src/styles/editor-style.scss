@@ -1,21 +1,22 @@
 // Styles for the block editor.
-@import 'base/variables',
-'base/mixins',
+@import 'abstracts/variables',
+'abstracts/mixins',
 'layout/site-main',
-'module/buttons';
+'components/buttons';
 
 :root {
 
     @each $name,
     $color in $theme-colors {
-      --#{$name}: #{$color};
+        --#{$name}: #{$color};
     }
-  }
+}
 
-  html {
+html {
     font-size: 10px;
     line-height: 1.5;
-  }
+}
+
 body {
     font-family: $font-family-base;
     font-size: 18px;
@@ -36,7 +37,6 @@ h6 {
     font-weight: $font-weight-bold;
     font-feature-settings: "lnum";
     font-variant-numeric: lining-nums;
-    transition: font-size .25s ease;
 }
 
 h1,
@@ -77,9 +77,8 @@ p {
 a {
     color: $link-color;
     text-decoration: none;
-    transition: color .25s ease;
     background-color: transparent;
-    
+
     &:hover {
         color: $link-hover-color;
         text-decoration: none;

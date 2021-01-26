@@ -1,33 +1,30 @@
-$fa-font-path: "../fonts/fontawesome";
+$fa-font-path: '../fonts/fontawesome';
 
-@import "base/variables",
-"base/mixins";
+@import 'abstracts/variables',
+'abstracts/mixins',
+'abstracts/animation';
 
-@import "vendor/fontawesome/fontawesome",
-"vendor/fontawesome/solid",
-"vendor/flickity/flickity",
-"vendor/hamburgers/hamburgers";
+@import 'base/reset',
+'base/typography';
 
-@import "base/base",
-"base/colors",
-"base/typography",
-"base/animation",
-"base/columns";
+@import 'components/buttons',
+'components/forms';
 
-@import "layout/site-main",
-"layout/site-footer",
-"layout/site-header";
+@import 'layout/columns',
+'layout/navigation',
+'layout/site-header',
+'layout/site-main',
+'layout/site-footer';
 
-@import "module/hero",
-"module/forms",
-"module/card",
-"module/buttons",
-"module/page-header",
-"module/navigation",
-"module/search",
-"module/pagination";
+@import 'parts/card',
+'parts/hero',
+'parts/page-header',
+'parts/pagination',
+'parts/search';
 
-@import "plugins/cf7",
-"plugins/yoast";
+@import 'templates/404';
 
-@import "shame";
+@import 'vendor/fontawesome/fontawesome',
+'vendor/fontawesome/regular.scss',
+'vendor/fontawesome/solid.scss',
+'vendor/fontawesome/brands.scss';

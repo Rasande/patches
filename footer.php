@@ -4,6 +4,9 @@
  * The template for displaying the footer. 
  *
  */
+
+// Exit if accessed directly.
+defined('ABSPATH') || exit;
 ?>
 
 <!-- Site footer -->
@@ -14,7 +17,7 @@
 	</div>
 
 	<div class="site-footer__center">
-		<div class="container-wide">
+		<div class="container-lg">
 			<div class="columns">
 
 				<!-- Footer Column 1 -->

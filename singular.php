@@ -22,7 +22,7 @@ get_header(); ?>
                 <?php get_template_part('template-parts/page', 'header'); ?>
 
                 <!-- Page content -->
-                <div class="page-content">
+                <div class="block-content">
                     <?php the_content(); ?>
                 </div>
 
