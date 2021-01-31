@@ -5,8 +5,12 @@
     color: $light;
     font-size: 1.8rem;
 
-    h2,h3,h4,h5,h6 {
-     font-size:$h5-font-size;
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @extend .h5;
     }
 
     ul {
@@ -23,15 +27,11 @@
     }
 }
 
-.site-footer__top {
+.site-footer__top {}
 
-}
-.site-footer__center {
+.site-footer__center {}
 
-}
-.site-footer__bottom {
-
-}
+.site-footer__bottom {}
 
 .copyright {
     padding: $spacer-2 0 0;

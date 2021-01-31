@@ -1,70 +1,79 @@
 // Respond above.
 @mixin respond-above($breakpoint) {
 
-  // If the breakpoint exists in the map.
-  @if map-has-key($breakpoints, $breakpoint) {
+    @if map-has-key($break, $breakpoint) {
 
-    // Get the breakpoint value.
-    $breakpoint-value: map-get($breakpoints, $breakpoint);
+        $breakpoint-value: map-get($break, $breakpoint);
 
-    // Write the media query.
-    @media (min-width: $breakpoint-value) {
-      @content;
+        @media (min-width: $breakpoint-value) {
+            @content;
+        }
     }
 
-  // If the breakpoint doesn't exist in the map.
-  } @else {
-
-    // Log a warning.
-    @warn 'Invalid breakpoint: #{$breakpoint}.';
-  }
+    @else {
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
 }
 
 // Respond below.
 @mixin respond-below($breakpoint) {
 
-// If the breakpoint exists in the map.
-@if map-has-key($breakpoints, $breakpoint) {
+    @if map-has-key($break, $breakpoint) {
 
-  // Get the breakpoint value.
-  $breakpoint-value: map-get($breakpoints, $breakpoint);
+        $breakpoint-value: map-get($break, $breakpoint);
 
-  // Write the media query.
-  @media (max-width: $breakpoint-value) {
-    @content;
-  }
-
-// If the breakpoint doesn't exist in the map.
-} @else {
-
-  // Log a warning.
-  @warn 'Invalid breakpoint: #{$breakpoint}.';
-}
-}
-
-@mixin font-size($fs-map) {
-  @each $fs-breakpoint, $fs-font-size in $fs-map {
-    @if $fs-breakpoint == null {
-      @include make-font-size($fs-font-size);
+        @media (max-width: $breakpoint-value) {
+            @content;
+        }
     }
+
     @else {
-      @include respond-above($fs-breakpoint) {
-        @include make-font-size($fs-font-size);
-      }
+
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
     }
-  }
 }
 
-@mixin make-font-size($fs-font-size) {
-  // If $fs-font-size is a list, include
-  // both font-size and line-height
-  @if type-of($fs-font-size) == "list" {
-    font-size: nth($fs-font-size, 1);
-    @if (length($fs-font-size) > 1) {
-      line-height: nth($fs-font-size, 2);
+// FLUID TYPE
+//
+// @example 
+// h1 {
+//    @include fluid-type(h1, sm, md)
+// }
+//
+@mixin fluid-type($size, $min-range, $max-range) {
+
+    $min-fs-value: map-get($font-sizes-min, $size);
+    $max-fs-value: map-get($font-sizes-max, $size);
+    $min-range-value: map-get($break, $min-range);
+    $max-range-value: map-get($break, $max-range);
+
+    font-size: calc(#{$min-fs-value} + #{(($max-fs-value / ($max-fs-value * 0 + 1)) - ($min-fs-value / ($min-fs-value * 0 + 1)))} * ((100vw - #{$min-range-value}) / #{(($max-range-value / ($max-range-value * 0 + 1)) - ($min-range-value / ($min-range-value * 0 + 1)))}));
+
+    @media screen and (max-width: $min-range-value) {
+        font-size: $min-fs-value;
     }
-  }
-  @else {
-    font-size: $fs-font-size;
-  }
+
+    @media screen and (min-width: $max-range-value) {
+        font-size: $max-fs-value;
+    }
+}
+
+// FLUID TYPE CUSTOM
+//
+// @example 
+// h1 {
+//    @include fluid-type-custom(22px, 38px, 600px, 980px)
+// }
+//
+@mixin fluid-type-custom($min-font-size: 12px, $max-font-size: 21px, $lower-range: 420px, $upper-range: 900px) {
+
+    font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ((100vw - #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
+
+    @media screen and (max-width: $lower-range) {
+        font-size: $min-font-size;
+    }
+
+    @media screen and (min-width: $upper-range) {
+        font-size: $max-font-size;
+    }
 }
