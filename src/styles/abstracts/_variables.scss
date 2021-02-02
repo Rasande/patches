@@ -15,19 +15,9 @@ $font-size-sm: 14px !default;
 $line-height-base: 1.5 !default;
 $line-height-heading: 1.25 !default;
 
-$font-sizes-min: (h1: 29px,
-    h2: 25px,
-    h3: 22px,
-    h4: 18px,
-    h5: 16px,
-    h6: $font-size-sm) !default;
+$font-sizes-min: (h1: 29px, h2: 25px, h3: 22px, h4: 18px, h5: 16px, h6: $font-size-sm) !default;
 
-$font-sizes-max: (h1: 49px,
-    h2: 39px,
-    h3: 31px,
-    h4: 25px,
-    h5: 20px,
-    h6: $font-size-sm) !default;
+$font-sizes-max: (h1: 49px, h2: 39px, h3: 31px, h4: 25px, h5: 20px, h6: $font-size-sm) !default;
 
 /* -------------------------------- 
 
@@ -48,12 +38,7 @@ $light: #fffbff !default;
 $dark: #212121 !default;
 $grey: #929292 !default;
 
-$theme-colors: (primary, $primary),
-(secondary, $secondary),
-(accent, $accent),
-(light, $light),
-(dark, $dark),
-(grey, $grey);
+$theme-colors: (primary, $primary), (secondary, $secondary), (accent, $accent), (light, $light), (dark, $dark), (disable, $grey);
 
 $success: #6cbd7f !default;
 $warning: #ffc107 !default;
@@ -75,11 +60,7 @@ Breakpoints & Sizing
 
 -------------------------------- */
 
-$break: (xs: 576px,
-    sm: 680px,
-    md: 960px,
-    lg: 1680px,
-    xl: 1920px) !default;
+$break: (xs: 576px, sm: 680px, md: 960px, lg: 1680px, xl: 1920px) !default;
 
 $navbar-expand: md !default;
 
@@ -113,9 +94,3 @@ $hamburger-layer-height : 3px;
 $hamburger-layer-color: $nav-link-color;
 $hamburger-layer-border-radius : 0px;
 $hamburger-types: (squeeze);
-
-/* -------------------------------- 
-
-Footer
-
--------------------------------- */

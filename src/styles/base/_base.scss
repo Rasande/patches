@@ -1,7 +1,8 @@
+@use '../abstracts/variables'as *;
+@use '../abstracts/mixins'as *;
+
 /* Box sizing rules */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
@@ -21,23 +22,11 @@ body {
     text-rendering: optimizeSpeed;
 }
 
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
+body, h1, h2, h3, h4, p, li, figure, figcaption, blockquote, dl, dd {
     margin: 0;
 }
 
-ul[class],
-ol[class] {
+ul[class], ol[class] {
     padding: 0;
     list-style: none;
 }

@@ -1,3 +1,9 @@
+@use '../abstracts/variables'as *;
+@use '../abstracts/mixins'as *;
+@use '../base/typography'as *;
+@use '../layouts/columns'as *;
+@use '../components/buttons'as *;
+
 /* -------------------------------- 
 
 Blocks
@@ -8,14 +14,14 @@ Blocks
     // Alignment
     &>*,
     .wp-block {
-        @extend .container !optional;
+        @extend .container;
         word-break: break-word;
     }
 
     .alignwide,
     .alignwide *,
     .wp-block[data-align="wide"] {
-        @extend .container-wide !optional;
+        @extend .container-wide;
         word-break: break-word;
     }
 

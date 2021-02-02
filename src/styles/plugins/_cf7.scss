@@ -74,7 +74,7 @@ form.wpcf7-form {
     }
     .form-columns {
         padding-bottom: $spacer-2;
-        @include respond-above(sm) {
+        @include mq(sm) {
             display: flex;
             
             justify-content: space-between;

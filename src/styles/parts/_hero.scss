@@ -1,9 +1,13 @@
+@use '../abstracts/variables'as *;
+@use '../abstracts/mixins'as *;
+
 .hero {
     //padding-top: $spacer-4 * 2;
     padding: 54px $spacer-2 $spacer-2;
     margin-bottom: $spacer-4;
     background-color: $light;
-    @include respond-above(sm){
+
+    @include mq(sm) {
         padding: 72px $spacer-2 $spacer-2;
     }
 
@@ -19,11 +23,13 @@
         background-position: center !important;
         background-size: cover !important;
         z-index: 888;
-       @include respond-above(sm){
-     
-        height: 65vh;
-        max-height: 100%;
+
+        @include mq(sm) {
+
+            height: 65vh;
+            max-height: 100%;
         }
+
         &--content {
             position: absolute;
             right: 0;
@@ -38,10 +44,11 @@
             transform-origin: bottom;
             transform: scaleY(0);
 
-            @include respond-above(sm) {
+            @include mq(sm) {
                 background-color: $light;
                 width: auto;
             }
+
             h2 {
                 animation: fadeIn .75s forwards;
                 animation-timing-function: ease;
@@ -52,4 +59,3 @@
     }
 
 }
-

@@ -1,34 +1,18 @@
+@use '../abstracts/variables'as *;
+
 // Respond above.
-@mixin respond-above($breakpoint) {
+@mixin mq($breakpoint) {
 
     @if map-has-key($break, $breakpoint) {
 
         $breakpoint-value: map-get($break, $breakpoint);
 
-        @media (min-width: $breakpoint-value) {
+        @media only screen and (min-width: $breakpoint-value) {
             @content;
         }
     }
 
     @else {
-        @warn 'Invalid breakpoint: #{$breakpoint}.';
-    }
-}
-
-// Respond below.
-@mixin respond-below($breakpoint) {
-
-    @if map-has-key($break, $breakpoint) {
-
-        $breakpoint-value: map-get($break, $breakpoint);
-
-        @media (max-width: $breakpoint-value) {
-            @content;
-        }
-    }
-
-    @else {
-
         @warn 'Invalid breakpoint: #{$breakpoint}.';
     }
 }

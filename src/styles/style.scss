@@ -1,32 +1,8 @@
 $fa-font-path: '../fonts/fontawesome';
 
-@import 'abstracts/variables',
-'abstracts/mixins';
-
-@import 'base/base',
-'base/typography',
-'base/colors',
-'base/animations',
-'base/wordpress';
-
-@import 'components/buttons',
-'components/forms';
-
-@import 'layout/columns',
-'layout/navigation',
-'layout/site-header',
-'layout/site-main',
-'layout/site-footer';
-
-@import 'parts/card',
-'parts/hero',
-'parts/page-header',
-'parts/pagination',
-'parts/search';
-
-@import 'templates/404';
-
-@import 'vendor/fontawesome/fontawesome',
-'vendor/fontawesome/regular.scss',
-'vendor/fontawesome/solid.scss',
-'vendor/fontawesome/brands.scss';
+@use 'abstracts';
+@use 'base';
+@use 'components';
+@use 'layouts';
+@use 'parts';
+@use 'templates';

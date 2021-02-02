@@ -8,11 +8,11 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
-$customTitle = get_field('page_title');
-$customLead = get_field('page_lead');
-$leadChoice = get_field('page_lead-choice')
-
-?>
+if (class_exists('ACF')) {
+    $customTitle = get_field('page_title');
+    $customLead = get_field('page_lead');
+    $leadChoice = get_field('page_lead-choice');
+} ?>
 
 <header class="page-header">
     <div class="container-wide">

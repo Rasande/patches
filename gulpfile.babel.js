@@ -1,12 +1,12 @@
 import {
-  src,
-  dest,
-  watch,
-  series,
-  parallel
+    src,
+    dest,
+    watch,
+    series,
+    parallel
 } from 'gulp';
 import yargs from 'yargs';
-import sass from 'gulp-sass';
+import sass from 'gulp-dart-sass';
 import cleanCss from 'gulp-clean-css';
 import gulpif from 'gulp-if';
 import postcss from 'gulp-postcss';
@@ -22,18 +22,18 @@ const server = browserSync.create();
 
 // Browsersync
 export const bs = done => {
-  server.init({
-    proxy: "http://localhost/",
-    notify: false,
-    open: false
-  });
-  done();
+    server.init({
+        proxy: "http://localhost/",
+        notify: false,
+        open: false
+    });
+    done();
 };
 
 // Reload browser
 export const reload = done => {
-  server.reload();
-  done();
+    server.reload();
+    done();
 };
 
 // Clean the assets folder
@@ -42,67 +42,67 @@ export const clean = () => del(['assets/js', 'assets/css']);
 // Run gulp styles to compile sass files
 // Run gulp styles --prod to also minify 
 export const styles = () => {
-  return src(['src/styles/style.scss', 'src/styles/editor-style.scss'])
-    .pipe(gulpif(PRODUCTION, sourcemaps.init()))
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulpif(PRODUCTION, postcss([autoprefixer])))
-    .pipe(gulpif(PRODUCTION, cleanCss({
-      compatibility: 'ie8'
-    })))
-    .pipe(gulpif(PRODUCTION, sourcemaps.write()))
-    .pipe(dest('assets/css'))
-    .pipe(server.stream());
+    return src(['src/styles/style.scss', 'src/styles/editor-style.scss'])
+        .pipe(gulpif(PRODUCTION, sourcemaps.init()))
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulpif(PRODUCTION, postcss([autoprefixer])))
+        .pipe(gulpif(PRODUCTION, cleanCss({
+            compatibility: 'ie8'
+        })))
+        .pipe(gulpif(PRODUCTION, sourcemaps.write()))
+        .pipe(dest('assets/css'))
+        .pipe(server.stream());
 }
 
 // Run gulp scripts to compile js files
 // Run gulp scripts --prod to also minify 
 export const scripts = () => {
-  return src(['src/scripts/script.js', 'src/scripts/scriptDesktop.js'])
-    .pipe(named())
-    .pipe(webpack({
-      module: {
-        rules: [{
-          test: /\.js$/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env']
-            }
-          }
-        }]
-      },
-      mode: PRODUCTION ? 'production' : 'development',
-      devtool: PRODUCTION ? 'inline-source-map' : true,
-      output: {
-        filename: '[name].js'
-      },
-      externals: {
-        jquery: 'jQuery'
-      },
-    }))
-    .on('error', function handleError() {
-      this.emit('end'); // Recover from errors
-    })
-    .pipe(dest('assets/js'));
+    return src(['src/scripts/script.js', 'src/scripts/scriptDesktop.js'])
+        .pipe(named())
+        .pipe(webpack({
+            module: {
+                rules: [{
+                    test: /\.js$/,
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env']
+                        }
+                    }
+                }]
+            },
+            mode: PRODUCTION ? 'production' : 'development',
+            devtool: PRODUCTION ? 'inline-source-map' : true,
+            output: {
+                filename: '[name].js'
+            },
+            externals: {
+                jquery: 'jQuery'
+            },
+        }))
+        .on('error', function handleError() {
+            this.emit('end'); // Recover from errors
+        })
+        .pipe(dest('assets/js'));
 }
 
 // Copy files from src to assets
 export const copy = () => {
-  return src(['src/**/*', '!src/{scripts,styles}', '!src/{scripts,styles}/**/*'])
-    .pipe(dest('assets'));
+    return src(['src/**/*', '!src/{scripts,styles}', '!src/{scripts,styles}/**/*'])
+        .pipe(dest('assets'));
 }
 
 export const vendor = () => {
-  return src(['src/scripts/vendor/**/*'])
-    .pipe(dest('assets/js/vendor'));
+    return src(['src/scripts/vendor/**/*'])
+        .pipe(dest('assets/js/vendor'));
 }
 
 // Watch
 export const watcher = () => {
-  watch('src/styles/**/*.scss', styles);
-  watch('src/scripts/**/*.js', series(scripts, reload));
-  watch(['src/**/*', '!src/{scripts,styles}', '!src/{scripts,styles}/**/*'], series(copy, reload));
-  watch("**/*.php", reload);
+    watch('src/styles/**/*.scss', styles);
+    watch('src/scripts/**/*.js', series(scripts, reload));
+    watch(['src/**/*', '!src/{scripts,styles}', '!src/{scripts,styles}/**/*'], series(copy, reload));
+    watch("**/*.php", reload);
 }
 
 // Start dev environment

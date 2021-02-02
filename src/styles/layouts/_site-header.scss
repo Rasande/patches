@@ -1,3 +1,6 @@
+@use '../abstracts/variables'as *;
+@use '../abstracts/mixins'as *;
+
 .site-header {
     top: 0;
     width: 100%;
@@ -38,7 +41,7 @@
     .custom-logo {
         max-width: 80px;
 
-        @include respond-above(md) {
+        @include mq(md) {
             max-width: 130px;
         }
     }
@@ -61,7 +64,7 @@
     }
 
     .navigation__toggle {
-        @include respond-above($navbar-expand) {
+        @include mq($navbar-expand) {
             display: none;
         }
     }

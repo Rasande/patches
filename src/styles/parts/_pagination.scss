@@ -1,3 +1,7 @@
+@use '../abstracts/variables'as *;
+@use '../abstracts/mixins'as *;
+@use '../components/buttons'as *;
+
 .pagination {
     display: flex;
     padding: $spacer 0;

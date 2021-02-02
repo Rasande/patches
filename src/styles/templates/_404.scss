@@ -1,4 +1,6 @@
-// 404 page
+@use '../abstracts/variables'as *;
+@use '../abstracts/mixins'as *;
+
 .page-404 {
     display: flex;
     justify-content: center;

@@ -1,3 +1,7 @@
+@use '../abstracts/variables'as *;
+@use '../abstracts/mixins'as *;
+@use '../base/typography'as *;
+
 .card {
     margin-bottom: $spacer-2;
 
@@ -5,30 +9,35 @@
         width: auto;
         background-color: $grey;
     }
+
     &__content {
         &--title {
             h2 {
                 @extend .h5;
                 width: 100%;
                 margin: 0;
-         
+
 
             }
         }
+
         &--category {
             padding: $spacer-half 0;
             color: $primary;
             text-transform: uppercase;
             font-size: $font-size-sm;
-         
+
         }
+
         &--date {
             text-transform: uppercase;
             font-size: $font-size-sm;
         }
+
         &--read {
             font-size: $font-size-sm;
         }
+
         .wrapper {
             display: flex;
             justify-content: space-between;
