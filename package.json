@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "npx npm-force-resolutions",
-    "start": "gulp --prod",
+    "start": "gulp",
     "build": "gulp build --prod"
   },
   "resolutions": {
-    "yargs-parser": "19.0.1"
+    "yargs-parser": "^20.2.4"
   },
   "repository": {
     "type": "git",
@@ -18,27 +18,25 @@
   "author": "Andreas Jansson",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.11.1",
-    "@babel/preset-env": "^7.11.0",
-    "@babel/register": "^7.10.5",
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/register": "^7.12.13",
     "autoprefixer": "^9.8.6",
-    "babel-loader": "^8.1.0",
-    "browser-sync": "^2.26.12",
+    "babel-loader": "^8.2.2",
+    "browser-sync": "^2.26.14",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-dart-sass": "^1.0.2",
     "gulp-if": "^3.0.0",
     "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "serialize-javascript": "^3.1.0",
+    "socket.io": ">=2.4.0",
     "vinyl-named": "^1.1.0",
     "webpack-stream": "^5.2.1",
     "yargs": "^15.4.1",
     "yargs-parser": "^19.0.1"
   },
-  "dependencies": {
-    "disable-scroll": "^0.6.0"
-  }
+  "dependencies": {}
 }

@@ -1,0 +1,17 @@
+@use '../abstracts/variables'as *;
+
+#breadcrumbs {
+    font-size: $font-size-sm;
+    font-weight: 700;
+    color: $color-secondary;
+    padding: $space-md 0;
+    margin-bottom: $space-md;
+
+    a {
+        color: $color-primary;
+
+        &:hover {
+            color: $color-secondary
+        }
+    }
+}

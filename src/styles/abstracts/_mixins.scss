@@ -1,11 +1,10 @@
 @use '../abstracts/variables'as *;
 
-// Respond above.
+// Media queries.
 @mixin mq($breakpoint) {
 
-    @if map-has-key($break, $breakpoint) {
-
-        $breakpoint-value: map-get($break, $breakpoint);
+    @if map-has-key($breakpoints, $breakpoint) {
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
 
         @media only screen and (min-width: $breakpoint-value) {
             @content;
@@ -17,19 +16,11 @@
     }
 }
 
-// FLUID TYPE
-//
-// @example 
-// h1 {
-//    @include fluid-type(h1, sm, md)
-// }
-//
-@mixin fluid-type($size, $min-range, $max-range) {
+// Fluid type
+@mixin fluid-type($min-fs-value, $max-fs-value, $min-range, $max-range) {
 
-    $min-fs-value: map-get($font-sizes-min, $size);
-    $max-fs-value: map-get($font-sizes-max, $size);
-    $min-range-value: map-get($break, $min-range);
-    $max-range-value: map-get($break, $max-range);
+    $min-range-value: map-get($breakpoints, $min-range);
+    $max-range-value: map-get($breakpoints, $max-range);
 
     font-size: calc(#{$min-fs-value} + #{(($max-fs-value / ($max-fs-value * 0 + 1)) - ($min-fs-value / ($min-fs-value * 0 + 1)))} * ((100vw - #{$min-range-value}) / #{(($max-range-value / ($max-range-value * 0 + 1)) - ($min-range-value / ($min-range-value * 0 + 1)))}));
 
@@ -42,22 +33,37 @@
     }
 }
 
-// FLUID TYPE CUSTOM
-//
-// @example 
-// h1 {
-//    @include fluid-type-custom(22px, 38px, 600px, 980px)
-// }
-//
-@mixin fluid-type-custom($min-font-size: 12px, $max-font-size: 21px, $lower-range: 420px, $upper-range: 900px) {
+// Font size and line-height from map
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+    @each $fs-breakpoint, $fs-font-size in $fs-map {
+        @if $fs-breakpoint==null {
+            @include make-font-size($fs-font-size);
+        }
 
-    font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ((100vw - #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
+        @else {
+            @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+                $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+            }
 
-    @media screen and (max-width: $lower-range) {
-        font-size: $min-font-size;
+            @media screen and (min-width: $fs-breakpoint) {
+                @include make-font-size($fs-font-size);
+            }
+        }
+    }
+}
+
+// Utility function for mixin font-size
+@mixin make-font-size($fs-font-size) {
+
+    @if type-of($fs-font-size)=="list" {
+        font-size: nth($fs-font-size, 1);
+
+        @if (length($fs-font-size) > 1) {
+            line-height: nth($fs-font-size, 2);
+        }
     }
 
-    @media screen and (min-width: $upper-range) {
-        font-size: $max-font-size;
+    @else {
+        font-size: $fs-font-size;
     }
 }

@@ -1,26 +1,77 @@
 @use '../abstracts/variables'as *;
 @use '../components/buttons'as *;
 
-input,
+input[type=text],
+input[type=email],
+input[type=search],
 .input,
 textarea,
 .textarea {
     width: 100%;
-    margin-bottom: $spacer-half;
-    border: 1px solid $grey;
+    margin-bottom: $space-sm;
+    border: 1px solid $body-color-secondary;
+    padding: $space-xs;
     outline: none;
     font-size: $font-size-base;
-    background-color: $light;
-    color: $dark;
+    background-color: $color-light;
+    color: $color-dark;
     resize: vertical;
 }
 
 input[type=submit] {
     @extend .btn;
-    @extend .btn-secondary;
+    @extend .btn-primary;
     width: auto;
+}
+
+select {
+    width: 100%;
+    background-color: $color-light;
+    margin-bottom: $space-sm;
+    padding: $space-xs;
 }
 
 label {
     font-size: $font-size-sm;
+    color: $body-color-secondary;
+}
+
+/* CF7 */
+.wpcf7 {
+    .wpcf7-checkbox {
+        text-align: center;
+    }
+
+    .wpcf7-list-item {
+        margin-bottom: $space-xs;
+    }
+
+    .wpcf7-submit {
+        margin-top: $space-lg;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .wpcf7-form.invalid .wpcf7-response-output {
+        border: none;
+        padding: $space-sm;
+        color: $color-light;
+        background-color: $color-danger;
+    }
+
+    .wpcf7-form.failed .wpcf7-response-output {
+        border: none;
+        padding: $space-sm;
+        color: $color-light;
+        background-color: $color-warning;
+    }
+
+    .wpcf7-form.sent .wpcf7-response-output {
+        border: none;
+        padding: $space-sm;
+        color: $color-light;
+        background-color: $color-success;
+    }
 }

@@ -1,3 +1,14 @@
+@use '../abstracts/variables'as *;
+
 .site-main {
     min-height: 90vh;
+
+    a {
+        color: $link-color;
+        text-decoration-skip-ink: auto;
+
+        &:hover {
+            color: $link-hover-color;
+        }
+    }
 }

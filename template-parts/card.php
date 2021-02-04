@@ -5,9 +5,7 @@
  * 
  */
 
-// Exit if accessed directly.
-defined('ABSPATH') || exit;
-?>
+defined('ABSPATH') || exit; ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('entry card the-card'); ?>>
     <a href="<?php echo get_permalink(); ?>">
@@ -32,8 +30,6 @@ defined('ABSPATH') || exit;
                     <?php the_title(); ?>
                 </a></h2>
         </div>
-
-
 
     </div>
 </article>

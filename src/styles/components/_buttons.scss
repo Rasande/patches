@@ -1,13 +1,12 @@
 @use '../abstracts/variables'as *;
 
 button,
-.btn,
-input[type="submit"] {
+.btn {
     display: inline-block;
     border-style: none;
     border-radius: 0;
     outline: none;
-    padding: $spacer-half $spacer;
+    padding: $space-sm $space-md;
     transition: all .25s ease;
     cursor: pointer;
 }
@@ -31,8 +30,8 @@ input[type="submit"] {
 
     &:hover,
     &:focus {
-        color: darken($primary, 8%);
-        border-color: darken($primary, 8%);
+        color: darken($color-primary, 8%);
+        border-color: darken($color-primary, 8%);
     }
 }
 
@@ -40,7 +39,7 @@ input[type="submit"] {
 $color in $theme-colors {
     .btn-#{$name} {
         background-color: $color;
-        color: $light;
+        color: $color-light;
 
         &:hover,
         &:focus {

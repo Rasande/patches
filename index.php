@@ -5,10 +5,9 @@
  * 
  */
 
-// Exit if accessed directly.
-defined('ABSPATH') || exit;
+defined('ABSPATH') || exit; ?>
 
-get_header(); ?>
+<?php get_header(); ?>
 
 <!-- Site content -->
 <main class="site-main">
@@ -28,8 +27,10 @@ get_header(); ?>
             <?php endwhile; ?>
         <?php endif; ?>
 
-
     </div>
+
+    <?php get_template_part('template-parts/pagination'); ?>
+
 </main>
 
 <?php get_footer(); ?>

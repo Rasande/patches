@@ -1,40 +1,147 @@
 @use '../abstracts/variables'as *;
 @use '../abstracts/mixins'as *;
 
-/* Box sizing rules */
+:root {
+
+    @each $name,
+    $color in $theme-colors {
+        --#{$name}: #{$color};
+    }
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
 html {
     font-size: 10px;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba($dark, 0);
-    -webkit-font-smoothing: auto;
 }
 
-/* Set core body defaults */
 body {
     width: 100%;
     min-height: 100vh;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    text-rendering: optimizeSpeed;
-}
-
-body, h1, h2, h3, h4, p, li, figure, figcaption, blockquote, dl, dd {
     margin: 0;
+    color: $body-color;
+    font-size: $font-size-base;
+    font-family: $font-primary;
+    background-color: $body-bg;
+    overflow-y: scroll;
 }
 
-ul[class], ol[class] {
+// Typography
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: $space-sm;
+    font-family: $font-secondary;
+    line-height: $line-height-heading;
+
+}
+
+h1, .h1 {
+    @include font-size($font-sizes-h1);
+}
+
+h2, .h2 {
+    @include font-size($font-sizes-h2);
+}
+
+h3, .h3 {
+    @include font-size($font-sizes-h3);
+}
+
+h4, .h4 {
+    @include font-size($font-sizes-h4);
+}
+
+h5, .h5 {
+    font-size: $font-size-base;
+}
+
+h6, .h6, small, .small {
+    font-size: $font-size-sm;
+}
+
+.display {
+    @include font-size($font-sizes-display);
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: $space-md;
+    line-height: $line-height-base;
+}
+
+b, strong, .bold {
+    font-weight: bold;
+}
+
+pre, code, kbd, samp {
+    font-family: $font-mono;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+cite {
+    font-size: $font-size-sm;
+    color: $body-color-secondary;
+}
+
+hr {
+    width: 50%;
+    border-top: 1px solid $body-color-secondary;
+}
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// lists
+ul, ol {
+    margin: 0;
     padding: 0;
-    list-style: none;
+    list-style-position: inside;
 }
 
+// Images
 img {
     max-width: 100%;
     display: block;
     height: auto;
+}
+
+figure {
+    margin: 0;
+}
+
+figcaption {
+    color: $body-color-secondary;
+    font-size: $font-size-sm;
+}
+
+// Selection
+::selection {
+    color: $selection-color;
+    background: $selection-bg;
+}
+
+// Accessibility
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+    word-break: normal;
 }
 
 @media (prefers-reduced-motion: reduce) {

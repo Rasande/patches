@@ -5,7 +5,6 @@
  * 
  */
 
-// Exit if accessed directly.
 defined('ABSPATH') || exit;
 
 if (class_exists('ACF')) {

@@ -5,12 +5,10 @@
  * 
  */
 
-// Exit if accessed directly.
 defined('ABSPATH') || exit;
 
 // Clean up Wordpress head
 if (!function_exists('rasande_cleanup')) {
-
     function rasande_cleanup()
     {
         // Remove extra links
@@ -42,7 +40,6 @@ if (!function_exists('rasande_cleanup')) {
 
 // Archive post order
 if (!function_exists('rasande_archive_order')) {
-
     function rasande_archive_order($query)
     {
         if (is_archive()) :

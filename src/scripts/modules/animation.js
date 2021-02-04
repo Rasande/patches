@@ -1,6 +1,5 @@
-import anime from '../vendor/anime.min.js'
-import waypoint from '../vendor/noframework.waypoints.min.js'
-
+import anime from '../vendor/anime.js'
+import waypoint from '../vendor/noframework.waypoints.js'
 class Animations {
 
     constructor() {
@@ -11,10 +10,10 @@ class Animations {
         const odds = document.querySelectorAll('.odd')
         const evens = document.querySelectorAll('.even')
 
-        evens.forEach(function (element) {
+        evens.forEach(function(element) {
             new Waypoint({
                 element: element,
-                handler: function () {
+                handler: function() {
                     anime({
                         targets: this.element,
                         opacity: [0, 1],
@@ -29,10 +28,10 @@ class Animations {
             })
         })
 
-        odds.forEach(function (element) {
+        odds.forEach(function(element) {
             new Waypoint({
                 element: element,
-                handler: function () {
+                handler: function() {
                     anime({
                         targets: this.element,
                         opacity: [0, 1],

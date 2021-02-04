@@ -1,96 +1,60 @@
-/* -------------------------------- 
+// Typography
+$font-primary: sans-serif;
+$font-secondary: serif;
+$font-mono: SFMono-Regular, monospace;
 
-Typography
+$font-size-base: 1.6rem;
+$font-size-sm: 1.4rem;
+$font-sizes-display: (null: 3.2rem, sm: 4.2, md: 6.2rem);
+$font-sizes-h1: (null: 2.9rem, sm: 3.9rem, md: 4.9rem);
+$font-sizes-h2: (null: 2.5rem, sm: 3.2rem, md: 3.9rem);
+$font-sizes-h3: (null: 2.2rem, sm: 2.6rem, md: 3.1rem);
+$font-sizes-h4: (null: 1.8rem, sm: 2.2rem, md: 2.5rem);
 
--------------------------------- */
+$line-height-base: 1.5;
+$line-height-heading: 1.25;
 
-$font-primary: sans-serif !default;
-$font-secondary: serif !default;
-$font-mono: SFMono-Regular,
-monospace !default;
+// Colors
+$color-primary: #a81010;
+$color-secondary: #790b0b;
+$color-tertiary: red;
+$color-quaternary:#f0b434;
+$color-light: #fffbff;
+$color-dark: #252525;
 
-$font-size-base: 16px !default;
-$font-size-sm: 14px !default;
+$color-success: #6cbd7f;
+$color-warning: #ffc107;
+$color-danger: #dc3545;
 
-$line-height-base: 1.5 !default;
-$line-height-heading: 1.25 !default;
+$body-bg: $color-light;
+$body-color: $color-dark;
+$body-color-secondary: #a1a1a1;
+$link-color: $color-primary;
+$link-hover-color: $color-secondary;
+$selection-color: $color-light;
+$selection-bg: #3297FD;
 
-$font-sizes-min: (h1: 29px, h2: 25px, h3: 22px, h4: 18px, h5: 16px, h6: $font-size-sm) !default;
+$theme-colors: (primary, $color-primary), (secondary, $color-secondary), (tertiary, $color-tertiary), (quaternary, $color-quaternary), (light, $color-light), (dark, $color-dark);
 
-$font-sizes-max: (h1: 49px, h2: 39px, h3: 31px, h4: 25px, h5: 20px, h6: $font-size-sm) !default;
+// Breakpoints
+$breakpoints: (xs: 576px, sm: 680px, md: 960px, lg: 1680px, xl: 1920px);
 
-/* -------------------------------- 
+// Sizing
+$space-unit: 2rem;
 
-Colors
-
--------------------------------- */
-
-$primary: #21209c !default;
-$primary-variant: lighten($primary, 15%) !default;
-
-$secondary: #23120b !default;
-$secondary-variant: lighten($secondary, 15%) !default;
-
-$accent: #fdb827 !default;
-$accent-variant: lighten($accent, 15%) !default;
-
-$light: #fffbff !default;
-$dark: #212121 !default;
-$grey: #929292 !default;
-
-$theme-colors: (primary, $primary), (secondary, $secondary), (accent, $accent), (light, $light), (dark, $dark), (disable, $grey);
-
-$success: #6cbd7f !default;
-$warning: #ffc107 !default;
-$danger: #dc3545 !default;
-
-$body-bg: $light !default;
-$body-color: $dark !default;
-$body-color-secondary: $grey !default;
-
-$link-color: $primary !default;
-$link-hover-color: $primary-variant !default;
-
-$selection-bg: #3297FD !default;
-$selection-color: $light !default;
-
-/* -------------------------------- 
-
-Breakpoints & Sizing
-
--------------------------------- */
-
-$break: (xs: 576px, sm: 680px, md: 960px, lg: 1680px, xl: 1920px) !default;
-
-$navbar-expand: md !default;
-
-$container-width: map-get($break, "sm") !default;
-$container-wide-width: map-get($break, "md") !default;
-$container-large-width: map-get($break, "lg") !default;
-
-// Spacing 
-$spacer: 2rem !default;
-$spacer-half: $spacer * .5 !default;
-$spacer-2: $spacer * 2 !default;
-$spacer-4: $spacer * 4 !default;
+$space-xs: $space-unit * .25;
+$space-sm: $space-unit * .75;
+$space-md: $space-unit * 1.25;
+$space-lg: $space-unit * 2;
+$space-xl: $space-unit * 3.25;
+$space-xxl: $space-unit * 5.25;
 
 // Grid
-$grid-gutter-width: $spacer-2 !default;
-$grid-outer-margin: $spacer !default;
-$grid-gutter-compensation: $grid-outer-margin / 2 !default;
-$grid-gutter-halfWidth: $grid-gutter-width / 2 !default;
+$container: map-get($breakpoints, "sm");
+$container-wide: map-get($breakpoints, "md");
+$container-lg: map-get($breakpoints, "lg");
+$grid-gutter: $space-lg;
+$grid-margin: $grid-gutter / 2;
 
-/* -------------------------------- 
-
-Navigation
-
--------------------------------- */
-
-$nav-link-color: $dark;
-
-// Hamburger icon
-$hamburger-layer-width: 25px;
-$hamburger-layer-height : 3px;
-$hamburger-layer-color: $nav-link-color;
-$hamburger-layer-border-radius : 0px;
-$hamburger-types: (squeeze);
+// Navigation
+$navbar-expand: md;

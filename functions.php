@@ -5,7 +5,6 @@
  * 
  */
 
-// Exit if accessed directly.
 defined('ABSPATH') || exit;
 
 // Variables
@@ -13,7 +12,6 @@ $odd_or_even = 'odd';
 
 // Theme setup
 if (!function_exists('rasande_theme_support')) {
-
 	function rasande_theme_support()
 	{
 		// Setup for translation
@@ -113,23 +111,21 @@ if (!function_exists('rasande_theme_support')) {
 		add_image_size('page-header', 1020, 650, array('center', 'center'));
 		// Register menus
 		register_nav_menus(array(
-			'primary' => __('Primary Menu', 'rasande'),
+			'desktop' => __('Desktop Menu', 'rasande'),
 			'mobile' => __('Mobile Menu', 'rasande')
 		));
 	}
-
 	add_action('after_setup_theme', 'rasande_theme_support');
 }
 
 // Register widget ares
 if (!function_exists('rasande_widgets_init')) {
-
 	function rasande_widgets_init()
 	{
 		register_sidebar(array(
 			'name' => __('Footer column 1', 'rasande'),
 			'id' => 'footer-1',
-			'before_widget' => '<div>',
+			'before_widget' => '<div class="footer-widget">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3>',
 			'after_title' => '</h3>',
@@ -137,7 +133,7 @@ if (!function_exists('rasande_widgets_init')) {
 		register_sidebar(array(
 			'name' => __('Footer column 2', 'rasande'),
 			'id' => 'footer-2',
-			'before_widget' => '<div>',
+			'before_widget' => '<div class="footer-widget">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3>',
 			'after_title' => '</h3>',
@@ -145,7 +141,7 @@ if (!function_exists('rasande_widgets_init')) {
 		register_sidebar(array(
 			'name' => __('Footer column 3', 'rasande'),
 			'id' => 'footer-3',
-			'before_widget' => '<div>',
+			'before_widget' => '<div class="footer-widget">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3>',
 			'after_title' => '</h3>',
@@ -156,7 +152,6 @@ if (!function_exists('rasande_widgets_init')) {
 
 // Enqueue styles
 if (!function_exists('rasande_styles')) {
-
 	function rasande_styles()
 	{
 		$theme_version = wp_get_theme()->get('Version');
@@ -168,24 +163,13 @@ if (!function_exists('rasande_styles')) {
 
 // Enqueue scripts
 if (!function_exists('rasande_scripts')) {
-
 	function rasande_scripts()
 	{
 
 		$theme_version = wp_get_theme()->get('Version');
 
-		wp_register_script('anime', get_template_directory_uri() . '/assets/js/vendor/anime.min.js', array(), false, true);
-		//wp_enqueue_script('anime');
-
-		wp_register_script('waypoints', get_template_directory_uri() . '/assets/js/vendor/noframework.waypoints.min.js', array(), false, true);
-		//wp_enqueue_script('waypoints');
-
 		wp_register_script('rasande-script', get_template_directory_uri() . '/assets/js/script.js', array(), $theme_version, true);
 		wp_enqueue_script('rasande-script');
-
-		if (!wp_is_mobile()) {
-			wp_enqueue_script('rasande-desktop-script', get_template_directory_uri() . '/assets/js/scriptDesktop.js', array(), $theme_version, true);
-		}
 
 		if (is_singular() && comments_open() && get_option('thread_comments')) {
 			wp_enqueue_script('comment-reply');

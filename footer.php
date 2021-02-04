@@ -5,20 +5,14 @@
  *
  */
 
-// Exit if accessed directly.
-defined('ABSPATH') || exit;
-?>
+defined('ABSPATH') || exit; ?>
 
 <!-- Site footer -->
 <footer class="site-footer">
 
-	<div class="site-footer__top">
-
-	</div>
-
 	<div class="site-footer__center">
-		<div class="container-lg">
-			<div class="columns">
+		<div class="container-wide">
+			<div class="grid">
 
 				<!-- Footer Column 1 -->
 				<div class="col-12 col-sm-6 col-md-4">

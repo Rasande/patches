@@ -1,9 +1,0 @@
-@use '../abstracts/variables'as *;
-
-:root {
-
-    @each $name,
-    $color in $theme-colors {
-        --#{$name}: #{$color};
-    }
-}

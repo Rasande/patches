@@ -4,16 +4,20 @@
 .site-header {
     top: 0;
     width: 100%;
-    background-color: $light;
-    color: $dark;
+    background-color: $color-light;
+    color: $color-dark;
     z-index: 999;
 
     a,
     button {
-        pointer-events: all;
-        color: inherit;
+        color: $color-dark;
         text-decoration: none;
+        pointer-events: all;
         cursor: pointer;
+
+        &:hover {
+            color: $link-hover-color;
+        }
     }
 
     &.is-fixed {
@@ -26,46 +30,5 @@
         position: relative;
         display: flex;
         align-items: center;
-    }
-}
-
-// Brand
-
-.site-header__brand {
-    display: block;
-    margin: 0 auto 0 0;
-    padding: $spacer-half $spacer-half $spacer-half 0;
-    font-weight: 700;
-    line-height: 1;
-
-    .custom-logo {
-        max-width: 80px;
-
-        @include mq(md) {
-            max-width: 130px;
-        }
-    }
-}
-
-// Controls
-
-.site-header__controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .search__toggle {
-        transition: transform .25s ease;
-        background-color: transparent;
-
-        &.is-active {
-            transform: rotate(90deg);
-        }
-    }
-
-    .navigation__toggle {
-        @include mq($navbar-expand) {
-            display: none;
-        }
     }
 }

@@ -97,11 +97,11 @@ class MobileMenu {
 
             targetMenu.style.height = '0px';
 
-            setTimeout(function () {
+            setTimeout(function() {
                 targetMenu.style.height = height;
             }, 0);
 
-            targetMenu.addEventListener('transitionend', function () {
+            targetMenu.addEventListener('transitionend', function() {
                 targetMenu.removeAttribute('style')
             }, {
                 once: true
@@ -113,11 +113,11 @@ class MobileMenu {
             let height = targetMenu.clientHeight + 'px';
             targetMenu.style.height = height;
 
-            setTimeout(function () {
+            setTimeout(function() {
                 targetMenu.style.height = '0px';
             }, 0);
 
-            targetMenu.addEventListener('transitionend', function () {
+            targetMenu.addEventListener('transitionend', function() {
                 targetMenu.classList.remove('is-open');
                 targetMenu.removeAttribute('style')
             }, {

@@ -1,45 +1,37 @@
 @use '../abstracts/variables'as *;
 @use '../abstracts/mixins'as *;
-@use '../base/typography'as *;
 
 .site-footer {
-    padding: $spacer-4 0 $spacer-2;
-    margin-top: $spacer-4;
-    background-color: $dark;
-    color: $light;
-    font-size: 1.8rem;
+    margin-top: $space-xl;
+    padding: $space-xl 0 $space-lg;
+    background-color: $color-dark;
+    color: $color-light;
 
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        @extend .h5;
+    a {
+        color: $color-light;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+    h2, h3, h4, h5, h6 {
+        @include font-size($font-sizes-h3);
     }
 
     ul {
         list-style: none;
         padding-left: 0;
     }
-
-    a {
-        color: $grey;
-
-        &:hover {
-            color: $primary;
-        }
-    }
 }
 
-.site-footer__top {}
-
-.site-footer__center {}
-
-.site-footer__bottom {}
+.footer-widget {
+    margin-bottom: $space-md;
+}
 
 .copyright {
-    padding: $spacer-2 0 0;
+    padding: $space-lg 0 0;
     font-size: $font-size-sm;
-    color: $primary;
+    color: $body-color-secondary;
     text-align: center;
 }

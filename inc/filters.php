@@ -5,12 +5,10 @@
  * 
  */
 
-// Exit if accessed directly.
 defined('ABSPATH') || exit;
 
 // Cleanup archive titles
 if (!function_exists('rasande_archive_titles')) {
-
     function rasande_archive_titles($title)
     {
         if (is_category()) {
@@ -55,7 +53,6 @@ if (!function_exists('rasande_remove_hentry_class')) {
 
 // Fix svg size attributes
 if (!function_exists('rasande_svg_attr')) {
-
     function rasande_svg_attr($out, $id)
     {
         $image_url  = wp_get_attachment_url($id);
@@ -76,4 +73,16 @@ if (!function_exists('rasande_pagination_attr')) {
     }
     add_filter('next_posts_link_attributes', 'rasande_pagination_attr');
     add_filter('previous_posts_link_attributes', 'rasande_pagination_attr');
+}
+
+// Wrap html-block with custom div
+if (!function_exists('rasande_wrap_html_block')) {
+    function rasande_wrap_html_block($block_content, $block)
+    {
+        if ('core/html' === $block['blockName']) {
+            $block_content = '<div class="wp-block-html">' . $block_content . '</div>';
+        }
+        return $block_content;
+    }
+    add_filter('render_block', 'rasande_wrap_html_block', 10, 2);
 }

@@ -1,40 +1,43 @@
 @use '../abstracts/variables'as *;
 @use '../abstracts/mixins'as *;
 
-.container-fluid,
-.container,
-.container-wide,
-.container-lg {
+.container, .container-wide, .container-lg, .container-fluid {
     margin-right: auto;
     margin-left: auto;
     width: 100%;
-    padding-right: $grid-outer-margin;
-    padding-left: $grid-outer-margin;
+    padding-right: $grid-margin;
+    padding-left: $grid-margin;
 }
 
 .container {
-    max-width: $container-width;
+    max-width: $container;
 }
 
 .container-wide {
     width: 100%;
-    max-width: $container-wide-width;
+    max-width: $container-wide;
 }
 
 .container-lg {
     width: 100%;
-    max-width: $container-large-width;
+    max-width: $container-lg;
 }
 
-.columns {
+.container-full {
+    width: 100vw;
+    max-width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.grid {
     position: relative;
-    box-sizing: border-box;
     display: flex;
     flex: 0 1 auto;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-right: -$grid-gutter-compensation;
-    margin-left: -$grid-gutter-compensation;
+    margin-right: -$grid-gutter / 2;
+    margin-left: -$grid-gutter / 2;
 }
 
 .col,
@@ -63,10 +66,9 @@
 .col-offset-10,
 .col-offset-11,
 .col-offset-12 {
-    box-sizing: border-box;
     flex: 1 1 0px;
-    padding-right: $grid-gutter-halfWidth;
-    padding-left: $grid-gutter-halfWidth;
+    padding-right: $grid-gutter / 2;
+    padding-left: $grid-gutter / 2;
 }
 
 .col {
@@ -254,10 +256,9 @@
     .col-sm-offset-10,
     .col-sm-offset-11,
     .col-sm-offset-12 {
-        box-sizing: border-box;
         flex: 1 1 0px;
-        padding-right: $grid-gutter-halfWidth;
-        padding-left: $grid-gutter-halfWidth;
+        padding-right: $grid-gutter / 2;
+        padding-left: $grid-gutter / 2;
     }
 
     .col-sm {
@@ -446,10 +447,9 @@
     .col-md-offset-10,
     .col-md-offset-11,
     .col-md-offset-12 {
-        box-sizing: border-box;
         flex: 1 1 0px;
-        padding-right: $grid-gutter-halfWidth;
-        padding-left: $grid-gutter-halfWidth;
+        padding-right: $grid-gutter / 2;
+        padding-left: $grid-gutter / 2;
     }
 
     .col-md {
@@ -638,10 +638,9 @@
     .col-lg-offset-10,
     .col-lg-offset-11,
     .col-lg-offset-12 {
-        box-sizing: border-box;
         flex: 1 1 0px;
-        padding-right: $grid-gutter-halfWidth;
-        padding-left: $grid-gutter-halfWidth;
+        padding-right: $grid-gutter / 2;
+        padding-left: $grid-gutter / 2;
     }
 
     .col-lg {

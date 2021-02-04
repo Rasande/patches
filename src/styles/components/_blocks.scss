@@ -1,81 +1,53 @@
 @use '../abstracts/variables'as *;
 @use '../abstracts/mixins'as *;
-@use '../base/typography'as *;
-@use '../layouts/columns'as *;
+@use '../layouts/grid'as *;
 @use '../components/buttons'as *;
 
-/* -------------------------------- 
-
-Blocks
-
--------------------------------- */
 .block-content {
 
-    // Alignment
-    &>*,
-    .wp-block {
+    &>* {
         @extend .container;
-        word-break: break-word;
     }
 
+    &>[class^="wp-block-"] {
+        margin-bottom: $space-lg;
+    }
+
+    // Alignment
     .alignwide,
-    .alignwide *,
     .wp-block[data-align="wide"] {
         @extend .container-wide;
-        word-break: break-word;
     }
 
-    .alignfull,
-    .wp-block[data-align="full"] {
-        margin: $spacer-2 calc(50% - 50vw);
-        max-width: 100vw !important;
-        width: 100vw !important;
-        padding-right: 0 !important;
-        padding-left: 0 !important;
+    .alignfull, [class^="wp-block-"][data-align="full"] {
+        @extend .container-full;
     }
 
-    // Lists
-    ul:not(.blocks-gallery-grid),
-    ol {
-        padding-left: $spacer-2;
-        list-style-position: inside;
-    }
-
-    // Columns
+    // Columns block
     .wp-block-columns {
         margin-bottom: 0;
 
         .wp-block-column {
-            margin-bottom: $spacer-2;
+            margin-bottom: $space-sm;
+
+            &:last-of-type {
+                margin-bottom: $space-md;
+            }
+        }
+
+        p {
+            margin-bottom: 0;
         }
     }
 
-    // Preformatted block
-    .wp-block-preformatted,
-    .wp-block-verse {
-        white-space: pre-wrap
-    }
-
-    // Video block
-    .wp-block-video video {
-        width: 100%;
-    }
-
-    // Image block
-    .wp-block-image figcaption {
-        font-size: $font-size-sm;
-        color: $grey;
-    }
-
-    // Socials links
-    .wp-social-link {
-        background-color: $primary !important;
-
-        a {
-            color: $light;
+    // Cover block
+    .wp-block-cover {
+        .wp-block-cover__inner-container {
+            @extend .container-wide;
         }
     }
 
+    // Button block
     .wp-block-button {
         &.is-style-outline {
             .wp-block-button__link {
@@ -119,6 +91,11 @@ Blocks
 
                 &:not(.has-text-color) {
                     color: $body-color;
+
+                    &:hover,
+                    &:focus {
+                        color: darken($color-primary, 8%);
+                    }
                 }
             }
         }
@@ -159,36 +136,72 @@ Blocks
             }
         }
     }
+
+    // Image block
+    .wp-block-image {
+        img {
+            padding: 0;
+        }
+    }
+
+    // List blocks
+    ul:not(.blocks-gallery-grid), ol {
+        margin-bottom: $space-md;
+
+        ul, ol {
+            margin-bottom: 0;
+            padding-left: $space-sm;
+        }
+    }
+
+    // Paragraph block
+    p.has-background {
+        padding-right: $grid-margin;
+        padding-left: $grid-margin;
+    }
+
+    // Preformatted block 
+    .wp-block-preformatted,
+    .wp-block-verse {
+        white-space: pre-wrap
+    }
+
+    // Pullquote block
+    .wp-block-pullquote {
+        cite {
+            color: $body-color-secondary;
+        }
+    }
+
+    // Seperator block
+    .wp-block-separator {
+        max-width: 200px !important;
+        margin-top: $space-lg;
+        margin-bottom: $space-lg;
+    }
+
+    // Social links
+    .wp-social-link a {
+        color: $color-light;
+
+        &:hover {
+            color: $color-light;
+        }
+    }
+
+    // Spacer block
+    .wp-block-spacer {
+        margin-bottom: 0;
+    }
+
+    // Video block
+    .wp-block-video video {
+        width: 100%;
+    }
+
 }
 
-/* -------------------------------- 
-
-Typography
-
--------------------------------- */
-
-.has-small-font-size {
-    font-size: $font-size-sm;
-}
-
-.has-normal-font-size {
-    font-size: $font-size-base;
-}
-
-.has-medium-font-size {
-    @extend .h4;
-}
-
-.has-large-font-size {
-    @extend .h3;
-}
-
-/* -------------------------------- 
-
-Colors
-
--------------------------------- */
-
+// Color classes
 @each $name,
 $color in $theme-colors {
 
@@ -199,4 +212,21 @@ $color in $theme-colors {
     .has-#{$name}-background-color {
         background-color: $color;
     }
+}
+
+// Font-size classes
+.has-small-font-size {
+    font-size: $font-size-sm;
+}
+
+.has-normal-font-size {
+    font-size: $font-size-base;
+}
+
+.has-medium-font-size {
+    @include font-size($font-sizes-h3);
+}
+
+.has-large-font-size {
+    @include font-size($font-sizes-h2);
 }

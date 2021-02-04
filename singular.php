@@ -5,10 +5,9 @@
  * 
  */
 
-// Exit if accessed directly.
-defined('ABSPATH') || exit;
+defined('ABSPATH') || exit; ?>
 
-get_header(); ?>
+<?php get_header(); ?>
 
 <!-- Site content -->
 <main class="site-main">

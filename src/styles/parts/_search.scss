@@ -5,17 +5,17 @@
     position: absolute;
     top: 100%;
     right: 0;
-    padding: $spacer;
+    padding: $space-md;
     width: 100%;
     transform: scaleY(0);
     transform-origin: top;
     transition: transform .4s ease;
-    background: $light;
+    background: $color-light;
     overflow: hidden;
 
     .search__input {
         width: 100%;
-        padding: $spacer-half;
+        padding: $space-sm;
         opacity: 0;
         transition: opacity .25s ease;
     }

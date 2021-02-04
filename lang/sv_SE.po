@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Rasande\n"
-"POT-Creation-Date: 2021-01-08 13:40+0100\n"
-"PO-Revision-Date: 2021-01-08 13:40+0100\n"
+"POT-Creation-Date: 2021-02-04 15:44+0100\n"
+"PO-Revision-Date: 2021-02-04 15:44+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -22,126 +22,118 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 
-#: 404.php:21
-msgid "Sorry, we can't find the page you were looking for."
-msgstr "Något gick snett, sidan du söker verkar inte finnas."
+#: 404.php:20
+msgid "The page cannot be found"
+msgstr "Sidan kan inte hittas"
 
-#: functions.php:71
+#: functions.php:49
 msgid "Primary"
 msgstr "Primär"
 
-#: functions.php:76
+#: functions.php:54
 msgid "Secondary"
-msgstr ""
+msgstr "Sekundär"
 
-#: functions.php:81
+#: functions.php:59
 msgid "Accent"
 msgstr ""
 
-#: functions.php:86
+#: functions.php:64
 msgid "Light"
 msgstr ""
 
-#: functions.php:91
+#: functions.php:69
 msgid "Dark"
 msgstr ""
 
-#: functions.php:96
+#: functions.php:74
 msgid "Grey"
 msgstr ""
 
-#: functions.php:106
+#: functions.php:84
 msgid "Small"
 msgstr ""
 
-#: functions.php:107
+#: functions.php:85
 msgid "S"
 msgstr ""
 
-#: functions.php:112
+#: functions.php:90
 msgid "Normal"
 msgstr ""
 
-#: functions.php:113
+#: functions.php:91
 msgid "N"
 msgstr ""
 
-#: functions.php:118
+#: functions.php:96
 msgid "Medium"
 msgstr ""
 
-#: functions.php:119
+#: functions.php:97
 msgid "M"
 msgstr ""
 
-#: functions.php:124
+#: functions.php:102
 msgid "Large"
 msgstr ""
 
-#: functions.php:125
+#: functions.php:103
 msgid "L"
 msgstr ""
 
-#: functions.php:136
-msgid "Primary Menu"
-msgstr "Primär meny"
+#: functions.php:114
+msgid "Desktop Menu"
+msgstr "Desktopmeny"
 
-#: functions.php:137
+#: functions.php:115
 msgid "Mobile Menu"
 msgstr "Mobilmeny"
 
-#: functions.php:152
+#: functions.php:126
 msgid "Footer column 1"
 msgstr "Fotkolumn 1"
 
-#: functions.php:160
+#: functions.php:134
 msgid "Footer column 2"
 msgstr "Fotkolumn 2"
 
-#: functions.php:168
+#: functions.php:142
 msgid "Footer column 3"
 msgstr "Fotkolumn 3"
 
-#: functions.php:349
-msgid "Custom Blocks"
-msgstr "Anpassade Block"
-
-#: header.php:55
-msgid "Toggle navigation"
-msgstr "Öppna navigation"
-
-#: inc/acf.php:13 inc/acf.php:14
+#: inc/acf.php:11 inc/acf.php:12
 msgid "Theme settings"
-msgstr "Tema inställningar"
+msgstr "Temainställningar"
 
-#: inc/acf.php:41
-msgid "Social Icons"
-msgstr "Sociala Ikoner"
-
-#: inc/acf.php:42
-msgid "Display social media icons."
-msgstr "Visa social media ikoner."
-
-#: inc/navigation-walker.php:59
+#: inc/walkers.php:54
 #, php-format
 msgid "Show submenu for %s"
 msgstr "Visa undermeny för %s"
 
-#: inc/navigation-walker.php:109
+#: inc/walkers.php:104
 msgid "Add a menu"
 msgstr "Lägg till meny"
 
-#: index.php:36
+#: template-parts/controls.php:15
+msgid "Search..."
+msgstr "Sök..."
+
+#: template-parts/controls.php:23
+msgid "Toggle navigation"
+msgstr "Öppna navigation"
+
+#: template-parts/page-header.php:25
+msgid "Search Results For"
+msgstr "Sökresultat för"
+
+#: template-parts/pagination.php:12
 msgid "Newer posts"
 msgstr "Senare inlägg"
 
-#: index.php:39
+#: template-parts/pagination.php:15
 msgid "Older posts"
 msgstr "Tidigare inlägg"
-
-#: template-parts/page-header.php:21
-msgid "Search Results For"
-msgstr "Sökresultat för"
 
 #. Theme Name of the plugin/theme
 msgid "Patches"
@@ -162,6 +154,21 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://rasande.se"
 msgstr ""
+
+#~ msgid "Sorry, we can't find the page you were looking for."
+#~ msgstr "Vi kan tyvärr inte hitta sidan du letade efter."
+
+#~ msgid "Primary Menu"
+#~ msgstr "Primär meny"
+
+#~ msgid "Custom Blocks"
+#~ msgstr "Anpassade Block"
+
+#~ msgid "Social Icons"
+#~ msgstr "Sociala Ikoner"
+
+#~ msgid "Display social media icons."
+#~ msgstr "Visa social media ikoner."
 
 #~ msgid "All articles"
 #~ msgstr "Alla artiklar"

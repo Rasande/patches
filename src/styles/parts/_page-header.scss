@@ -2,17 +2,16 @@
 @use '../abstracts/mixins'as *;
 
 .page-header {
-    padding: 10rem 0 $spacer-2;
-    background: $primary;
-    background: radial-gradient(circle, $primary 0%, $secondary 100%);
-    margin-bottom: $spacer;
+    padding: 10rem 0 $space-lg;
+    background: $color-primary;
+    margin-bottom: $space-lg;
 
     // Title
     &__title {
-        color: $light;
+        color: $color-light;
     }
 
     &__lead {
-        color: $light;
+        color: $color-light;
     }
 }
