@@ -3,12 +3,12 @@
 
 .page-header {
     padding: 10rem 0 $space-lg;
-    background: $color-primary;
+
     margin-bottom: $space-lg;
 
     // Title
     &__title {
-        color: $color-light;
+        color: $heading-color;
     }
 
     &__lead {

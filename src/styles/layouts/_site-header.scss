@@ -8,6 +8,7 @@
     color: $color-dark;
     z-index: 999;
 
+    // Links
     a,
     button {
         color: $color-dark;
@@ -20,11 +21,30 @@
         }
     }
 
+    // Shadow
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        box-shadow: 0 .5rem 1rem -.25em rgba(0, 0, 0, .1);
+        transition: opacity 1s ease;
+        pointer-events: none;
+    }
+
+    // States
     &.is-fixed {
         position: fixed;
     }
 
-    &.is-scrolled {}
+    &.is-scrolled {
+        &::after {
+            opacity: 1;
+        }
+    }
 
     &__inner {
         position: relative;

@@ -4,7 +4,7 @@
 .site-footer {
     margin-top: $space-xl;
     padding: $space-xl 0 $space-lg;
-    background-color: $color-dark;
+    background-color: $color-secondary;
     color: $color-light;
 
     a {
@@ -16,7 +16,8 @@
     }
 
     h2, h3, h4, h5, h6 {
-        @include font-size($font-sizes-h3);
+        @include font-size($font-sizes-h4);
+        color: $color-light;
     }
 
     ul {
@@ -32,6 +33,6 @@
 .copyright {
     padding: $space-lg 0 0;
     font-size: $font-size-sm;
-    color: $body-color-secondary;
+    color: $text-color-secondary;
     text-align: center;
 }

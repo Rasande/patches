@@ -140,9 +140,9 @@ class MobileMenu {
     changeHeader() {
         let scrollPos = window.scrollY
         if (scrollPos >= 75 || this.isMenuOpen) {
-            this.header.classList.add('scrolled')
+            this.header.classList.add('is-scrolled')
         } else {
-            this.header.classList.remove('scrolled')
+            this.header.classList.remove('is-scrolled')
         }
     }
 

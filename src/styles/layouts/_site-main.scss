@@ -2,8 +2,12 @@
 
 .site-main {
     min-height: 90vh;
+    line-break: auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
 
-    a {
+    a:not(.btn):not(.wp-block-button__link) {
         color: $link-color;
         text-decoration-skip-ink: auto;
 

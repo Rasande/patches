@@ -17,7 +17,7 @@ defined('ABSPATH') || exit; ?>
         </div>
 
     </div>
-    <button class="search__toggle btn-clean" aria-expanded="false"><i class="fas fa-search"></i></button>
+    <button class="search__toggle btn-clean" aria-expanded="false"><i class="icon-search"></i></button>
 
     <!-- Hamburger -->
     <button toggle-menu="mobile" class="navigation__toggle hamburger hamburger--squeeze" type="button" aria-label="<?php esc_attr_e('Toggle navigation', 'rasande'); ?>" aria-expanded="false">

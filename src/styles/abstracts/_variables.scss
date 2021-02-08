@@ -1,6 +1,6 @@
 // Typography
-$font-primary: sans-serif;
-$font-secondary: serif;
+$font-primary: 'Verdana', sans-serif;
+$font-secondary: 'Arial', serif;
 $font-mono: SFMono-Regular, monospace;
 
 $font-size-base: 1.6rem;
@@ -9,7 +9,7 @@ $font-sizes-display: (null: 3.2rem, sm: 4.2, md: 6.2rem);
 $font-sizes-h1: (null: 2.9rem, sm: 3.9rem, md: 4.9rem);
 $font-sizes-h2: (null: 2.5rem, sm: 3.2rem, md: 3.9rem);
 $font-sizes-h3: (null: 2.2rem, sm: 2.6rem, md: 3.1rem);
-$font-sizes-h4: (null: 1.8rem, sm: 2.2rem, md: 2.5rem);
+$font-sizes-h4: (null: 1.8rem, sm: 2rem, md: 2.2rem);
 
 $line-height-base: 1.5;
 $line-height-heading: 1.25;
@@ -19,22 +19,27 @@ $color-primary: #a81010;
 $color-secondary: #790b0b;
 $color-tertiary: red;
 $color-quaternary:#f0b434;
-$color-light: #fffbff;
-$color-dark: #252525;
+$color-light: #ffffff;
+$color-dark: #3c3b3b;
 
 $color-success: #6cbd7f;
 $color-warning: #ffc107;
 $color-danger: #dc3545;
 
-$body-bg: $color-light;
-$body-color: $color-dark;
-$body-color-secondary: #a1a1a1;
-$link-color: $color-primary;
-$link-hover-color: $color-secondary;
+$body-bg: #f4f4f4;
+$text-color: #646464;
+$text-color-secondary:#aaaaaa;
+$heading-color: $color-dark;
+$link-color: $heading-color;
+$link-hover-color: $color-primary;
 $selection-color: $color-light;
 $selection-bg: #3297FD;
 
 $theme-colors: (primary, $color-primary), (secondary, $color-secondary), (tertiary, $color-tertiary), (quaternary, $color-quaternary), (light, $color-light), (dark, $color-dark);
+
+// Borders
+$border-radius: 4px;
+$border-radius-sm: 2px;
 
 // Breakpoints
 $breakpoints: (xs: 576px, sm: 680px, md: 960px, lg: 1680px, xl: 1920px);

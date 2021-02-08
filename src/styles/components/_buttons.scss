@@ -4,10 +4,12 @@ button,
 .btn {
     display: inline-block;
     border-style: none;
-    border-radius: 0;
+    border-radius: $border-radius-sm;
     outline: none;
     padding: $space-sm $space-md;
     transition: all .25s ease;
+    font-size: $font-size-base;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -17,21 +19,21 @@ button,
     outline: none;
     box-shadow: none;
     padding: 0;
-    color: $body-color;
+    color: $text-color;
     background-color: transparent;
 }
 
 .btn-outline {
     border-style: solid;
     border-width: 2px;
-    border-color: $body-color;
+    border-color: $text-color;
     background-color: transparent;
-    color: $body-color;
+    color: $text-color;
 
     &:hover,
     &:focus {
-        color: darken($color-primary, 8%);
-        border-color: darken($color-primary, 8%);
+        color: $color-primary;
+        border-color: $color-primary;
     }
 }
 

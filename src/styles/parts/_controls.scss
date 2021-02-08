@@ -10,6 +10,9 @@
         transition: transform .25s ease;
         background-color: transparent;
 
+        width: 30px;
+        padding: $space-md;
+
         &.is-active {
             transform: rotate(90deg);
         }

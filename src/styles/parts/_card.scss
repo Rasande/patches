@@ -3,27 +3,47 @@
 
 .card {
     margin-bottom: $space-lg;
+    border-radius: $border-radius;
+    background-color: $color-light;
 
     &__thumbnail {
-        width: auto;
-        background-color: $body-color-secondary;
+        width: 100%;
+        max-width: none;
+
+        img {
+            border-radius: $border-radius $border-radius 0px 0px;
+
+            width: 100%;
+            max-width: none;
+            opacity: 1;
+            transition: opacity .25s ease;
+
+            &:hover {
+                opacity: .8;
+            }
+        }
     }
 
     &__content {
+        padding: $space-xs $space-sm $space-md;
+
         &--title {
-            h2 {
-                width: 100%;
+
+
+            h2, h3, h4, h5 {
+                @include font-size($font-sizes-h4);
                 margin: 0;
-
-
             }
         }
 
-        &--category {
-            padding: $space-sm 0;
+        .card__content--category {
+            padding: $space-xs 0;
             color: $color-primary;
-            text-transform: uppercase;
             font-size: $font-size-sm;
+
+            a {
+                color: $text-color-secondary;
+            }
 
         }
 
@@ -36,9 +56,9 @@
             font-size: $font-size-sm;
         }
 
-        .wrapper {
-            display: flex;
-            justify-content: space-between;
-        }
+    }
+
+    a {
+        text-decoration: none;
     }
 }

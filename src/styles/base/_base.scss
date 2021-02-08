@@ -21,7 +21,7 @@ body {
     width: 100%;
     min-height: 100vh;
     margin: 0;
-    color: $body-color;
+    color: $text-color;
     font-size: $font-size-base;
     font-family: $font-primary;
     background-color: $body-bg;
@@ -34,6 +34,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: $space-sm;
     font-family: $font-secondary;
     line-height: $line-height-heading;
+    color: $heading-color;
 
 }
 
@@ -85,12 +86,12 @@ a:not([class]) {
 
 cite {
     font-size: $font-size-sm;
-    color: $body-color-secondary;
+    color: $text-color-secondary;
 }
 
 hr {
     width: 50%;
-    border-top: 1px solid $body-color-secondary;
+    border-top: 1px solid $text-color-secondary;
 }
 
 .truncate {
@@ -118,7 +119,7 @@ figure {
 }
 
 figcaption {
-    color: $body-color-secondary;
+    color: $text-color-secondary;
     font-size: $font-size-sm;
 }
 
@@ -151,4 +152,10 @@ figcaption {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+// Utility
+
+.text-center {
+    text-align: center;
 }

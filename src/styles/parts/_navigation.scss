@@ -52,7 +52,7 @@ Desktop navigation
         padding: $space-md $space-md;
     }
 
-    .nav__item:hover>.nav__item--link {
+    .nav__item:hover>.nav__item--link, .nav__item:hover>.submenu-btn {
         color: $color-primary !important;
     }
 
@@ -61,7 +61,7 @@ Desktop navigation
     }
 
     .nav__item.is-active>.nav__item--link {
-        color: $body-color-secondary;
+        color: $text-color-secondary;
     }
 
     .nav__item.has-submenu .nav__item--link {
@@ -77,8 +77,20 @@ Desktop navigation
     .submenu-btn {
         border: none;
         padding-right: $space-md;
-        padding-left: 5px;
+        padding-left: 10px;
         background-color: transparent;
+        line-height: 0;
+
+        i {
+            transform: rotate(45deg);
+        }
+    }
+
+    .submenu .submenu-btn {
+
+        i {
+            transform: rotate(-45deg)
+        }
     }
 
     .submenu {
@@ -155,13 +167,23 @@ Mobile navigation
     }
 
     .nav__item.is-active>.nav__item--link {
-        color: $body-color-secondary;
+        color: $text-color-secondary;
     }
 
     .submenu-btn {
         border: none;
         background-color: transparent;
         padding: 0 $space-lg;
+        line-height: 0;
+
+        i {
+            transform: rotate(45deg);
+            transition: transform .25s ease;
+        }
+
+        &.is-open {
+            transform: rotate(-180deg);
+        }
     }
 
     .submenu {

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Rasande\n"
-"POT-Creation-Date: 2021-02-04 15:44+0100\n"
-"PO-Revision-Date: 2021-02-04 15:44+0100\n"
+"POT-Creation-Date: 2021-02-08 11:08+0100\n"
+"PO-Revision-Date: 2021-02-08 11:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -22,9 +22,13 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 
-#: 404.php:20
+#: 404.php:19
 msgid "The page cannot be found"
 msgstr "Sidan kan inte hittas"
+
+#: 404.php:20
+msgid "Back to homepage"
+msgstr "Till startsidan"
 
 #: functions.php:49
 msgid "Primary"
@@ -114,6 +118,11 @@ msgstr "Visa undermeny för %s"
 #: inc/walkers.php:104
 msgid "Add a menu"
 msgstr "Lägg till meny"
+
+#: search.php:35
+#, php-format
+msgid "No results found for \"%s\""
+msgstr "Inga resultat hittade för \"%s\""
 
 #: template-parts/controls.php:15
 msgid "Search..."

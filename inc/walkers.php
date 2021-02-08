@@ -59,7 +59,7 @@ if (!class_exists('Rasande_WP_Navwalker')) {
             $output .= $title;
             $output .= $link_output_end;
             if ($this->has_children) {
-                $output .= '<button aria-label="' . $labelName . '" aria-expanded="false" class="submenu-btn " type="button"><i class="dropdown-icon">+</i></button>';
+                $output .= '<button aria-label="' . $labelName . '" aria-expanded="false" class="submenu-btn " type="button"><i class="icon-arrow"></i></button>';
             }
         }
         public function display_element($element, &$children_elements, $max_depth, $depth, $args, &$output)
