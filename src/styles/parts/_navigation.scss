@@ -98,6 +98,7 @@ Desktop navigation
         top: 100%;
         display: block;
         visibility: hidden;
+        padding-bottom: $space-xs;
         background-color: $color-light;
         transform: translateY(-15px);
         opacity: 0;
