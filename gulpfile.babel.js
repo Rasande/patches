@@ -4,60 +4,58 @@ import {
     watch,
     series,
     parallel
-} from 'gulp';
-import yargs from 'yargs';
-import sass from 'gulp-dart-sass';
-import cleanCss from 'gulp-clean-css';
-import gulpif from 'gulp-if';
-import postcss from 'gulp-postcss';
-import sourcemaps from 'gulp-sourcemaps';
-import autoprefixer from 'autoprefixer';
-import webpack from 'webpack-stream';
-import named from 'vinyl-named';
-import del from 'del';
-import browserSync from "browser-sync";
+} from 'gulp'
+import yargs from 'yargs'
+import sass from 'gulp-dart-sass'
+import cleanCss from 'gulp-clean-css'
+import gulpif from 'gulp-if'
+import postcss from 'gulp-postcss'
+import sourcemaps from 'gulp-sourcemaps'
+import autoprefixer from 'autoprefixer'
+import webpack from 'webpack-stream'
+import named from 'vinyl-named'
+import browserSync from 'browser-sync'
 
+const config = require('./gulp.config.js')
 const PRODUCTION = yargs.argv.prod;
-const server = browserSync.create();
+const server = browserSync.create()
 
 // Browsersync
 export const bs = done => {
     server.init({
-        proxy: "http://localhost/",
+        proxy: config.projectURL,
+        open: config.browserAutoOpen,
         notify: false,
-        open: false
-    });
-    done();
+        ui: false
+    })
+    done()
 };
 
 // Reload browser
 export const reload = done => {
-    server.reload();
-    done();
+    server.reload()
+    done()
 };
-
-// Clean the assets folder
-export const clean = () => del(['assets/js', 'assets/css']);
 
 // Run gulp styles to compile sass files
 // Run gulp styles --prod to also minify 
 export const styles = () => {
-    return src(['src/styles/style.scss', 'src/styles/editor-style.scss'])
+    return src([config.styleSrc, config.editorStyleSrc])
         .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulpif(PRODUCTION, postcss([autoprefixer])))
+        .pipe(postcss([autoprefixer(config.BROWSERS_LIST)]))
         .pipe(gulpif(PRODUCTION, cleanCss({
             compatibility: 'ie8'
         })))
         .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
-        .pipe(dest('assets/css'))
-        .pipe(server.stream());
+        .pipe(dest(config.styleDest))
+        .pipe(server.stream())
 }
 
 // Run gulp scripts to compile js files
 // Run gulp scripts --prod to also minify 
 export const scripts = () => {
-    return src(['src/scripts/script.js'])
+    return src([config.scriptSrc])
         .pipe(named())
         .pipe(webpack({
             module: {
@@ -83,29 +81,21 @@ export const scripts = () => {
         .on('error', function handleError() {
             this.emit('end'); // Recover from errors
         })
-        .pipe(dest('assets/js'));
-}
-
-// Copy files from src to assets
-export const copy = () => {
-    return src(['src/**/*', '!src/{scripts,styles}', '!src/{scripts,styles}/**/*'])
-        .pipe(dest('assets'));
-}
-
-export const vendor = () => {
-    return src(['src/scripts/vendor/**/*'])
-        .pipe(dest('assets/js/vendor'));
+        .pipe(dest(config.scriptDest))
 }
 
 // Watch
 export const watcher = () => {
-    watch('src/styles/**/*.scss', styles);
-    watch('src/scripts/**/*.js', series(scripts, reload));
-    watch(['src/**/*', '!src/{scripts,styles}', '!src/{scripts,styles}/**/*'], series(copy, reload));
-    watch("**/*.php", reload);
+    watch(config.styleWatch, styles)
+    watch(config.scriptWatch, series(scripts, reload))
+    watch(config.phpWatch, reload)
+    watch(config.htmlWatch, reload)
+    console.log(config.styleWatch)
 }
 
 // Start dev environment
-export const dev = series(clean, parallel(styles, scripts, copy, vendor), bs, watcher)
-export const build = series(clean, parallel(styles, scripts, copy, vendor))
+// npm start
+export const dev = series(parallel(styles, scripts), bs, watcher)
+// npm run build
+export const build = series(styles, scripts)
 export default dev;
