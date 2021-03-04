@@ -1,5 +1,5 @@
 // Browser-sync options
-const projectURL = 'localhost'
+const projectURL = 'patches.local'
 const browserAutoOpen = false
 
 // Source paths
