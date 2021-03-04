@@ -26,9 +26,9 @@ class MobileMenu {
     }
 
     triggerMenu(e) {
-        let target = e.currentTarget.getAttribute('toggle-menu')
-        let targetMenu = document.querySelector('[menu-name="' + target + '"]')
-        let otherMenus = document.querySelectorAll('[menu-name]:not([menu-name="' + target + '"])')
+        const target = e.currentTarget.getAttribute('toggle-menu')
+        const targetMenu = document.querySelector('[menu-name="' + target + '"]')
+        const otherMenus = document.querySelectorAll('[menu-name]:not([menu-name="' + target + '"])')
 
         if (!targetMenu.classList.contains('is-open')) {
             // Close other open menus first
@@ -47,8 +47,8 @@ class MobileMenu {
     }
 
     openMenu(menu) {
-        let id = menu.getAttribute('menu-name')
-        let menuBtn = document.querySelector('[toggle-menu="' + id + '"]')
+        const id = menu.getAttribute('menu-name')
+        const menuBtn = document.querySelector('[toggle-menu="' + id + '"]')
 
         const scrollY = window.scrollY
 
@@ -66,8 +66,8 @@ class MobileMenu {
     }
 
     closeMenu(menu) {
-        let id = menu.getAttribute('menu-name')
-        let menuBtn = document.querySelector('[toggle-menu="' + id + '"]')
+        const id = menu.getAttribute('menu-name')
+        const menuBtn = document.querySelector('[toggle-menu="' + id + '"]')
 
         const bodyStyle = document.body.style.top;
         document.body.style.position = '';
