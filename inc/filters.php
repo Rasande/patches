@@ -33,7 +33,7 @@ if (!function_exists('rasande_archive_titles')) {
 if (!function_exists('rasande_change_logo_class')) {
     function rasande_change_logo_class($html)
     {
-        $html = str_replace('class="custom-logo-link"', 'class="site-header__brand"', $html);
+        $html = str_replace('class="custom-logo-link"', 'class="brand"', $html);
         $html = str_replace('alt=""', 'title="Home" alt="logo"', $html);
 
         return $html;
