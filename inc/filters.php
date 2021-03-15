@@ -86,3 +86,21 @@ if (!function_exists('rasande_wrap_html_block')) {
     }
     add_filter('render_block', 'rasande_wrap_html_block', 10, 2);
 }
+
+// Excerpt length
+if (!function_exists('rasande_excerpt_length')) {
+    function rasande_excerpt_length($length)
+    {
+        return 30;
+    }
+    add_filter('excerpt_length', 'rasande_excerpt_length');
+}
+
+// Excerpt more
+if (!function_exists('rasande_excerpt_more')) {
+    function rasande_excerpt_more($more)
+    {
+        return '...';
+    }
+    add_filter('excerpt_more', 'rasande_excerpt_more');
+}
