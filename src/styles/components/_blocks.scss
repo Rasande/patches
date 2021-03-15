@@ -147,7 +147,8 @@
     // List blocks
     ul:not(.blocks-gallery-grid), ol {
         margin-bottom: $space-md;
-
+        padding-left: $grid-margin * 2;
+        
         ul, ol {
             margin-bottom: 0;
             padding-left: $space-md;
