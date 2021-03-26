@@ -4,12 +4,8 @@
   "description": "Lets build a WordPress site!",
   "main": "index.js",
   "scripts": {
-    "preinstall": "npx npm-force-resolutions",
     "start": "gulp",
     "build": "gulp build --prod"
-  },
-  "resolutions": {
-    "yargs-parser": "^20.2.4"
   },
   "repository": {
     "type": "git",
@@ -18,22 +14,22 @@
   "author": "Andreas Jansson",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.12.13",
-    "@babel/preset-env": "^7.12.13",
-    "@babel/register": "^7.12.13",
-    "autoprefixer": "^9.8.6",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/register": "^7.13.8",
+    "autoprefixer": "^10.2.5",
     "babel-loader": "^8.2.2",
     "browser-sync": "^2.26.14",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-dart-sass": "^1.0.2",
     "gulp-if": "^3.0.0",
-    "gulp-postcss": "^8.0.0",
-    "gulp-sourcemaps": "^2.6.5",
-    "serialize-javascript": "^3.1.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "serialize-javascript": "^5.0.1",
     "vinyl-named": "^1.1.0",
-    "webpack-stream": "^5.2.1",
-    "yargs": "^15.4.1",
-    "yargs-parser": "^19.0.1"
+    "webpack-stream": "^6.1.2",
+    "yargs": "^16.2.0",
+    "yargs-parser": "^20.2.7"
   }
 }

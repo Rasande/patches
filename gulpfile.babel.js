@@ -97,5 +97,5 @@ export const watcher = () => {
 // npm start
 export const dev = series(parallel(styles, scripts), bs, watcher)
 // npm run build
-export const build = series(styles, scripts)
+export const build = series(parallel(styles, scripts))
 export default dev;
