@@ -178,6 +178,15 @@ if (!function_exists('rasande_scripts')) {
 	add_action('wp_enqueue_scripts', 'rasande_scripts');
 }
 
+// Enqueue google fonts
+if (!function_exists('rasande_google_fonts')) {
+	function rasande_google_fonts()
+	{
+		wp_enqueue_style('custom-google-font', 'https://fonts.googleapis.com/css?family=Archivo:500|Open+Sans:400,700', false);
+	}
+	add_action('wp_enqueue_scripts', 'rasande_google_fonts');
+}
+
 // Rewrite slug to swedish
 add_action('init', function () {
 	$GLOBALS['wp_rewrite']->pagination_base = 'sida';

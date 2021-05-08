@@ -55,7 +55,7 @@ class MobileMenu {
         document.body.style.position = 'fixed'
         document.body.style.top = -scrollY + 'px'
 
-        this.header.classList.add('scrolled')
+        this.header.classList.add('is-scrolled')
 
         menu.classList.add('is-open')
         menuBtn.classList.add('is-active')

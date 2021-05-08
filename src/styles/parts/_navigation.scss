@@ -64,7 +64,7 @@ Desktop navigation
         color: $text-color-secondary;
     }
 
-    .nav__item.has-submenu .nav__item--link {
+    .nav__item.has-submenu>.nav__item--link {
         padding-right: 0;
     }
 
